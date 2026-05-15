@@ -3,7 +3,8 @@ import Link from 'next/link'
 
 export const metadata: Metadata = {
   title: '关于 tribox',
-  description: 'tribox 由独立小团队开发，不接受 VC 融资，靠用户付费支撑。本地优先，文件即真理。',
+  description:
+    'tribox 是一款本地优先的笔记与知识管理桌面应用，主张数据所有权、开放格式、隐私优先。',
 }
 
 export default function AboutPage() {
@@ -13,21 +14,18 @@ export default function AboutPage() {
         {/* 标题 */}
         <div className="text-center mb-16">
           <p className="text-xs uppercase tracking-[0.2em] text-indigo-400/80 font-medium mb-4">
-            关于我们
+            关于
           </p>
           <h1 className="text-4xl sm:text-5xl font-bold text-white mb-6 tracking-tight">
             做一款十年后还想用的工具。
           </h1>
           <p className="text-slate-400 text-lg leading-relaxed">
-            tribox 由一个相信"工具应该让用户更自由，而不是更依赖"的小团队开发。
+            tribox 由一支相信"工具应该让用户更自由，而不是更依赖"的小团队开发。
           </p>
         </div>
 
         {/* 我们是谁 */}
-        <Section title="我们是谁">
-          <p>
-            tribox 由一支独立小团队全资开发，没有外部投资人，没有融资轮次，没有"增长 KPI"。
-          </p>
+        <Section title="我们为什么做 tribox">
           <p>
             团队成员长期使用 Obsidian、Notion、Roam 等工具，但都在某个时刻被"数据被锁在云端"
             "被迫迁就软件设计"
@@ -38,10 +36,10 @@ export default function AboutPage() {
           </p>
         </Section>
 
-        {/* 我们的承诺 */}
-        <Section title="我们的承诺">
+        {/* 我们的产品承诺 */}
+        <Section title="产品承诺">
           <p>
-            tribox 永远不会做以下事情。这不是营销话术，而是写在产品架构里的约束：
+            以下不是营销话术，而是写在 tribox 产品架构里的硬约束：
           </p>
           <ul className="list-disc pl-5 space-y-2.5 text-slate-400">
             <li>
@@ -49,27 +47,27 @@ export default function AboutPage() {
               所有笔记都是磁盘上真实的 Markdown 文件，VSCode / Sublime / vim 都能直接打开。
             </li>
             <li>
-              <strong className="text-slate-200">不偷偷写你的文件。</strong>
+              <strong className="text-slate-200">AI 不偷写你的文件。</strong>
               AI 生成的内容必须先经过你的确认（草稿 → 预览 → 接受三段流程）才能落入笔记。
             </li>
             <li>
-              <strong className="text-slate-200">不做多人实时协作编辑。</strong>
-              我们相信深度思考需要独处的空间。需要分享时，用快照分享——对方拿到独立副本。
+              <strong className="text-slate-200">本地优先，离线完整可用。</strong>
+              所有核心功能不依赖云端。同步、AI 云端等可选服务是延伸，不是核心。
             </li>
             <li>
-              <strong className="text-slate-200">不做"功能墙"逼你升级。</strong>
-              基础 app 永久免费，所有本地功能都包含。Sync 等付费产品只是云端基础设施，不是功能限制。
+              <strong className="text-slate-200">没有"功能墙"。</strong>
+              基础 app 永久免费，所有本地功能都包含。Sync 等付费产品只提供云端基础设施，不是功能限制。
             </li>
             <li>
-              <strong className="text-slate-200">不接受 VC 融资。</strong>
-              一旦接受外部投资，董事会就会要求增长曲线，我们就会被推着做不利于用户的设计。
+              <strong className="text-slate-200">端到端加密的同步。</strong>
+              订阅 Sync 后，笔记在你本地加密后才上传——tribox 工作人员和服务器都看不到内容。
             </li>
           </ul>
         </Section>
 
         {/* 商业模式 */}
-        <Section title="我们怎么活下来">
-          <p>tribox 的全部收入来自用户付费的附加产品：</p>
+        <Section title="商业模式">
+          <p>tribox 的运营资金来自用户付费的附加产品：</p>
           <ul className="list-disc pl-5 space-y-2 text-slate-400">
             <li>
               <strong className="text-slate-200">tribox Sync</strong> — 多端同步订阅（$4-5/月）
@@ -79,12 +77,11 @@ export default function AboutPage() {
             </li>
             <li>
               <strong className="text-slate-200">Commercial License</strong> —
-              企业组织的道德倡议许可
+              企业 / 组织许可
             </li>
           </ul>
           <p>
-            如果你或你的公司在依赖 tribox 创造价值，订阅是支持 tribox
-            保持独立最直接的方式——你不是付钱购买功能，你是付钱让我们继续按现在的原则做事。
+            付费帮助小团队持续投入开发，把更多精力放在产品本身。基础 app 永远免费，所有本地功能不会被锁。
           </p>
         </Section>
 

@@ -52,9 +52,9 @@ const CAPABILITIES = [
     body: 'tribox Sync 服务于你一个人在桌面、笔电、手机之间的衔接。在地铁上记下灵感，回到桌面继续展开——同一份文件，端到端加密。',
   },
   {
-    eyebrow: '分享，不是协作',
-    title: '快照分享：发出去的是副本，不是活文档。',
-    body: '把一个笔记或一组笔记打包发给别人，接收者得到自己的独立副本，可以自由修改。tribox 不做多人实时编辑——我们相信深度思考需要独处的空间。',
+    eyebrow: '快照分享',
+    title: '发出去的是副本，不是活文档。',
+    body: '把一个笔记或一组笔记打包发给别人，接收者得到自己的独立副本，可以自由修改和管理。每个人的笔记仍在各自的本地磁盘上，互不干扰。',
   },
   {
     eyebrow: '本地优先',
@@ -158,31 +158,6 @@ export default function HomePage() {
               </div>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* 独立声明 */}
-      <section className="px-4 py-20 sm:py-28 border-t border-white/10">
-        <div className="mx-auto max-w-3xl text-center">
-          <p className="text-xs uppercase tracking-[0.2em] text-slate-500 font-medium mb-4">
-            独立开发
-          </p>
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6 leading-tight tracking-tight">
-            没有融资。没有 KPI。
-            <br />
-            只有用户。
-          </h2>
-          <p className="text-slate-400 leading-relaxed max-w-xl mx-auto">
-            tribox 由小团队全资开发，不接受风险投资。我们的全部收入来自用户付费的附加产品（Sync、Catalyst）。
-            这意味着我们对你负责，不对董事会负责——
-            <span className="text-slate-300">你是我们的客户，不是我们的产品。</span>
-          </p>
-          <Link
-            href="/about"
-            className="mt-8 inline-block text-sm text-indigo-300 hover:text-indigo-200 transition-colors"
-          >
-            了解我们的团队 →
-          </Link>
         </div>
       </section>
 

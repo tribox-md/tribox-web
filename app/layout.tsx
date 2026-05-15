@@ -199,7 +199,7 @@ export default function RootLayout({
               </div>
             </div>
             <div className="flex flex-col sm:flex-row items-center justify-between gap-3 pt-6 border-t border-white/5 text-xs text-slate-500">
-              <p>© {new Date().getFullYear()} tribox. 独立开发，不接受 VC 融资。</p>
+              <p>© {new Date().getFullYear()} tribox. Local-first by design.</p>
               <p>Built with Next.js · 文件即真理</p>
             </div>
           </div>

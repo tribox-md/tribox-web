@@ -107,7 +107,7 @@ export function InviteLandingPage({ token, preview }: Props) {
 
           {/* 提示：这是快照，不是实时协作 */}
           <p className="mt-2 text-xs text-slate-500 max-w-xs mx-auto leading-relaxed">
-            接受后你将获得独立的本地副本，可自由修改。tribox 不做多人实时协作编辑。
+            接受后你将获得独立的本地副本，可自由修改和管理。
           </p>
 
           {/* 过期时间提示 */}
