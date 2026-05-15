@@ -3,12 +3,11 @@
 // 后端 POST /api/v1/billing/checkout-session：
 //   - 必须 Bearer access_token
 //   - body: { planTier?: 'pro' | 'team', priceId?: string }
-//     - 默认 planTier = 'pro'（对应前端的 tribox Sync 产品）
-//     - priceId 用于在同一 tier 内选不同变体（月付/年付）；不传则用该 tier 第一个 price_id
 //   - response: { url, sessionId } — 前端直接 window.location = url 跳转
 //
-// 后端 POST /api/v1/billing/portal-session：**尚未实现**
-//   需在 tribox-sync-server 的 routes/stripe.rs 添加，调 Stripe billing_portal API。
+// 后端 POST /api/v1/billing/portal-session：调用 Stripe billing_portal API，
+//   返回 { url } 由前端跳转。当后端尚未实现该端点时，前端会收到 404，提示
+//   "订阅管理功能开放中"。
 
 import { loadTokens, saveTokens, clearTokens, refresh, type AuthTokens } from './auth'
 

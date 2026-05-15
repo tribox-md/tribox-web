@@ -1,6 +1,28 @@
+# env files — 只允许 .env.*.example 入库
+.env
+.env.*
+!.env.*.example
+
+# build / cache
 node_modules/
 .next/
 out/
-.env.local
+dist/
+coverage/
+.turbo/
+.vercel/
+
+# editor / OS
 .DS_Store
+.vscode/
+.idea/
+*.swp
+*~
+*.bak
+*.orig
+
+# tsbuildinfo / 本地日志
 *.tsbuildinfo
+*.log
+npm-debug.log*
+.npm
