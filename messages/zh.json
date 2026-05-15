@@ -1,0 +1,553 @@
+{
+  "meta": {
+    "title": "tribox — 思考，写在你自己的文件里",
+    "description": "本地优先的笔记与知识管理桌面应用。Markdown 文件存储，双向链接，全文搜索。免费使用，无需注册。",
+    "descriptionShort": "本地优先的笔记与知识管理。免费使用，无需注册。",
+    "keywords": "tribox,笔记应用,本地优先,Markdown,知识管理,双向链接,隐私"
+  },
+  "nav": {
+    "pricing": "定价",
+    "about": "关于",
+    "account": "账号",
+    "download": "下载"
+  },
+  "footer": {
+    "product": "产品",
+    "about": "关于",
+    "aboutLink": "团队 / 哲学",
+    "legal": "法律",
+    "privacy": "隐私政策",
+    "terms": "服务条款",
+    "refund": "退款政策",
+    "contact": "联系",
+    "tagline": "Local-first by design.",
+    "builtWith": "Built with Next.js · 文件即真理"
+  },
+  "home": {
+    "badge": "本地优先 · 文件即真理 · 开放格式",
+    "heroTitle1": "思考，",
+    "heroTitle2": "写在你自己的",
+    "heroTitle3": "文件里。",
+    "heroSubtitle1": "tribox 是一款本地优先的笔记与知识管理工具。Markdown 文件存储，双向链接，全文搜索。",
+    "heroSubtitle2": "免费使用，无需注册，无附加条件。",
+    "heroCtaPrimary": "免费下载 tribox",
+    "heroCtaSecondary": "查看附加产品",
+    "platformNote": "macOS · Windows · Linux — 桌面优先，移动端开发中",
+    "principlesTitle": "tribox 的五条产品承诺",
+    "principlesIntro": "这些不是营销口号，而是我们写每一行代码时遵循的边界。",
+    "principle1Title": "属于你",
+    "principle1Body": "所有笔记是你磁盘上真实的 Markdown 文件。任何文本编辑器都能打开，没有专有格式，没有数据锁定。",
+    "principle2Title": "能久存",
+    "principle2Body": "纯文本是过去四十年都能读的格式，也会是未来四十年都能读的格式。今天写下的笔记，二十年后仍然属于你。",
+    "principle3Title": "可掌控",
+    "principle3Body": "离线完整可用。云端同步是你选择的功能，不是强制依赖。如果哪一天 tribox 消失，你的笔记仍在你的电脑里。",
+    "principle4Title": "可塑造",
+    "principle4Body": "快捷键、主题、插件、AI 模型——所有用得到的地方都可定制。你不必迁就软件，软件应该迁就你。",
+    "principle5Title": "不会偷写",
+    "principle5Body": "AI 输出永远先经过你的确认（草稿 → 预览 → 接受三段流程）才能落入笔记。tribox 不在你不知情时修改你的文件。",
+    "capability1Eyebrow": "思考的形状",
+    "capability1Title": "把想法用双向链接连起来。",
+    "capability1Body": "[[WikiLink]] 语法在写作中即时建立联系。每一篇笔记都知道谁链接了自己，知识图谱自动浮现，无需手动整理。",
+    "capability2Eyebrow": "当下与未来",
+    "capability2Title": "任务和笔记是同一件事。",
+    "capability2Body": "在段落里直接写 @due(2026-06-01) @priority(high)，今日视图就会看到它。任务不再被关在另一个 app 里。",
+    "capability3Eyebrow": "毫秒级",
+    "capability3Title": "搜索快到不像本地工具。",
+    "capability3Body": "Tantivy 全文索引 + 语义向量检索，几千篇笔记下查询不超过 50ms。AI Copilot 引用真实笔记内容，不臆造。",
+    "capability4Eyebrow": "你的多端",
+    "capability4Title": "一个账号，多台设备，同一份笔记。",
+    "capability4Body": "tribox Sync 服务于你一个人在桌面、笔电、手机之间的衔接。在地铁上记下灵感，回到桌面继续展开——同一份文件，端到端加密。",
+    "capability5Eyebrow": "快照分享",
+    "capability5Title": "发出去的是副本，不是活文档。",
+    "capability5Body": "把一个笔记或一组笔记打包发给别人，接收者得到自己的独立副本，可以自由修改和管理。每个人的笔记仍在各自的本地磁盘上，互不干扰。",
+    "capability6Eyebrow": "本地优先",
+    "capability6Title": "没有网络也照样工作。",
+    "capability6Body": "所有功能离线可用，包括 AI（接 Ollama 本地模型）。网络只在你主动同步或调用云端 AI 时才介入。",
+    "downloadTitle": "开始使用",
+    "downloadSubtitle": "下载桌面客户端，无需注册账号即可使用全部本地功能。",
+    "platforms": {
+      "macos": "Apple Silicon · Intel",
+      "windows": "x64 · ARM64",
+      "mobile": "Tauri Mobile · 开发中"
+    }
+  },
+  "pricing": {
+    "eyebrow": "定价",
+    "title": "基础免费，按需付费。",
+    "subtitle1": "tribox 本身永久免费、无功能墙、无注册要求。",
+    "subtitle2": "Sync 与 Catalyst 是独立的可选附加产品，只在你需要时付费。",
+    "billingMonthly": "月付",
+    "billingAnnual": "年付",
+    "billingSave": "省 20%",
+    "popular": "最受欢迎",
+    "perMonth": "/月",
+    "forever": "永久免费",
+    "annualNote": "按年计费 {price}/年",
+    "monthlyNote": "按月计费",
+    "oneTimeNote": "一次性买断，无续费",
+    "free": {
+      "name": "tribox",
+      "tagline": "基础 app —— 永久免费，无需注册",
+      "cta": "免费下载",
+      "features": [
+        "Markdown 文件存储，数据永远属于你",
+        "双向链接 [[WikiLink]] 与知识图谱",
+        "Tantivy 全文搜索 + 语义检索",
+        "任务管理：@due / @priority 内嵌语法",
+        "AI Copilot（支持本地 Ollama 模型）",
+        "插件系统",
+        "快照分享：发出本地副本给他人",
+        "社区支持"
+      ]
+    },
+    "sync": {
+      "name": "tribox Sync",
+      "tagline": "一个账号，多台设备，同一份笔记",
+      "cta": "订阅 Sync",
+      "features": [
+        "端到端加密的多端同步（AES-256）",
+        "版本历史，最长 12 个月",
+        "已删除文件可恢复",
+        "可选择按文件夹同步",
+        "设置、主题、插件同步",
+        "附件云存储 10 GB",
+        "邮件技术支持"
+      ]
+    },
+    "catalyst": {
+      "name": "tribox Catalyst",
+      "tagline": "创始会员档 —— 一次买断，永久铭记",
+      "cta": "成为创始会员",
+      "features": [
+        "提前体验 beta 通道与新功能",
+        "官网致谢页留名（可选）",
+        "社区创始会员徽章",
+        "插件开发者优先访问",
+        "直接资助产品开发与维护"
+      ]
+    },
+    "comparisonTitle": "功能对比",
+    "comparisonSubtitle": "基础 app 已包含全部本地功能。Sync 与 Catalyst 解锁额外能力。",
+    "comparison": {
+      "headerFeature": "功能",
+      "rows": [
+        {"label": "本地 Markdown 文件存储", "free": "✓", "sync": "✓", "catalyst": "✓"},
+        {"label": "双向链接 + 图谱", "free": "✓", "sync": "✓", "catalyst": "✓"},
+        {"label": "全文搜索 + 语义检索", "free": "✓", "sync": "✓", "catalyst": "✓"},
+        {"label": "AI Copilot（本地模型）", "free": "✓", "sync": "✓", "catalyst": "✓"},
+        {"label": "快照分享", "free": "✓", "sync": "✓", "catalyst": "✓"},
+        {"label": "多端云同步", "free": "—", "sync": "✓ E2E 加密", "catalyst": "需另订"},
+        {"label": "版本历史", "free": "—", "sync": "12 个月", "catalyst": "需另订"},
+        {"label": "附件云存储", "free": "—", "sync": "10 GB", "catalyst": "需另订"},
+        {"label": "beta 通道", "free": "—", "sync": "—", "catalyst": "✓"},
+        {"label": "社区徽章", "free": "—", "sync": "—", "catalyst": "✓ 创始会员"}
+      ]
+    },
+    "commercialEyebrow": "Commercial / Self-hosted",
+    "commercialTitle": "团队、企业、政府机构使用？",
+    "commercialBody": "tribox 没有\"商业墙\"，你完全可以免费用于工作。如果你或公司在依赖 tribox 创造价值，欢迎订阅 Commercial 计划来支持产品持续开发；也可以自建 tribox-sync-server（开源）用于内网部署。",
+    "commercialCta": "联系我们",
+    "faqTitle": "常见问题",
+    "faqs": [
+      {
+        "q": "免费版有功能限制吗？",
+        "a": "没有。tribox 基础 app 永久免费，所有本地功能（编辑、搜索、AI Copilot、插件、快照分享）都包含在内，不强制注册账号。Sync 和 Catalyst 是独立的可选附加产品，只有当你需要时才付费。"
+      },
+      {
+        "q": "Sync 是多人协作吗？",
+        "a": "不是。tribox Sync 服务于一个人在多台设备之间的衔接——例如手机记下灵感，桌面继续展开。如果你想把笔记给别人看，请使用免费的\"快照分享\"功能：对方拿到独立的本地副本，可自由修改，互不干扰。"
+      },
+      {
+        "q": "我的笔记会被上传到云端吗？",
+        "a": "默认不会。基础 app 完全本地运行，零遥测。只有当你主动订阅 Sync 后，文件才会以端到端加密的形式同步到 tribox 服务器（我们也读不到你的内容）。你可以随时退出 Sync，本地文件永远是真相源。"
+      },
+      {
+        "q": "我用 tribox 工作（商业用途）需要额外付费吗？",
+        "a": "不强制。tribox 没有\"商业墙\"，你完全可以免费用于工作。但如果你或你的公司在依赖 tribox 创造价值，欢迎订阅 Sync 或 Catalyst——付费帮助小团队持续投入开发与维护。"
+      },
+      {
+        "q": "取消订阅后我的笔记会怎样？",
+        "a": "完全不影响。所有笔记都以 Markdown 文件存在你的本地磁盘，Sync 只是同步通道。取消订阅后笔记原样保留，只是不再向云端同步新变更。"
+      },
+      {
+        "q": "支持退款吗？",
+        "a": "Sync 订阅 14 天内无理由全额退款。Catalyst 一次性买断不退款（这是支持档，类似众筹）。"
+      },
+      {
+        "q": "学生 / 教师 / 非营利组织有折扣吗？",
+        "a": "正在筹备中。请发邮件到 hello@tribox.md 说明身份，我们会逐封回复。"
+      },
+      {
+        "q": "Self-hosted 选项？",
+        "a": "tribox-sync-server 开源（与 tribox 应用同 GitHub 组织），可自建。Self-hosted 适合企业内网或对数据主权有更高要求的用户。"
+      }
+    ],
+    "faqContact": "还有问题？发邮件到"
+  },
+  "about": {
+    "eyebrow": "关于",
+    "title": "做一款十年后还想用的工具。",
+    "intro": "tribox 由一支相信\"工具应该让用户更自由，而不是更依赖\"的小团队开发。",
+    "whyTitle": "我们为什么做 tribox",
+    "whyBody": "团队成员长期使用 Obsidian、Notion、Roam 等工具，但都在某个时刻被\"数据被锁在云端\"\"被迫迁就软件设计\"\"厂商倒闭笔记就消失\"的恐惧戳中。所以我们决定自己做一款笔记应用——<strong>先保证不会让用户付出这种代价，再谈功能丰富与否。</strong>",
+    "promisesTitle": "产品承诺",
+    "promisesIntro": "以下不是营销话术，而是写在 tribox 产品架构里的硬约束：",
+    "promise1Title": "不把你的笔记锁进数据库。",
+    "promise1Body": "所有笔记都是磁盘上真实的 Markdown 文件，VSCode / Sublime / vim 都能直接打开。",
+    "promise2Title": "AI 不偷写你的文件。",
+    "promise2Body": "AI 生成的内容必须先经过你的确认（草稿 → 预览 → 接受三段流程）才能落入笔记。",
+    "promise3Title": "本地优先，离线完整可用。",
+    "promise3Body": "所有核心功能不依赖云端。同步、AI 云端等可选服务是延伸，不是核心。",
+    "promise4Title": "没有\"功能墙\"。",
+    "promise4Body": "基础 app 永久免费，所有本地功能都包含。Sync 等付费产品只提供云端基础设施，不是功能限制。",
+    "promise5Title": "端到端加密的同步。",
+    "promise5Body": "订阅 Sync 后，笔记在你本地加密后才上传——tribox 工作人员和服务器都看不到内容。",
+    "businessTitle": "商业模式",
+    "businessIntro": "tribox 的运营资金来自用户付费的附加产品：",
+    "businessSync": "tribox Sync — 多端同步订阅（$4-5/月）",
+    "businessCatalyst": "tribox Catalyst — 一次性创始会员档（$35）",
+    "businessCommercial": "Commercial License — 企业 / 组织许可",
+    "businessClosing": "付费帮助小团队持续投入开发，把更多精力放在产品本身。基础 app 永远免费，所有本地功能不会被锁。",
+    "contactTitle": "联系我们",
+    "contactEmail": "邮件：",
+    "contactBusiness": "商业合作：",
+    "contactGithub": "GitHub：",
+    "backHome": "← 返回首页"
+  },
+  "download": {
+    "eyebrow": "下载",
+    "title": "把 tribox 装到你的电脑上。",
+    "subtitleWithVersion": "桌面优先的本地笔记应用，当前版本 {version}。安装即用，无需注册。",
+    "subtitleNoVersion": "桌面优先的本地笔记应用，即将推出第一个公开版本。安装即用，无需注册。",
+    "notReadyTitle": "🚧 公开版本尚未发布",
+    "notReadyBody": "tribox 正在准备首个公开发布，预计 2026 年内推出。",
+    "notReadyCta": "想第一时间收到通知？发邮件到 hello@tribox.md 并写下\"发布通知\"。",
+    "macosTitle": "macOS",
+    "macosNote": "macOS 11 Big Sur 及以上",
+    "windowsTitle": "Windows",
+    "windowsNote": "Windows 10 / 11，x64",
+    "linuxTitle": "Linux",
+    "linuxNote": "开发中，预计随 v1.1 发布",
+    "comingSoon": "即将推出",
+    "inDevelopment": "开发中",
+    "mobileEyebrow": "移动端",
+    "mobileTitle": "iOS / Android 客户端",
+    "mobileBody": "tribox 移动端正在开发中（Tauri Mobile），将作为桌面版的延伸——通过 Sync 在手机上记下灵感，回到桌面继续展开。预计 2026 年下半年公开测试。",
+    "securityTitle": "⚠️ 关于安全警告",
+    "securityMacos": "**macOS**：首次打开未签名版本会被 Gatekeeper 拦截。右键 → \"打开\"，或在系统设置 → 隐私与安全性中允许。",
+    "securityWindows": "**Windows**：未签名版本会触发 SmartScreen 警告。点击\"更多信息\" → \"仍要运行\"。",
+    "securityCert": "代码签名证书需要数百美元/年的支出，tribox 暂未购买。所有发布物的 SHA256 校验值随版本一起发布，方便你验证完整性。",
+    "backHome": "← 返回首页",
+    "assetFormats": {
+      "appleSilicon": "Apple Silicon (M1/M2/M3/M4)",
+      "intel": "Intel x86_64",
+      "winInstaller": "x64 — 安装程序",
+      "winMsi": "x64 — MSI 部署包",
+      "linuxAll": "AppImage / deb"
+    }
+  },
+  "privacy": {
+    "eyebrow": "法律",
+    "title": "隐私政策",
+    "lastUpdated": "最后更新：",
+    "tldrTitle": "一句话总结",
+    "tldrBody": "tribox 桌面 app 默认完全本地运行，零遥测，零分析。云端服务（Sync、Catalyst、邀请分享）仅在你主动注册账号并使用时才收集必要的最少信息，且所有笔记内容在传输和存储时均端到端加密。",
+    "section1Title": "1. 桌面客户端（基础 app）",
+    "section1Body": "tribox 桌面客户端默认不向我们的服务器发送任何数据。具体来说：",
+    "section1List": [
+      "无遥测、无使用统计、无崩溃报告自动上报",
+      "无内置广告 SDK、无第三方追踪",
+      "所有笔记、设置、附件都存储在你本地磁盘",
+      "本地 AI 功能（Ollama）完全离线；云端 AI 仅在你主动配置 API key 并发起请求时才连接"
+    ],
+    "section1Note": "你不需要注册账号就能使用 tribox 桌面客户端。",
+    "section2Title": "2. 注册账号时收集什么",
+    "section2Body": "当你订阅 Sync、Catalyst 或接受快照分享时需要注册账号。我们仅收集：",
+    "section2List": [
+      "邮箱地址（用于登录、密码重置、订阅通知）",
+      "加密后的密码（bcrypt 哈希，原文从不存储）",
+      "设备 ID（用于多设备会话管理与撤销）",
+      "注册时间、最后登录时间"
+    ],
+    "section2Note": "我们不收集姓名、电话、地址、性别、生日，也不要求你绑定社交账号。",
+    "section3Title": "3. tribox Sync — 笔记同步的加密",
+    "section3Body": "订阅 Sync 后，你的笔记会通过我们的服务器在你的设备之间同步。但服务器无法读取你的笔记内容：",
+    "section3List": [
+      "端到端加密：所有笔记在你的本地设备用 AES-256 加密后才上传，密钥从你的密码派生",
+      "零知识架构：tribox 工作人员、服务器管理员、数据库都看不到你的笔记原文",
+      "忘记密码 = 数据无法找回，除非你提前设置了恢复密钥"
+    ],
+    "section4Title": "4. 支付信息",
+    "section4Body": "付款通过 Stripe 处理。我们不接触你的信用卡号、CVV 或银行账户。Stripe 只把以下信息回传给我们：",
+    "section4List": [
+      "订阅状态（active / past_due / canceled）",
+      "当前订阅档位",
+      "下次扣费时间",
+      "发票 ID（用于客户支持）"
+    ],
+    "section4Stripe": "Stripe 的隐私政策见：",
+    "section5Title": "5. 网站的极简埋点",
+    "section5Body": "tribox 官网（你正在浏览的这个站）收集以下匿名指标，用于了解哪些内容对用户有用：",
+    "section5List": [
+      "页面浏览（路径、referer、UA），不绑定个人身份",
+      "下载按钮点击",
+      "定价页 CTA 点击"
+    ],
+    "section5Note": "我们不使用 Google Analytics 或 Facebook Pixel。无 cookie 弹窗，因为我们不放追踪 cookie。",
+    "section6Title": "6. 你的权利",
+    "section6Body": "你随时可以：",
+    "section6List": [
+      "导出你的所有笔记（它们一直就在你本地的 .md 文件里）",
+      "删除账号（联系 hello@tribox.md，3 个工作日内完成）",
+      "取消订阅而保留账号",
+      "查询 tribox 服务器存有你的哪些数据"
+    ],
+    "section7Title": "7. 联系",
+    "section7Body": "隐私相关问题请邮件：",
+    "backHome": "← 返回首页"
+  },
+  "terms": {
+    "eyebrow": "法律",
+    "title": "服务条款",
+    "lastUpdated": "最后更新：",
+    "tldrBody": "使用 tribox 桌面客户端或订阅 tribox 云端服务，即视为你已阅读并同意以下条款。如有任何疑问，请在订阅前邮件 hello@tribox.md。",
+    "section1Title": "1. 服务说明",
+    "section1Body": "tribox 提供以下服务：",
+    "section1List": [
+      "桌面客户端：本地优先的笔记与知识管理工具，永久免费、无功能限制、无注册要求",
+      "tribox Sync：付费订阅服务，提供端到端加密的多端同步、版本历史、附件云存储",
+      "tribox Catalyst：一次性买断的创始会员档，提供 beta 通道与社区徽章",
+      "快照分享：在用户之间传递笔记副本的功能（免费）"
+    ],
+    "section2Title": "2. 账号责任",
+    "section2List": [
+      "账号密码由你自行保管。tribox 采用零知识加密，密码丢失意味着同步数据无法找回。",
+      "同一账号同时登录的设备数受订阅档位限制，可在用户中心查看与撤销。",
+      "禁止将账号转让、出租、共享给他人。订阅许可面向个人或单一组织实体，不是\"团队席位\"。",
+      "如发现账号异常，应立即修改密码并联系 hello@tribox.md。"
+    ],
+    "section3Title": "3. 订阅计费与退款",
+    "section3List": [
+      "订阅周期：Sync 按月或按年订阅，到期自动续费，可随时取消续费",
+      "退款政策：Sync 订阅首次付款后 14 天内可申请全额退款；Catalyst 一次性买断不退款（性质类似众筹支持）",
+      "价格调整：tribox 有权调整未来订阅周期的价格，调整前 30 天会邮件通知。已支付的当前周期不受影响",
+      "税费：展示价格不含可能适用的当地税费"
+    ],
+    "section4Title": "4. 取消订阅",
+    "section4List": [
+      "你可以在 Stripe Customer Portal 随时取消订阅，无需联系客服",
+      "取消后服务持续到当前付费周期结束，到期后停止同步",
+      "本地笔记完全不受影响——所有 Markdown 文件原样保留在你的磁盘",
+      "账号本身保留 12 个月，期间可重新订阅恢复同步"
+    ],
+    "section5Title": "5. 可接受使用",
+    "section5Body": "使用 tribox 服务时，你同意不会：",
+    "section5List": [
+      "用于存储或分发违反所在地法律的内容",
+      "逆向工程或试图破坏 tribox 服务器",
+      "使用自动化脚本异常消耗云端资源（API 滥用、爬取等）",
+      "侵犯他人版权、商标、隐私权"
+    ],
+    "section5Note": "违反上述条款可能导致账号被暂停或终止。tribox 保留对内容的最终审核权，但<strong>不会主动扫描或读取</strong>你的笔记内容（零知识架构使我们也读不到）。",
+    "section6Title": "6. 服务可用性",
+    "section6List": [
+      "tribox 努力维持云端服务 99.9% 的月度可用性，但不提供 SLA 担保",
+      "服务中断时，本地客户端仍可正常使用——这是本地优先架构的核心承诺",
+      "计划内的维护窗口会提前 48 小时通过邮件或站内公告通知"
+    ],
+    "section7Title": "7. 责任限制",
+    "section7Body": "在法律允许的最大范围内，tribox 对因服务使用导致的任何间接、特殊或后果性损失不承担责任。tribox 的全部赔偿责任不超过你在过去 12 个月支付的订阅费用。",
+    "section8Title": "8. 条款变更",
+    "section8Body": "tribox 可能不时更新本服务条款。重大变更会通过邮件通知所有付费订阅用户，并在网站上提前公告 30 天。继续使用即视为接受新条款。",
+    "section9Title": "9. 适用法律",
+    "section9Body": "本条款适用相关司法管辖区的法律。争议优先通过协商解决。",
+    "section10Title": "10. 联系",
+    "section10Body": "条款相关问题：",
+    "backHome": "← 返回首页"
+  },
+  "refund": {
+    "eyebrow": "法律",
+    "title": "退款政策",
+    "lastUpdated": "最后更新：",
+    "summaryTitle": "速览",
+    "summaryList": [
+      "**tribox Sync**：首次付款后 14 天内无理由全额退款",
+      "**tribox Catalyst**（一次性买断）：不支持退款",
+      "**取消订阅**：随时可在 Customer Portal 取消，服务持续到付费周期结束"
+    ],
+    "section1Title": "1. tribox Sync 订阅退款",
+    "section1Sub1": "14 天无理由退款",
+    "section1Body1": "自你<strong>首次</strong>订阅 tribox Sync 之日起 14 个自然日内，无论使用了多少，都可申请全额退款。退款会原路退回支付时使用的信用卡或其他支付方式，通常 5-10 个工作日内到账（具体取决于发卡行）。",
+    "section1Sub2": "续费周期不再退款",
+    "section1Body2": "14 天无理由退款<strong>仅适用于首次付款</strong>。订阅自动续费后，续费周期的费用不退款。你可以随时取消自动续费（服务持续到当前周期结束），但已支付的当前周期不会按比例退款。",
+    "section1Sub3": "如何申请退款",
+    "section1Body3": "发邮件到 hello@tribox.md，包含：",
+    "section1Body3List": [
+      "注册时使用的邮箱地址",
+      "订阅日期（大致即可）",
+      "简单说明退款原因（可选，但有助于我们改进产品）"
+    ],
+    "section1Body3End": "我们会在 2 个工作日内回复并处理。",
+    "section2Title": "2. tribox Catalyst 一次性买断",
+    "section2Body": "tribox Catalyst（创始会员档）<strong>不支持退款</strong>。原因是：",
+    "section2List": [
+      "Catalyst 的本质类似众筹支持，购买即代表对 tribox 团队的信任投票",
+      "购买后立即解锁全部权益（beta 通道、社区徽章、致谢页留名）",
+      "这些权益一旦授予无法收回"
+    ],
+    "section2Note": "请在购买 Catalyst 前充分了解其性质。如果你只是想试用 tribox 的功能，请使用永久免费的基础 app，不需要购买 Catalyst。",
+    "section3Title": "3. 取消订阅 vs 退款",
+    "section3Body": "这两个操作不同：",
+    "section3List": [
+      "**取消订阅**：停止下次自动续费，当前付费周期内服务正常使用直到到期。无须联系客服，可在 Stripe Customer Portal 自助操作",
+      "**退款**：退还已支付的费用并立即终止服务。需联系 hello@tribox.md 并符合 14 天无理由条件"
+    ],
+    "section3Note": "大多数情况下，<strong>取消订阅</strong>是更合适的选择——可以继续使用到当前周期结束。",
+    "section4Title": "4. 异常情况",
+    "section4Sub1": "服务无法使用",
+    "section4Body1": "如果你的订阅期间 tribox Sync 服务持续 24 小时以上无法使用，且我们未提前通知，可申请按比例退还受影响时段的费用。",
+    "section4Sub2": "误操作 / 重复扣费",
+    "section4Body2": "因系统问题导致的重复扣费、误扣费，将无条件全额退还，不受 14 天限制。发邮件附上 Stripe 收据即可。",
+    "section4Sub3": "争议处理",
+    "section4Body3": "我们倾向于通过邮件友好解决争议。如果你已经向发卡行发起 chargeback（争议扣款），我们将暂停账号直到争议结束。请优先邮件联系我们——我们处理速度通常快于 chargeback 流程。",
+    "section5Title": "5. 联系",
+    "section5Body": "退款相关问题：",
+    "backHome": "← 返回首页"
+  },
+  "login": {
+    "title": "登录 tribox",
+    "subtitle": "使用桌面客户端注册的账号",
+    "fromPricing": "登录后即可订阅 tribox Sync",
+    "emailLabel": "邮箱",
+    "passwordLabel": "密码",
+    "deriving": "正在派生密钥…",
+    "submitting": "登录中…",
+    "submit": "登录",
+    "noAccount": "还没有 tribox 账号？",
+    "signupLink": "注册指引",
+    "fillBoth": "请填写邮箱和密码",
+    "errorDefault": "登录失败，请重试",
+    "errorInvalidCreds": "邮箱或密码错误",
+    "errorRateLimit": "请求过于频繁，请稍后再试",
+    "termsConsent": "登录即视为同意 tribox 的",
+    "termsLink": "服务条款",
+    "privacyAnd": "与",
+    "privacyLink": "隐私政策"
+  },
+  "signup": {
+    "title": "在桌面客户端注册",
+    "subtitle": "tribox 账号涉及端到端加密的密钥派生，注册流程在桌面客户端完成更安全。",
+    "step1Title": "下载并安装 tribox",
+    "step1Body": "选择适合你的操作系统，安装后无需注册即可开始使用全部本地功能。",
+    "step2Title": "在设置 → 账号中注册",
+    "step2Body": "打开 tribox 设置面板，选择「创建账号」，填写邮箱和密码。整个过程在你本地完成密钥生成。",
+    "step3Title": "回到 tribox.md 登录",
+    "step3Body": "用同一组邮箱密码在网页登录，即可订阅 Sync 或管理已有订阅。",
+    "ctaDownload": "下载桌面客户端",
+    "ctaLogin": "已有账号？登录",
+    "whyNoWebSignup": "为什么不在网页直接注册？",
+    "whyBody": "注册涉及为你的 vault 生成端到端加密密钥，由桌面客户端完成可避免密钥经网页传输的风险。"
+  },
+  "account": {
+    "subscribedToast": "🎉 订阅成功！",
+    "subscribedNote": "在你的桌面 tribox 客户端登录同一账号即可开始同步。",
+    "eyebrow": "账号",
+    "title": "你的 tribox 账号",
+    "loadError": "加载失败",
+    "retry": "重试",
+    "subscriptionTitle": "订阅",
+    "subscriptionFree": "基础免费档",
+    "subscriptionPaid": "付费订阅",
+    "statusActive": "正常",
+    "statusTrialing": "试用中",
+    "statusPastDue": "付款失败",
+    "statusCanceled": "已取消",
+    "statCurrentPlan": "当前计划",
+    "statRenewalDate": "续费日期",
+    "statStorage": "附件存储",
+    "upgradeButton": "升级到 Sync",
+    "manageButton": "管理订阅（即将开放）",
+    "manageTooltip": "Stripe Customer Portal 接入中",
+    "viewAllPlans": "查看所有计划",
+    "devicesTitle": "已登录设备",
+    "devicesSubtitle": "{count} 台设备 · 单个用户最多 20 台",
+    "deviceCurrent": "当前",
+    "deviceLastSeen": "最后活跃",
+    "deviceNote": "单设备移除需要在桌面客户端的设置 → 账号 → 设备中操作。",
+    "logoutTitle": "登出",
+    "logoutSubtitle": "\"仅退出当前浏览器\"不影响桌面客户端；\"退出所有设备\"会强制全部设备重新登录。",
+    "logoutLocal": "仅退出当前浏览器",
+    "logoutAll": "退出所有设备",
+    "logoutAllConfirm": "确定要退出所有设备吗？所有设备（含桌面客户端）都会被强制重新登录。",
+    "logoutWorking": "处理中…",
+    "planLabels": {
+      "free": "免费 · 基础 app",
+      "pro": "tribox Sync",
+      "team": "Commercial",
+      "enterprise": "Enterprise"
+    },
+    "platformLabels": {
+      "mac": "🍎",
+      "windows": "🪟",
+      "linux": "🐧",
+      "ios": "📱",
+      "android": "🤖",
+      "web": "🌐",
+      "default": "💻"
+    },
+    "timeAgo": {
+      "justNow": "刚刚",
+      "minutes": "{n} 分钟前",
+      "hours": "{n} 小时前",
+      "days": "{n} 天前"
+    }
+  },
+  "invite": {
+    "toastNotInstalled": "未检测到 tribox，请先下载安装",
+    "inviterShared": "{name} 向你分享了",
+    "withYou": "",
+    "lastUpdated": "最后更新 {time}",
+    "roleEditor": "可编辑副本",
+    "roleViewer": "只读副本",
+    "snapshotNote": "接受后你将获得独立的本地副本，可自由修改和管理。",
+    "expiresAt": "邀请链接将于 {date} 过期",
+    "downloadCta": "下载 tribox（免费开始）",
+    "openInApp": "在 tribox 中打开",
+    "needAppCta": "没装 tribox？前往下载页",
+    "invalidTitle": "邀请链接已失效",
+    "invalidBody": "该链接可能已过期、被撤销，或者你没有访问权限。请联系邀请人重新生成链接。",
+    "backHome": "返回首页"
+  },
+  "onboarding": {
+    "step": "{current}/{total}",
+    "stepNames": ["选择用途", "下载应用", "接受分享", "完成"],
+    "step1Title": "你主要用 tribox 做什么？",
+    "step1Subtitle": "帮助我们为你优化体验",
+    "useCases": [
+      {"id": "knowledge", "icon": "🧠", "label": "知识管理", "desc": "构建个人知识库，双向链接，思维图谱"},
+      {"id": "team", "icon": "📤", "label": "快照分享", "desc": "把笔记打包发给别人，对方拿到独立副本"},
+      {"id": "personal", "icon": "📝", "label": "个人笔记", "desc": "日记、灵感记录、学习笔记"},
+      {"id": "project", "icon": "🚀", "label": "项目管理", "desc": "任务跟踪，@due 日期，项目文档"}
+    ],
+    "step1Continue": "继续",
+    "step2Title": "下载桌面客户端",
+    "step2Subtitle": "tribox 是桌面原生应用，请选择你的操作系统",
+    "platforms": [
+      {"os": "macOS", "icon": "🍎", "note": "Apple Silicon + Intel · .dmg"},
+      {"os": "Windows", "icon": "🪟", "note": "x64 / ARM64 · .msi"},
+      {"os": "Linux", "icon": "🐧", "note": ".AppImage / .deb / .rpm"}
+    ],
+    "step2Footer": "下载后，双击安装包完成安装，无需管理员权限",
+    "step3Title": "接受分享",
+    "step3Subtitle": "正在处理你的分享链接，接受后将获得独立副本…",
+    "step3Cta": "接受分享，下载副本",
+    "step3Loading": "正在加入…",
+    "step3Retry": "重试",
+    "step4Title": "欢迎使用 tribox！",
+    "step4TitleJoined": "已接收「{name}」副本！",
+    "step4Body": "打开 tribox 桌面客户端，开始你的知识管理之旅。",
+    "step4BodyJoined": "打开 tribox 桌面客户端，副本已在本地等你。",
+    "step4Cta": "在 tribox 中打开",
+    "errorAuthRequired": "请先完成注册或登录，再接受分享"
+  }
+}

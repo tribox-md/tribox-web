@@ -1,33 +1,32 @@
 import type { Metadata } from 'next'
+import { getTranslations, setRequestLocale } from 'next-intl/server'
 import { getShareLinkPreview } from '@/lib/api'
 import { InviteLandingPage, InvalidInvitePage } from '@/components/InviteLandingPage'
 
 interface Props {
-  params: Promise<{ token: string }>
+  params: Promise<{ locale: string; token: string }>
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { token } = await params
+  const { locale, token } = await params
   const preview = await getShareLinkPreview(token)
+  const t = await getTranslations({ locale, namespace: 'invite' })
 
   if (!preview || !preview.valid) {
-    return {
-      title: '邀请链接已失效 — tribox',
-    }
+    return { title: t('invalidTitle') }
   }
 
+  const title = `${preview.inviterName} → tribox`
   return {
-    title: `${preview.inviterName} 邀请你加入 tribox`,
-    description: `加入「${preview.spaceDisplayName}」，${preview.memberCount} 位协作者正在使用 tribox 协同工作。`,
-    openGraph: {
-      title: `${preview.inviterName} 邀请你加入 tribox`,
-      description: `加入「${preview.spaceDisplayName}」协作空间`,
-    },
+    title,
+    description: preview.spaceDisplayName,
+    openGraph: { title, description: preview.spaceDisplayName },
   }
 }
 
 export default async function JoinPage({ params }: Props) {
-  const { token } = await params
+  const { locale, token } = await params
+  setRequestLocale(locale)
   const preview = await getShareLinkPreview(token)
 
   if (!preview || !preview.valid) {

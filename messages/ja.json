@@ -1,0 +1,554 @@
+{
+  "meta": {
+    "title": "tribox — あなた自身のファイルに、思考を書く",
+    "description": "ローカルファーストのノート・ナレッジ管理デスクトップアプリ。Markdown ファイルで保存、双方向リンク、全文検索。無料で利用可能、登録不要。",
+    "descriptionShort": "ローカルファーストのノート・ナレッジ管理。無料で利用可能、登録不要。",
+    "keywords": "tribox,ノートアプリ,ローカルファースト,Markdown,ナレッジ管理,双方向リンク,プライバシー"
+  },
+  "nav": {
+    "pricing": "料金",
+    "about": "概要",
+    "account": "アカウント",
+    "download": "ダウンロード"
+  },
+  "footer": {
+    "product": "プロダクト",
+    "about": "概要",
+    "aboutLink": "チームと理念",
+    "legal": "リーガル",
+    "privacy": "プライバシー",
+    "terms": "利用規約",
+    "refund": "返金ポリシー",
+    "contact": "お問い合わせ",
+    "tagline": "Local-first by design.",
+    "builtWith": "Built with Next.js · ファイルが真実"
+  },
+  "home": {
+    "badge": "ローカルファースト · ファイルが真実 · オープンフォーマット",
+    "heroTitle1": "思考を、",
+    "heroTitle2": "あなた自身の",
+    "heroTitle3": "ファイルに。",
+    "heroSubtitle1": "tribox はローカルファーストのノート・ナレッジ管理ツールです。Markdown ファイルで保存、双方向リンク、全文検索。",
+    "heroSubtitle2": "無料で利用可能、登録不要、追加条件なし。",
+    "heroCtaPrimary": "tribox を無料でダウンロード",
+    "heroCtaSecondary": "アドオンを見る",
+    "platformNote": "macOS · Windows · Linux — デスクトップ優先、モバイル版開発中",
+    "principlesTitle": "tribox の 5 つの製品約束",
+    "principlesIntro": "これらはマーケティングのスローガンではなく、コードを書くたびに守る境界線です。",
+    "principle1Title": "あなたのもの",
+    "principle1Body": "すべてのノートは、あなたのディスク上の本物の Markdown ファイルです。どのテキストエディタでも開けます。独自フォーマットなし、データロックインなし。",
+    "principle2Title": "長期保存",
+    "principle2Body": "プレーンテキストは過去 40 年読めたフォーマットで、これからの 40 年も読めるでしょう。今日書いたノートは 20 年後もあなたのものです。",
+    "principle3Title": "あなたの管理下",
+    "principle3Body": "オフラインで完全に使えます。クラウド同期はあなたが選ぶ機能であり、強制的な依存ではありません。tribox が消えても、ノートはあなたのコンピュータに残ります。",
+    "principle4Title": "カスタマイズ可能",
+    "principle4Body": "ショートカット、テーマ、プラグイン、AI モデル——触れる場所はすべてカスタマイズできます。ソフトウェアに合わせるのではなく、ソフトウェアがあなたに合わせるべきです。",
+    "principle5Title": "勝手に書きません",
+    "principle5Body": "AI が生成した内容は、必ずあなたの確認（下書き → プレビュー → 承認の 3 段階）を経てからノートに反映されます。tribox があなたに知らせずファイルを変更することはありません。",
+    "capability1Eyebrow": "思考のかたち",
+    "capability1Title": "アイデアを双方向リンクでつなげる。",
+    "capability1Body": "[[WikiLink]] 構文で書きながら即座に関連付け。各ノートは誰がリンクしているかを把握し、ナレッジグラフが自動で浮かび上がります。手動整理は不要です。",
+    "capability2Eyebrow": "今と未来",
+    "capability2Title": "タスクとノートは同じもの。",
+    "capability2Body": "段落の中で直接 @due(2026-06-01) @priority(high) と書けば、Today ビューがすぐに認識します。タスクが別のアプリに閉じ込められることはもうありません。",
+    "capability3Eyebrow": "ミリ秒単位",
+    "capability3Title": "ローカルツールとは思えない検索速度。",
+    "capability3Body": "Tantivy 全文検索 + セマンティックベクトル検索。数千件のノートで 50ms 以内のクエリ。AI Copilot は実際のノート内容を引用し、ハルシネーションしません。",
+    "capability4Eyebrow": "あなたのマルチデバイス",
+    "capability4Title": "1 つのアカウント、複数のデバイス、同じノート。",
+    "capability4Body": "tribox Sync は、デスクトップ・ノート PC・スマートフォン間の連携をあなた一人のために提供します。電車で思いついたアイデアをデスクトップで展開——同じファイル、エンドツーエンド暗号化。",
+    "capability5Eyebrow": "スナップショット共有",
+    "capability5Title": "送るのはコピー、ライブドキュメントではありません。",
+    "capability5Body": "ノートやフォルダをパッケージ化して相手に送ると、受信者は独立したローカルコピーを受け取り、自由に編集できます。各人のノートはそれぞれのディスク上に残り、互いに干渉しません。",
+    "capability6Eyebrow": "ローカルファースト",
+    "capability6Title": "ネットワークなしでも動作。",
+    "capability6Body": "すべての機能がオフラインで利用可能、AI（ローカル Ollama モデル接続）も含みます。ネットワークは、あなたが能動的に同期したりクラウド AI を呼び出したりするときのみ介入します。",
+    "downloadTitle": "始める",
+    "downloadSubtitle": "デスクトップクライアントをダウンロードしてください。アカウント登録なしでもすべてのローカル機能が使えます。",
+    "platforms": {
+      "macos": "Apple Silicon · Intel",
+      "windows": "x64 · ARM64",
+      "mobile": "Tauri Mobile · 開発中"
+    }
+  },
+  "pricing": {
+    "eyebrow": "料金",
+    "title": "基本は無料、必要なときだけ支払う。",
+    "subtitle1": "tribox 本体は永久無料、機能制限なし、登録不要です。",
+    "subtitle2": "Sync と Catalyst は独立したオプションのアドオンで、必要なときだけ支払います。",
+    "billingMonthly": "月払い",
+    "billingAnnual": "年払い",
+    "billingSave": "20% お得",
+    "popular": "人気",
+    "perMonth": "/月",
+    "forever": "永久無料",
+    "annualNote": "年額 {price}、年払い",
+    "monthlyNote": "月額",
+    "oneTimeNote": "一括購入、継続課金なし",
+    "free": {
+      "name": "tribox",
+      "tagline": "基本アプリ —— 永久無料、登録不要",
+      "cta": "無料ダウンロード",
+      "features": [
+        "Markdown ファイルで保存、データはあなたのもの",
+        "双方向リンク [[WikiLink]] とナレッジグラフ",
+        "Tantivy 全文検索 + セマンティック検索",
+        "タスク管理：@due / @priority のインライン構文",
+        "AI Copilot（ローカル Ollama モデル対応）",
+        "プラグインシステム",
+        "スナップショット共有：ローカルコピーを他人に送信",
+        "コミュニティサポート"
+      ]
+    },
+    "sync": {
+      "name": "tribox Sync",
+      "tagline": "1 つのアカウント、複数のデバイス、同じノート",
+      "cta": "Sync を購読",
+      "features": [
+        "エンドツーエンド暗号化のマルチデバイス同期（AES-256）",
+        "最長 12 か月のバージョン履歴",
+        "削除ファイルの復元",
+        "フォルダ単位の同期選択",
+        "設定・テーマ・プラグインの同期",
+        "添付ファイル 10 GB のクラウドストレージ",
+        "メールテクニカルサポート"
+      ]
+    },
+    "catalyst": {
+      "name": "tribox Catalyst",
+      "tagline": "創設メンバー枠 —— 一括購入、永久に残る",
+      "cta": "創設メンバーになる",
+      "features": [
+        "ベータチャネルと新機能への早期アクセス",
+        "公式サイトの謝辞ページに名前掲載（任意）",
+        "コミュニティの創設メンバーバッジ",
+        "プラグイン開発者向け優先アクセス",
+        "プロダクト開発の直接支援"
+      ]
+    },
+    "comparisonTitle": "機能比較",
+    "comparisonSubtitle": "基本アプリにはすべてのローカル機能が含まれます。Sync と Catalyst は追加機能を解除します。",
+    "comparison": {
+      "headerFeature": "機能",
+      "rows": [
+        {"label": "ローカル Markdown ファイル保存", "free": "✓", "sync": "✓", "catalyst": "✓"},
+        {"label": "双方向リンク + グラフ", "free": "✓", "sync": "✓", "catalyst": "✓"},
+        {"label": "全文 + セマンティック検索", "free": "✓", "sync": "✓", "catalyst": "✓"},
+        {"label": "AI Copilot（ローカルモデル）", "free": "✓", "sync": "✓", "catalyst": "✓"},
+        {"label": "スナップショット共有", "free": "✓", "sync": "✓", "catalyst": "✓"},
+        {"label": "マルチデバイスクラウド同期", "free": "—", "sync": "✓ E2E 暗号化", "catalyst": "別途"},
+        {"label": "バージョン履歴", "free": "—", "sync": "12 か月", "catalyst": "別途"},
+        {"label": "添付ファイルストレージ", "free": "—", "sync": "10 GB", "catalyst": "別途"},
+        {"label": "ベータチャネル", "free": "—", "sync": "—", "catalyst": "✓"},
+        {"label": "コミュニティバッジ", "free": "—", "sync": "—", "catalyst": "✓ 創設"}
+      ]
+    },
+    "commercialEyebrow": "Commercial / Self-hosted",
+    "commercialTitle": "チーム、企業、組織での利用？",
+    "commercialBody": "tribox には「商用の壁」はありません。仕事でも無料で使えます。もしあなたや会社が tribox に価値を見出しているなら、Commercial プランの購読でプロダクトの継続的な開発を支援するか、tribox-sync-server（オープンソース）を自前ホスティングして社内利用してください。",
+    "commercialCta": "お問い合わせ",
+    "faqTitle": "よくある質問",
+    "faqs": [
+      {
+        "q": "無料版に機能制限はありますか？",
+        "a": "ありません。tribox 基本アプリは永久無料で、すべてのローカル機能（編集、検索、AI Copilot、プラグイン、スナップショット共有）が含まれます。アカウント登録も不要です。Sync と Catalyst は独立したオプションのアドオンで、必要なときだけ支払います。"
+      },
+      {
+        "q": "Sync は複数人での協同編集ですか？",
+        "a": "いいえ。tribox Sync は、あなた一人の複数デバイス間の連携を目的としています——例えばスマートフォンでアイデアを記録し、デスクトップで展開する、といった使い方です。他人にノートを見せたい場合は、無料の「スナップショット共有」機能をご利用ください：相手は独立したローカルコピーを受け取り、自由に編集でき、互いに干渉しません。"
+      },
+      {
+        "q": "ノートはクラウドにアップロードされますか？",
+        "a": "デフォルトではいいえ。基本アプリは完全にローカルで動作し、テレメトリも一切ありません。Sync を購読した場合のみ、ファイルがエンドツーエンド暗号化された形で tribox サーバーに同期されます（私たちも内容を読めません）。いつでも Sync を解約でき、ローカルファイルが常に正本です。"
+      },
+      {
+        "q": "tribox を仕事（商用）で使うには追加料金が必要ですか？",
+        "a": "必須ではありません。tribox には「商用の壁」はなく、仕事で無料利用できます。ただ、あなたや会社が tribox に価値を見出しているなら、Sync または Catalyst の購読は小規模チームの開発・メンテナンス継続に役立ちます。"
+      },
+      {
+        "q": "解約するとノートはどうなりますか？",
+        "a": "まったく影響ありません。すべてのノートはあなたのローカルディスクに Markdown ファイルとして存在し、Sync は単なる同期チャネルです。解約後、新しい変更がクラウドに同期されなくなるだけで、ローカルファイルはそのまま残ります。"
+      },
+      {
+        "q": "返金は可能ですか？",
+        "a": "Sync の初回購入から 14 日以内なら無条件で全額返金します。Catalyst の一括購入は返金不可です（クラウドファンディングに近い支援枠です）。"
+      },
+      {
+        "q": "学生・教員・非営利組織への割引はありますか？",
+        "a": "準備中です。hello@tribox.md に身分証明をお送りください。個別に返信します。"
+      },
+      {
+        "q": "セルフホスティングの選択肢はありますか？",
+        "a": "tribox-sync-server はオープンソースで（デスクトップアプリと同じ GitHub Organization）、自前運用できます。社内イントラネットやデータ主権を重視するユーザーに適しています。"
+      }
+    ],
+    "faqContact": "他にご質問は？メール："
+  },
+  "about": {
+    "eyebrow": "概要",
+    "title": "10 年後も使い続けたいツールを作る。",
+    "intro": "tribox は「ツールはユーザーをより自由にすべきで、より依存させるべきではない」と信じる小さなチームが開発しています。",
+    "whyTitle": "なぜ tribox を作るのか",
+    "whyBody": "チームメンバーは Obsidian、Notion、Roam などのツールを長く使ってきました。しかし、ある瞬間「データがクラウドにロックされる」「ソフトウェア設計に従わざるを得ない」「ベンダーが倒産したらノートが消える」という恐怖に直面しました。だから私たちは自分でノートアプリを作ることにしました——<strong>まずユーザーがこの代償を払わなくて済むことを保証し、そのうえで機能の豊富さを語ろう。</strong>",
+    "promisesTitle": "プロダクトの約束",
+    "promisesIntro": "以下はマーケティング表現ではなく、tribox のプロダクトアーキテクチャに刻まれた制約です：",
+    "promise1Title": "ノートをデータベースに閉じ込めません。",
+    "promise1Body": "すべてのノートはディスク上の本物の Markdown ファイルです。VSCode / Sublime / vim でそのまま開けます。",
+    "promise2Title": "AI が勝手にファイルを書き換えません。",
+    "promise2Body": "AI が生成した内容は、必ずあなたの確認（下書き → プレビュー → 承認の 3 段階）を経てからノートに反映されます。",
+    "promise3Title": "ローカルファースト、オフライン完全動作。",
+    "promise3Body": "コア機能はクラウドに依存しません。同期やクラウド AI は拡張機能であり、コアではありません。",
+    "promise4Title": "「機能の壁」はありません。",
+    "promise4Body": "基本アプリは永久無料で、すべてのローカル機能を含みます。Sync などの有料プロダクトはクラウドインフラの提供で、機能制限ではありません。",
+    "promise5Title": "エンドツーエンド暗号化の同期。",
+    "promise5Body": "Sync を購読すると、ノートはローカルで暗号化されてからアップロードされます——tribox のスタッフもサーバーも内容を読めません。",
+    "businessTitle": "ビジネスモデル",
+    "businessIntro": "tribox の運営資金は、ユーザーが支払うアドオンプロダクトから得ています：",
+    "businessSync": "tribox Sync — マルチデバイス同期サブスクリプション（$4-5/月）",
+    "businessCatalyst": "tribox Catalyst — 一括購入の創設メンバー枠（$35）",
+    "businessCommercial": "Commercial License — 企業 / 組織向けライセンス",
+    "businessClosing": "有料プランの収入は、小規模チームが開発に集中するために使われます。基本アプリは永久無料です。すべてのローカル機能がペイウォールの背後に隠されることはありません。",
+    "contactTitle": "お問い合わせ",
+    "contactEmail": "メール：",
+    "contactBusiness": "ビジネス：",
+    "contactGithub": "GitHub：",
+    "backHome": "← ホームに戻る"
+  },
+  "download": {
+    "eyebrow": "ダウンロード",
+    "title": "tribox をあなたのコンピュータにインストール。",
+    "subtitleWithVersion": "デスクトップ優先のローカルノートアプリ、現在のバージョン {version}。インストールしてすぐ使えます、登録不要。",
+    "subtitleNoVersion": "デスクトップ優先のローカルノートアプリ、初の公開バージョンを準備中です。インストールしてすぐ使えます、登録不要。",
+    "notReadyTitle": "🚧 公開バージョンはまだリリースされていません",
+    "notReadyBody": "tribox は初の公開リリースを準備中で、2026 年内のリリースを予定しています。",
+    "notReadyCta": "リリース通知を希望される方は、hello@tribox.md に「リリース通知」とご連絡ください。",
+    "macosTitle": "macOS",
+    "macosNote": "macOS 11 Big Sur 以降",
+    "windowsTitle": "Windows",
+    "windowsNote": "Windows 10 / 11、x64",
+    "linuxTitle": "Linux",
+    "linuxNote": "開発中、v1.1 でリリース予定",
+    "comingSoon": "近日公開",
+    "inDevelopment": "開発中",
+    "mobileEyebrow": "モバイル",
+    "mobileTitle": "iOS / Android クライアント",
+    "mobileBody": "tribox モバイル版はデスクトップ版の延長として開発中です（Tauri Mobile）——Sync でスマートフォンからアイデアを記録し、デスクトップで展開できます。2026 年下半期のパブリックテスト予定です。",
+    "securityTitle": "⚠️ セキュリティ警告について",
+    "securityMacos": "**macOS**：未署名のバージョンは初回起動時に Gatekeeper でブロックされます。右クリック → 「開く」、またはシステム設定 → プライバシーとセキュリティで許可してください。",
+    "securityWindows": "**Windows**：未署名のバージョンは SmartScreen 警告を表示します。「詳細情報」→「実行」をクリックしてください。",
+    "securityCert": "コード署名証明書には年間数百ドルの費用がかかり、tribox はまだ取得していません。すべてのリリースに SHA256 チェックサムが添付されており、完全性を検証できます。",
+    "backHome": "← ホームに戻る",
+    "assetFormats": {
+      "appleSilicon": "Apple Silicon (M1/M2/M3/M4)",
+      "intel": "Intel x86_64",
+      "winInstaller": "x64 — インストーラ",
+      "winMsi": "x64 — MSI 配布パッケージ",
+      "linuxAll": "AppImage / deb"
+    }
+  },
+  "privacy": {
+    "eyebrow": "リーガル",
+    "title": "プライバシーポリシー",
+    "lastUpdated": "最終更新：",
+    "tldrTitle": "要約",
+    "tldrBody": "tribox デスクトップアプリはデフォルトで完全にローカル動作し、テレメトリ・分析もありません。クラウドサービス（Sync、Catalyst、共有招待）はアカウント登録時に必要最小限の情報のみを収集し、ノートの内容はすべて転送中・保存中にエンドツーエンド暗号化されます。",
+    "section1Title": "1. デスクトップクライアント（基本アプリ）",
+    "section1Body": "tribox デスクトップクライアントは、デフォルトで私たちのサーバーにデータを送信しません：",
+    "section1List": [
+      "テレメトリ・使用統計・自動クラッシュレポートなし",
+      "広告 SDK なし、サードパーティのトラッキングなし",
+      "すべてのノート、設定、添付ファイルはローカルディスクに保存",
+      "ローカル AI（Ollama）は完全オフライン；クラウド AI はあなたが API キーを設定してリクエストを発行したときのみ接続"
+    ],
+    "section1Note": "tribox デスクトップクライアントの利用にアカウント登録は不要です。",
+    "section2Title": "2. アカウント登録時に収集する情報",
+    "section2Body": "Sync、Catalyst の購読、またはスナップショット共有の受け取りにはアカウントが必要です。収集するのは：",
+    "section2List": [
+      "メールアドレス（ログイン、パスワードリセット、購読通知用）",
+      "暗号化されたパスワード（bcrypt ハッシュ、原文は保存されない）",
+      "デバイス ID（マルチデバイスセッション管理と取り消し用）",
+      "登録時刻、最終ログイン時刻"
+    ],
+    "section2Note": "氏名、電話、住所、性別、生年月日は収集しません。ソーシャルアカウントとの連携も求めません。",
+    "section3Title": "3. tribox Sync —— ノート同期の暗号化",
+    "section3Body": "Sync を購読すると、ノートは私たちのサーバーを経由してあなたのデバイス間で同期されます。ただし、サーバーはノートの内容を読み取れません：",
+    "section3List": [
+      "エンドツーエンド暗号化：ノートはローカルデバイスで AES-256 暗号化されてからアップロードされ、鍵はパスワードから派生",
+      "ゼロ知識アーキテクチャ：tribox のスタッフ、サーバー管理者、データベースのいずれもノートの原文を見られません",
+      "パスワードを忘れた場合、データの復元は不可能です。事前にリカバリキーを設定していない限り"
+    ],
+    "section4Title": "4. 決済情報",
+    "section4Body": "決済は Stripe が処理します。クレジットカード番号、CVV、銀行口座に私たちは触れません。Stripe が返す情報のみ：",
+    "section4List": [
+      "サブスクリプション状態（active / past_due / canceled）",
+      "現在のプラン",
+      "次回課金日",
+      "請求書 ID（カスタマーサポート用）"
+    ],
+    "section4Stripe": "Stripe のプライバシーポリシー：",
+    "section5Title": "5. サイトのミニマルな分析",
+    "section5Body": "tribox 公式サイト（あなたが今閲覧しているサイト）は、どのコンテンツがユーザーに役立つか把握するために以下の匿名指標を収集します：",
+    "section5List": [
+      "ページビュー（パス、リファラ、UA）、個人特定情報と紐付けなし",
+      "ダウンロードボタンのクリック",
+      "料金ページの CTA クリック"
+    ],
+    "section5Note": "Google Analytics や Facebook Pixel は使いません。トラッキング Cookie を設置しないため、Cookie バナーもありません。",
+    "section6Title": "6. あなたの権利",
+    "section6Body": "あなたはいつでも：",
+    "section6List": [
+      "すべてのノートをエクスポートできます（ローカルディスクの .md ファイルとしてそのまま存在）",
+      "アカウントを削除できます（hello@tribox.md にご連絡、3 営業日以内に処理）",
+      "アカウントを残したまま購読を解約できます",
+      "tribox サーバーが保有するあなたのデータを照会できます"
+    ],
+    "section7Title": "7. お問い合わせ",
+    "section7Body": "プライバシー関連のお問い合わせ：",
+    "backHome": "← ホームに戻る"
+  },
+  "terms": {
+    "eyebrow": "リーガル",
+    "title": "利用規約",
+    "lastUpdated": "最終更新：",
+    "tldrBody": "tribox デスクトップクライアントの利用、または tribox クラウドサービスの購読は、以下の利用規約を読み同意したものとみなされます。ご質問は購読前に hello@tribox.md までメールください。",
+    "section1Title": "1. サービス内容",
+    "section1Body": "tribox は以下のサービスを提供します：",
+    "section1List": [
+      "デスクトップクライアント：ローカルファーストのノート・ナレッジ管理ツール、永久無料、機能制限なし、登録不要",
+      "tribox Sync：エンドツーエンド暗号化のマルチデバイス同期、バージョン履歴、添付ストレージを提供する有料サブスクリプション",
+      "tribox Catalyst：一括購入の創設メンバー枠、ベータチャネルとコミュニティバッジを提供",
+      "スナップショット共有：ユーザー間でノートのコピーを受け渡す機能（無料）"
+    ],
+    "section2Title": "2. アカウント責任",
+    "section2List": [
+      "アカウントとパスワードはあなた自身で管理してください。tribox はゼロ知識暗号化のため、パスワードを失うと同期データは復元できません。",
+      "同時ログインできるデバイス数はプランによって制限されます。ユーザーセンターで確認・取り消し可能です。",
+      "アカウントの譲渡、貸与、共有は禁止です。サブスクリプションライセンスは個人または単一の組織を対象とし、「チーム席」ではありません。",
+      "アカウントに異常を発見したら、すぐにパスワードを変更し hello@tribox.md にご連絡ください。"
+    ],
+    "section3Title": "3. 課金と返金",
+    "section3List": [
+      "サブスクリプション周期：Sync は月次または年次サブスクリプションで、満了時に自動更新、いつでも解約可能",
+      "返金ポリシー：Sync は初回支払いから 14 日以内なら全額返金可能；Catalyst の一括購入は返金不可（クラウドファンディングに近い）",
+      "価格改定：tribox は将来の周期の価格を 30 日前のメール通知を経て変更する権利を持ちます。支払い済みの現周期には影響しません",
+      "税金：表示価格に該当する地域の税金は含まれません"
+    ],
+    "section4Title": "4. 解約",
+    "section4List": [
+      "Stripe Customer Portal でいつでも解約可能、サポートへの連絡は不要",
+      "解約後、サービスは現在の支払い済み周期の終了まで継続し、その後同期は停止",
+      "ローカルノートには一切影響しません——すべての Markdown ファイルはディスクに残ります",
+      "アカウント自体は 12 か月間保持され、その間に再購読すれば同期を復元できます"
+    ],
+    "section5Title": "5. 利用上の禁止事項",
+    "section5Body": "tribox サービスの利用にあたり、以下を行わないことに同意します：",
+    "section5List": [
+      "所在地の法律に違反するコンテンツの保存または配布",
+      "tribox サーバーへのリバースエンジニアリングや破壊行為",
+      "自動化スクリプトによる異常なクラウドリソース消費（API 乱用、スクレイピングなど）",
+      "他者の著作権、商標、プライバシー権の侵害"
+    ],
+    "section5Note": "違反はアカウント停止や終了につながる可能性があります。tribox はコンテンツの最終審査権を保持しますが、<strong>能動的にスキャンやノート内容を読むことはしません</strong>（ゼロ知識アーキテクチャにより、私たちにも読めません）。",
+    "section6Title": "6. サービス可用性",
+    "section6List": [
+      "tribox はクラウドサービスの月次可用性 99.9% を目指しますが、SLA の保証は提供しません",
+      "サービス中断時もローカルクライアントは正常に動作します——これがローカルファーストアーキテクチャの中核的な約束です",
+      "計画されたメンテナンスは 48 時間前にメールまたはサイト告知でお知らせします"
+    ],
+    "section7Title": "7. 責任の制限",
+    "section7Body": "法律で許可される最大限の範囲で、tribox はサービス利用に起因する間接的・特別・派生的損害について責任を負いません。tribox の全責任は、過去 12 か月にあなたが支払ったサブスクリプション料金を超えません。",
+    "section8Title": "8. 規約の変更",
+    "section8Body": "tribox はこの利用規約を随時更新する場合があります。重要な変更はすべての有料購読者にメールで通知し、サイトにて 30 日前に告知します。継続利用は新規約への同意とみなされます。",
+    "section9Title": "9. 準拠法",
+    "section9Body": "本規約は関連する法域の法律に準拠します。紛争はまず協議で解決します。",
+    "section10Title": "10. お問い合わせ",
+    "section10Body": "規約関連のお問い合わせ：",
+    "backHome": "← ホームに戻る"
+  },
+  "refund": {
+    "eyebrow": "リーガル",
+    "title": "返金ポリシー",
+    "lastUpdated": "最終更新：",
+    "summaryTitle": "要約",
+    "summaryList": [
+      "**tribox Sync**：初回支払いから 14 日以内なら無条件で全額返金",
+      "**tribox Catalyst**（一括購入）：返金不可",
+      "**解約**：いつでも Customer Portal から実行可能、サービスは支払い済み周期の終了まで継続"
+    ],
+    "section1Title": "1. tribox Sync サブスクリプションの返金",
+    "section1Sub1": "14 日間の無条件返金",
+    "section1Body1": "tribox Sync を<strong>初めて</strong>購読してから 14 暦日以内なら、利用量に関係なく全額返金を申請できます。支払いに使用したクレジットカードまたは決済方法に返金され、通常 5-10 営業日以内に処理されます（カード発行会社によります）。",
+    "section1Sub2": "更新周期は返金対象外",
+    "section1Body2": "14 日間の無条件返金は<strong>初回支払いのみ</strong>に適用されます。サブスクリプションが自動更新された後、更新周期の費用は返金されません。自動更新はいつでも解約できます（サービスは現周期終了まで継続）が、支払い済みの現周期は按分返金されません。",
+    "section1Sub3": "返金の申請方法",
+    "section1Body3": "hello@tribox.md に以下を添えてメールください：",
+    "section1Body3List": [
+      "登録時のメールアドレス",
+      "購読日（おおよそで構いません）",
+      "返金理由の簡潔な説明（任意ですが、製品改善に役立ちます）"
+    ],
+    "section1Body3End": "2 営業日以内に返信・処理します。",
+    "section2Title": "2. tribox Catalyst 一括購入",
+    "section2Body": "tribox Catalyst（創設メンバー枠）は<strong>返金不可</strong>です。理由：",
+    "section2List": [
+      "Catalyst の本質はクラウドファンディング的な支援で、購入は tribox チームへの信頼投票です",
+      "購入後すぐにすべての特典（ベータチャネル、コミュニティバッジ、謝辞ページの名前掲載）が解禁されます",
+      "これらの特典は一度付与されると取り消せません"
+    ],
+    "section2Note": "Catalyst を購入する前にその性質を十分にご理解ください。tribox の機能を試したいだけなら、永久無料の基本アプリをご利用ください——Catalyst を購入する必要はありません。",
+    "section3Title": "3. 解約 vs 返金",
+    "section3Body": "これらは別の操作です：",
+    "section3List": [
+      "**解約**：次回の自動更新を停止します。現在の支払い済み周期内はサービスを正常に利用できます。サポートへの連絡は不要で、Stripe Customer Portal でセルフで実行できます",
+      "**返金**：支払い済みの費用を返金し、即座にサービスを終了します。hello@tribox.md への連絡が必要で、14 日間の無条件条件を満たす必要があります"
+    ],
+    "section3Note": "ほとんどの場合、<strong>解約</strong>がより適切な選択です——現周期の終了まで使い続けることができます。",
+    "section4Title": "4. 例外的なケース",
+    "section4Sub1": "サービス利用不能",
+    "section4Body1": "サブスクリプション期間中に tribox Sync が事前通知なく 24 時間以上連続して利用できなかった場合、影響を受けた期間の費用を按分で返金申請できます。",
+    "section4Sub2": "誤操作 / 重複請求",
+    "section4Body2": "システムの問題による重複請求や誤請求は、14 日間の制限なく無条件で全額返金します。Stripe の領収書を添えてメールしてください。",
+    "section4Sub3": "紛争処理",
+    "section4Body3": "私たちは紛争をメールで友好的に解決することを望みます。すでにカード発行会社にチャージバックを起こしている場合、アカウントを一時停止して紛争解決を待ちます。先にメールでご連絡ください——チャージバックよりも早く処理できます。",
+    "section5Title": "5. お問い合わせ",
+    "section5Body": "返金関連のお問い合わせ：",
+    "backHome": "← ホームに戻る"
+  },
+  "login": {
+    "title": "tribox にサインイン",
+    "subtitle": "デスクトップクライアントで登録したアカウントを使用",
+    "fromPricing": "サインインして tribox Sync を購読",
+    "emailLabel": "メールアドレス",
+    "passwordLabel": "パスワード",
+    "deriving": "鍵を派生中…",
+    "submitting": "サインイン中…",
+    "submit": "サインイン",
+    "noAccount": "tribox アカウントをお持ちでない方は",
+    "signupLink": "登録ガイド",
+    "fillBoth": "メールとパスワードをご入力ください",
+    "errorDefault": "サインインに失敗しました、もう一度お試しください",
+    "errorInvalidCreds": "メールまたはパスワードが正しくありません",
+    "errorRateLimit": "リクエストが多すぎます、しばらく後に再試行してください",
+    "termsConsent": "サインインは tribox の",
+    "termsLink": "利用規約",
+    "privacyAnd": "と",
+    "privacyLink": "プライバシーポリシー",
+    "termsConsentEnd": "に同意したものとみなされます。"
+  },
+  "signup": {
+    "title": "デスクトップクライアントで登録",
+    "subtitle": "tribox アカウントはエンドツーエンド暗号化の鍵派生を含みます。デスクトップクライアントで登録する方が安全です。",
+    "step1Title": "tribox をダウンロードしてインストール",
+    "step1Body": "お使いの OS を選択してください。インストール後、登録なしですべてのローカル機能が使えます。",
+    "step2Title": "設定 → アカウントで登録",
+    "step2Body": "tribox の設定パネルを開き、「アカウントを作成」を選択し、メールとパスワードを入力します。鍵の生成プロセスはすべてローカルで完了します。",
+    "step3Title": "tribox.md に戻ってサインイン",
+    "step3Body": "同じメールとパスワードで Web からサインインし、Sync を購読したり既存の購読を管理したりできます。",
+    "ctaDownload": "デスクトップクライアントをダウンロード",
+    "ctaLogin": "アカウントをお持ちですか？サインイン",
+    "whyNoWebSignup": "なぜ Web で直接登録できないのですか？",
+    "whyBody": "登録には vault のエンドツーエンド暗号鍵の生成が伴います。デスクトップクライアントで実行することで、鍵が Web を経由するリスクを避けられます。"
+  },
+  "account": {
+    "subscribedToast": "🎉 購読が完了しました！",
+    "subscribedNote": "tribox デスクトップクライアントで同じアカウントにサインインすると同期が始まります。",
+    "eyebrow": "アカウント",
+    "title": "あなたの tribox アカウント",
+    "loadError": "読み込みに失敗しました",
+    "retry": "再試行",
+    "subscriptionTitle": "サブスクリプション",
+    "subscriptionFree": "無料プラン",
+    "subscriptionPaid": "有料プラン",
+    "statusActive": "有効",
+    "statusTrialing": "トライアル中",
+    "statusPastDue": "支払い失敗",
+    "statusCanceled": "解約済み",
+    "statCurrentPlan": "現在のプラン",
+    "statRenewalDate": "更新日",
+    "statStorage": "添付ストレージ",
+    "upgradeButton": "Sync にアップグレード",
+    "manageButton": "サブスクリプション管理（近日公開）",
+    "manageTooltip": "Stripe Customer Portal の対応中",
+    "viewAllPlans": "すべてのプランを見る",
+    "devicesTitle": "サインイン中のデバイス",
+    "devicesSubtitle": "{count} 台 · 1 アカウントあたり最大 20 台",
+    "deviceCurrent": "現在",
+    "deviceLastSeen": "最終アクティブ",
+    "deviceNote": "単一デバイスの削除は、デスクトップクライアントの設定 → アカウント → デバイスから行えます。",
+    "logoutTitle": "サインアウト",
+    "logoutSubtitle": "「このブラウザのみサインアウト」はデスクトップクライアントには影響しません；「すべてのデバイスからサインアウト」はすべてのデバイスを強制的に再認証させます。",
+    "logoutLocal": "このブラウザのみサインアウト",
+    "logoutAll": "すべてのデバイスからサインアウト",
+    "logoutAllConfirm": "すべてのデバイスからサインアウトしますか？すべてのデバイス（デスクトップクライアントを含む）が強制的に再認証されます。",
+    "logoutWorking": "処理中…",
+    "planLabels": {
+      "free": "無料 · 基本アプリ",
+      "pro": "tribox Sync",
+      "team": "Commercial",
+      "enterprise": "Enterprise"
+    },
+    "platformLabels": {
+      "mac": "🍎",
+      "windows": "🪟",
+      "linux": "🐧",
+      "ios": "📱",
+      "android": "🤖",
+      "web": "🌐",
+      "default": "💻"
+    },
+    "timeAgo": {
+      "justNow": "たった今",
+      "minutes": "{n} 分前",
+      "hours": "{n} 時間前",
+      "days": "{n} 日前"
+    }
+  },
+  "invite": {
+    "toastNotInstalled": "tribox が見つかりません、先にダウンロードしてください",
+    "inviterShared": "{name} があなたに共有しました",
+    "withYou": "",
+    "lastUpdated": "最終更新 {time}",
+    "roleEditor": "編集可能なコピー",
+    "roleViewer": "読み取り専用コピー",
+    "snapshotNote": "承諾後、独立したローカルコピーを取得し、自由に編集・管理できます。",
+    "expiresAt": "招待リンクは {date} に期限切れになります",
+    "downloadCta": "tribox をダウンロード（無料で開始）",
+    "openInApp": "tribox で開く",
+    "needAppCta": "tribox をお持ちでない？ダウンロードページへ",
+    "invalidTitle": "招待リンクは無効です",
+    "invalidBody": "このリンクは期限切れ、取り消し済み、またはアクセス権がない可能性があります。招待者に新しいリンクを生成してもらってください。",
+    "backHome": "ホームに戻る"
+  },
+  "onboarding": {
+    "step": "{current}/{total}",
+    "stepNames": ["用途を選択", "アプリをダウンロード", "共有を受け取る", "完了"],
+    "step1Title": "tribox を主にどんな用途で使いますか？",
+    "step1Subtitle": "体験を最適化するためにお伺いします",
+    "useCases": [
+      {"id": "knowledge", "icon": "🧠", "label": "ナレッジ管理", "desc": "個人ナレッジベース、双方向リンク、マインドグラフ"},
+      {"id": "team", "icon": "📤", "label": "スナップショット共有", "desc": "ノートをパッケージ化して他人に送信、相手は独立コピーを受け取る"},
+      {"id": "personal", "icon": "📝", "label": "個人ノート", "desc": "日記、アイデア記録、学習ノート"},
+      {"id": "project", "icon": "🚀", "label": "プロジェクト管理", "desc": "タスク追跡、@due 日付、プロジェクトドキュメント"}
+    ],
+    "step1Continue": "続ける",
+    "step2Title": "デスクトップクライアントをダウンロード",
+    "step2Subtitle": "tribox はネイティブデスクトップアプリです。お使いの OS を選択してください。",
+    "platforms": [
+      {"os": "macOS", "icon": "🍎", "note": "Apple Silicon + Intel · .dmg"},
+      {"os": "Windows", "icon": "🪟", "note": "x64 / ARM64 · .msi"},
+      {"os": "Linux", "icon": "🐧", "note": ".AppImage / .deb / .rpm"}
+    ],
+    "step2Footer": "ダウンロード後、インストーラをダブルクリックします。管理者権限は不要です。",
+    "step3Title": "共有を受け取る",
+    "step3Subtitle": "共有リンクを処理中です。承諾後、独立したコピーを取得します…",
+    "step3Cta": "共有を承諾し、コピーをダウンロード",
+    "step3Loading": "参加中…",
+    "step3Retry": "再試行",
+    "step4Title": "tribox へようこそ！",
+    "step4TitleJoined": "「{name}」のコピーを受信しました！",
+    "step4Body": "tribox デスクトップクライアントを開いて、ナレッジ管理の旅を始めましょう。",
+    "step4BodyJoined": "tribox デスクトップクライアントを開いてください。コピーがローカルでお待ちしています。",
+    "step4Cta": "tribox で開く",
+    "errorAuthRequired": "先に登録またはサインインしてから共有を承諾してください"
+  }
+}

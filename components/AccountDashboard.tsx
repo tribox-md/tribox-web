@@ -1,8 +1,8 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import Link from 'next/link'
-import { useRouter } from 'next/navigation'
+import { useTranslations, useLocale } from 'next-intl'
+import { Link, useRouter } from '@/i18n/navigation'
 import { loadTokens } from '@/lib/auth'
 import {
   getUserPlan,
@@ -19,21 +19,9 @@ interface Props {
 
 type LoadState = 'checking_auth' | 'loading' | 'ready' | 'error'
 
-const PLAN_LABEL: Record<string, string> = {
-  free: '免费 · 基础 app',
-  pro: 'tribox Sync',
-  team: 'Commercial',
-  enterprise: 'Enterprise',
-}
-
-const STATUS_LABEL: Record<string, { text: string; tone: 'good' | 'warn' | 'bad' }> = {
-  active: { text: '正常', tone: 'good' },
-  trialing: { text: '试用中', tone: 'good' },
-  past_due: { text: '付款失败', tone: 'warn' },
-  canceled: { text: '已取消', tone: 'bad' },
-}
-
 export function AccountDashboard({ justSubscribed }: Props) {
+  const t = useTranslations('account')
+  const locale = useLocale()
   const router = useRouter()
   const [state, setState] = useState<LoadState>('checking_auth')
   const [plan, setPlan] = useState<UserPlan | null>(null)
@@ -65,7 +53,7 @@ export function AccountDashboard({ justSubscribed }: Props) {
   }, [router])
 
   async function handleLogoutAll() {
-    if (!confirm('确定要退出所有设备吗？所有设备（含桌面客户端）都会被强制重新登录。')) return
+    if (!confirm(t('logoutAllConfirm'))) return
     setLogoutBusy(true)
     await logoutAllDevices()
     router.replace('/login')
@@ -88,14 +76,14 @@ export function AccountDashboard({ justSubscribed }: Props) {
     return (
       <div className="px-4 py-24 max-w-2xl mx-auto text-center">
         <div className="rounded-2xl border border-red-500/30 bg-red-500/10 p-8">
-          <h1 className="text-xl font-semibold text-red-300 mb-3">加载失败</h1>
+          <h1 className="text-xl font-semibold text-red-300 mb-3">{t('loadError')}</h1>
           <p className="text-slate-400 text-sm mb-6">{error}</p>
           <button
             type="button"
             onClick={() => location.reload()}
             className="rounded-xl bg-indigo-500 hover:bg-indigo-400 px-5 py-2.5 text-sm font-semibold text-white transition-colors"
           >
-            重试
+            {t('retry')}
           </button>
         </div>
       </div>
@@ -104,51 +92,61 @@ export function AccountDashboard({ justSubscribed }: Props) {
 
   if (!plan) return null
 
-  const planLabel = PLAN_LABEL[plan.planTier] ?? plan.planTier
-  const statusInfo = STATUS_LABEL[plan.status] ?? { text: plan.status, tone: 'good' as const }
+  const planLabel =
+    (t.raw('planLabels') as Record<string, string>)[plan.planTier] ?? plan.planTier
+
+  const statusKeyMap: Record<string, { key: string; tone: 'good' | 'warn' | 'bad' }> = {
+    active: { key: 'statusActive', tone: 'good' },
+    trialing: { key: 'statusTrialing', tone: 'good' },
+    past_due: { key: 'statusPastDue', tone: 'warn' },
+    canceled: { key: 'statusCanceled', tone: 'bad' },
+  }
+  const statusInfo = statusKeyMap[plan.status] ?? { key: 'statusActive', tone: 'good' as const }
   const isFree = plan.planTier === 'free'
+
+  const dateLocale = locale === 'zh' ? 'zh-CN' : locale === 'ja' ? 'ja-JP' : 'en-US'
 
   return (
     <div className="px-4 py-16 sm:py-24">
       <div className="mx-auto max-w-3xl">
         {justSubscribed && (
           <div className="mb-8 rounded-2xl border border-green-500/30 bg-green-500/10 p-5 text-center">
-            <p className="text-green-300 font-semibold mb-1">🎉 订阅成功！</p>
-            <p className="text-slate-400 text-sm">在你的桌面 tribox 客户端登录同一账号即可开始同步。</p>
+            <p className="text-green-300 font-semibold mb-1">{t('subscribedToast')}</p>
+            <p className="text-slate-400 text-sm">{t('subscribedNote')}</p>
           </div>
         )}
 
         <div className="mb-12">
           <p className="text-xs uppercase tracking-[0.2em] text-indigo-400/80 font-medium mb-3">
-            账号
+            {t('eyebrow')}
           </p>
-          <h1 className="text-3xl sm:text-4xl font-bold text-white tracking-tight">
-            你的 tribox 账号
-          </h1>
+          <h1 className="text-3xl sm:text-4xl font-bold text-white tracking-tight">{t('title')}</h1>
         </div>
 
         {/* 订阅卡片 */}
         <section className="mb-10 rounded-2xl border border-white/10 bg-white/5 p-6">
           <div className="flex items-start justify-between mb-5">
             <div>
-              <h2 className="text-lg font-semibold text-white mb-1">订阅</h2>
-              <p className="text-sm text-slate-500">{plan.planTier === 'free' ? '基础免费档' : '付费订阅'}</p>
+              <h2 className="text-lg font-semibold text-white mb-1">{t('subscriptionTitle')}</h2>
+              <p className="text-sm text-slate-500">
+                {isFree ? t('subscriptionFree') : t('subscriptionPaid')}
+              </p>
             </div>
-            <StatusBadge {...statusInfo} />
+            <StatusBadge text={t(statusInfo.key)} tone={statusInfo.tone} />
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-5">
-            <Stat label="当前计划" value={planLabel} />
+            <Stat label={t('statCurrentPlan')} value={planLabel} />
             <Stat
-              label="续费日期"
+              label={t('statRenewalDate')}
               value={
                 plan.currentPeriodEnd
-                  ? new Date(plan.currentPeriodEnd).toLocaleDateString('zh-CN')
+                  ? new Date(plan.currentPeriodEnd).toLocaleDateString(dateLocale)
                   : '—'
               }
             />
             <Stat
-              label="附件存储"
+              label={t('statStorage')}
               value={`${formatBytes(plan.blobQuota.usedBytes)} / ${formatBytes(
                 plan.blobQuota.quotaBytes,
               )}`}
@@ -162,32 +160,32 @@ export function AccountDashboard({ justSubscribed }: Props) {
                 href="/pricing"
                 className="rounded-xl bg-indigo-500 hover:bg-indigo-400 px-5 py-2.5 text-sm font-semibold text-white text-center transition-colors"
               >
-                升级到 Sync
+                {t('upgradeButton')}
               </Link>
             ) : (
               <button
                 type="button"
                 disabled
-                title="Stripe Customer Portal 接入中"
+                title={t('manageTooltip')}
                 className="rounded-xl border border-white/20 px-5 py-2.5 text-sm font-semibold text-slate-400 cursor-not-allowed"
               >
-                管理订阅（即将开放）
+                {t('manageButton')}
               </button>
             )}
             <Link
               href="/pricing"
               className="rounded-xl border border-white/20 hover:border-white/40 px-5 py-2.5 text-sm font-semibold text-slate-300 hover:text-white text-center transition-colors"
             >
-              查看所有计划
+              {t('viewAllPlans')}
             </Link>
           </div>
         </section>
 
         {/* 设备列表 */}
         <section className="mb-10 rounded-2xl border border-white/10 bg-white/5 p-6">
-          <h2 className="text-lg font-semibold text-white mb-1">已登录设备</h2>
+          <h2 className="text-lg font-semibold text-white mb-1">{t('devicesTitle')}</h2>
           <p className="text-sm text-slate-500 mb-5">
-            {devices.length} 台设备 · 单个用户最多 20 台
+            {t('devicesSubtitle', { count: devices.length })}
           </p>
 
           <div className="space-y-2">
@@ -197,18 +195,18 @@ export function AccountDashboard({ justSubscribed }: Props) {
                 className="flex items-center justify-between rounded-xl border border-white/5 bg-white/[0.02] px-4 py-3"
               >
                 <div className="flex items-center gap-3">
-                  <span className="text-xl">{platformIcon(d.platform)}</span>
+                  <span className="text-xl">{platformEmoji(d.platform, t)}</span>
                   <div>
                     <div className="text-sm font-medium text-slate-200">
                       {d.name}
                       {d.current && (
                         <span className="ml-2 rounded-full bg-indigo-500/20 border border-indigo-500/30 px-2 py-0.5 text-xs text-indigo-300">
-                          当前
+                          {t('deviceCurrent')}
                         </span>
                       )}
                     </div>
                     <div className="text-xs text-slate-500 mt-0.5">
-                      {d.platform} · 最后活跃 {formatRelativeTime(d.lastSeen)}
+                      {d.platform} · {t('deviceLastSeen')} {formatRelativeTime(d.lastSeen, t)}
                     </div>
                   </div>
                 </div>
@@ -216,17 +214,13 @@ export function AccountDashboard({ justSubscribed }: Props) {
             ))}
           </div>
 
-          <p className="mt-4 text-xs text-slate-500">
-            单设备移除需要在桌面客户端的设置 → 账号 → 设备中操作。
-          </p>
+          <p className="mt-4 text-xs text-slate-500">{t('deviceNote')}</p>
         </section>
 
         {/* 危险操作 */}
         <section className="rounded-2xl border border-white/10 bg-white/5 p-6">
-          <h2 className="text-lg font-semibold text-white mb-1">登出</h2>
-          <p className="text-sm text-slate-500 mb-5">
-            "仅退出当前浏览器"不影响桌面客户端；"退出所有设备"会强制全部设备重新登录。
-          </p>
+          <h2 className="text-lg font-semibold text-white mb-1">{t('logoutTitle')}</h2>
+          <p className="text-sm text-slate-500 mb-5">{t('logoutSubtitle')}</p>
 
           <div className="flex flex-col sm:flex-row gap-3">
             <button
@@ -234,7 +228,7 @@ export function AccountDashboard({ justSubscribed }: Props) {
               onClick={handleLogoutLocal}
               className="rounded-xl border border-white/20 hover:border-white/40 px-5 py-2.5 text-sm font-semibold text-slate-300 hover:text-white transition-colors"
             >
-              仅退出当前浏览器
+              {t('logoutLocal')}
             </button>
             <button
               type="button"
@@ -242,7 +236,7 @@ export function AccountDashboard({ justSubscribed }: Props) {
               disabled={logoutBusy}
               className="rounded-xl border border-red-500/30 bg-red-500/10 hover:bg-red-500/20 disabled:opacity-50 px-5 py-2.5 text-sm font-semibold text-red-300 transition-colors"
             >
-              {logoutBusy ? '处理中…' : '退出所有设备'}
+              {logoutBusy ? t('logoutWorking') : t('logoutAll')}
             </button>
           </div>
         </section>
@@ -251,17 +245,13 @@ export function AccountDashboard({ justSubscribed }: Props) {
   )
 }
 
-// ============ 子组件 ============
-
 function StatusBadge({ text, tone }: { text: string; tone: 'good' | 'warn' | 'bad' }) {
   const styles = {
     good: 'border-green-500/30 bg-green-500/10 text-green-300',
     warn: 'border-yellow-500/30 bg-yellow-500/10 text-yellow-300',
     bad: 'border-red-500/30 bg-red-500/10 text-red-300',
   }[tone]
-  return (
-    <span className={`text-xs px-2.5 py-1 rounded-full border ${styles}`}>{text}</span>
-  )
+  return <span className={`text-xs px-2.5 py-1 rounded-full border ${styles}`}>{text}</span>
 }
 
 function Stat({
@@ -296,22 +286,25 @@ function formatBytes(bytes: number): string {
   return `${(bytes / (1024 * 1024 * 1024)).toFixed(2)} GB`
 }
 
-function platformIcon(platform: string): string {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+function platformEmoji(platform: string, t: any): string {
   const p = platform.toLowerCase()
-  if (p.includes('mac') || p.includes('darwin')) return '🍎'
-  if (p.includes('win')) return '🪟'
-  if (p.includes('linux')) return '🐧'
-  if (p.includes('ios')) return '📱'
-  if (p.includes('android')) return '🤖'
-  if (p.includes('web') || p.includes('mozilla') || p.includes('chrome')) return '🌐'
-  return '💻'
+  const labels = t.raw('platformLabels') as Record<string, string>
+  if (p.includes('mac') || p.includes('darwin')) return labels.mac
+  if (p.includes('win')) return labels.windows
+  if (p.includes('linux')) return labels.linux
+  if (p.includes('ios')) return labels.ios
+  if (p.includes('android')) return labels.android
+  if (p.includes('web') || p.includes('mozilla') || p.includes('chrome')) return labels.web
+  return labels.default
 }
 
-function formatRelativeTime(iso: string): string {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+function formatRelativeTime(iso: string, t: any): string {
   const ms = Date.now() - new Date(iso).getTime()
   const sec = Math.floor(ms / 1000)
-  if (sec < 60) return '刚刚'
-  if (sec < 3600) return `${Math.floor(sec / 60)} 分钟前`
-  if (sec < 86400) return `${Math.floor(sec / 3600)} 小时前`
-  return `${Math.floor(sec / 86400)} 天前`
+  if (sec < 60) return t('timeAgo.justNow')
+  if (sec < 3600) return t('timeAgo.minutes', { n: Math.floor(sec / 60) })
+  if (sec < 86400) return t('timeAgo.hours', { n: Math.floor(sec / 3600) })
+  return t('timeAgo.days', { n: Math.floor(sec / 86400) })
 }

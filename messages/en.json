@@ -1,0 +1,553 @@
+{
+  "meta": {
+    "title": "tribox — Think in your own files",
+    "description": "A local-first notes & knowledge management desktop app. Markdown files on disk, bidirectional links, full-text search. Free to use, no account required.",
+    "descriptionShort": "Local-first notes & knowledge management. Free to use, no account required.",
+    "keywords": "tribox,notes app,local-first,Markdown,knowledge management,backlinks,privacy"
+  },
+  "nav": {
+    "pricing": "Pricing",
+    "about": "About",
+    "account": "Account",
+    "download": "Download"
+  },
+  "footer": {
+    "product": "Product",
+    "about": "About",
+    "aboutLink": "Team & Philosophy",
+    "legal": "Legal",
+    "privacy": "Privacy",
+    "terms": "Terms",
+    "refund": "Refund",
+    "contact": "Contact",
+    "tagline": "Local-first by design.",
+    "builtWith": "Built with Next.js · Files are truth"
+  },
+  "home": {
+    "badge": "Local-first · Files are truth · Open format",
+    "heroTitle1": "Think,",
+    "heroTitle2": "written in your own",
+    "heroTitle3": "files.",
+    "heroSubtitle1": "tribox is a local-first notes and knowledge management desktop app. Markdown files on disk, bidirectional links, full-text search.",
+    "heroSubtitle2": "Free to use, no account required, no strings attached.",
+    "heroCtaPrimary": "Download tribox for free",
+    "heroCtaSecondary": "See add-ons",
+    "platformNote": "macOS · Windows · Linux — Desktop-first, mobile in development",
+    "principlesTitle": "Five product promises",
+    "principlesIntro": "These are not marketing slogans — they are constraints we hold while writing every line of code.",
+    "principle1Title": "Yours",
+    "principle1Body": "All notes are real Markdown files on your disk. Any text editor can open them. No proprietary format, no data lock-in.",
+    "principle2Title": "Durable",
+    "principle2Body": "Plain text was readable for the past 40 years and will be readable for the next 40. The notes you write today will still belong to you 20 years from now.",
+    "principle3Title": "In your control",
+    "principle3Body": "Fully usable offline. Cloud sync is something you choose to enable, not a forced dependency. If tribox ever disappears, your notes stay on your machine.",
+    "principle4Title": "Malleable",
+    "principle4Body": "Keyboard shortcuts, themes, plugins, AI models — everything you touch is customizable. You shouldn't have to bend yourself to the software.",
+    "principle5Title": "No silent writes",
+    "principle5Body": "AI-generated content is always reviewed by you (draft → preview → accept) before it lands in a note. tribox never modifies your files behind your back.",
+    "capability1Eyebrow": "The shape of thought",
+    "capability1Title": "Connect ideas with bidirectional links.",
+    "capability1Body": "[[WikiLink]] syntax creates connections as you write. Every note knows who links to it. The knowledge graph emerges automatically, no manual organization required.",
+    "capability2Eyebrow": "Now and later",
+    "capability2Title": "Tasks and notes are the same thing.",
+    "capability2Body": "Write @due(2026-06-01) @priority(high) inline in any paragraph. The Today view sees it instantly. Tasks no longer live in a separate app.",
+    "capability3Eyebrow": "Millisecond search",
+    "capability3Title": "Search faster than feels possible for a local app.",
+    "capability3Body": "Tantivy full-text index plus semantic vector search. Sub-50ms queries across thousands of notes. AI Copilot cites real notes, never hallucinates content.",
+    "capability4Eyebrow": "Your multi-device",
+    "capability4Title": "One account, many devices, one set of notes.",
+    "capability4Body": "tribox Sync stitches together your desktop, laptop, and phone for a single person. Jot an idea on the subway, continue it at your desk — same file, end-to-end encrypted.",
+    "capability5Eyebrow": "Snapshot sharing",
+    "capability5Title": "What you share is a copy, not a live document.",
+    "capability5Body": "Pack up a note or a folder, send it to someone, they get their own independent local copy to modify freely. Each person's notes stay on their own disk, completely separate.",
+    "capability6Eyebrow": "Local-first",
+    "capability6Title": "Works without a network.",
+    "capability6Body": "Every feature is available offline, including AI (via local Ollama models). The network is only involved when you actively sync or call cloud AI.",
+    "downloadTitle": "Get started",
+    "downloadSubtitle": "Download the desktop client. All local features are usable without registration.",
+    "platforms": {
+      "macos": "Apple Silicon · Intel",
+      "windows": "x64 · ARM64",
+      "mobile": "Tauri Mobile · in development"
+    }
+  },
+  "pricing": {
+    "eyebrow": "Pricing",
+    "title": "Free at the core, paid when you need more.",
+    "subtitle1": "tribox itself is permanently free with no feature wall and no signup.",
+    "subtitle2": "Sync and Catalyst are independent optional add-ons — pay only when you need them.",
+    "billingMonthly": "Monthly",
+    "billingAnnual": "Annual",
+    "billingSave": "Save 20%",
+    "popular": "Most popular",
+    "perMonth": "/mo",
+    "forever": "Free forever",
+    "annualNote": "{price}/year, billed annually",
+    "monthlyNote": "billed monthly",
+    "oneTimeNote": "One-time purchase",
+    "free": {
+      "name": "tribox",
+      "tagline": "The base app — free forever, no account required",
+      "cta": "Download for free",
+      "features": [
+        "Markdown files on disk, your data belongs to you",
+        "Bidirectional [[WikiLinks]] and knowledge graph",
+        "Tantivy full-text + semantic search",
+        "Inline task syntax: @due / @priority",
+        "AI Copilot (local Ollama models supported)",
+        "Plugin system",
+        "Snapshot sharing: send a local copy to others",
+        "Community support"
+      ]
+    },
+    "sync": {
+      "name": "tribox Sync",
+      "tagline": "One account, many devices, one set of notes",
+      "cta": "Subscribe to Sync",
+      "features": [
+        "End-to-end encrypted multi-device sync (AES-256)",
+        "Version history up to 12 months",
+        "Recover deleted files",
+        "Selective folder sync",
+        "Settings, themes, plugin sync",
+        "10 GB attachment cloud storage",
+        "Email technical support"
+      ]
+    },
+    "catalyst": {
+      "name": "tribox Catalyst",
+      "tagline": "Founder tier — one-time purchase, lasting recognition",
+      "cta": "Become a founder",
+      "features": [
+        "Early access to beta channel and new features",
+        "Optional name on the credits page",
+        "Founder badge in the community",
+        "Priority access for plugin developers",
+        "Direct funding of product development"
+      ]
+    },
+    "comparisonTitle": "Feature comparison",
+    "comparisonSubtitle": "Base app already includes every local feature. Sync and Catalyst unlock additional capabilities.",
+    "comparison": {
+      "headerFeature": "Feature",
+      "rows": [
+        {"label": "Local Markdown file storage", "free": "✓", "sync": "✓", "catalyst": "✓"},
+        {"label": "Bidirectional links + graph", "free": "✓", "sync": "✓", "catalyst": "✓"},
+        {"label": "Full-text + semantic search", "free": "✓", "sync": "✓", "catalyst": "✓"},
+        {"label": "AI Copilot (local models)", "free": "✓", "sync": "✓", "catalyst": "✓"},
+        {"label": "Snapshot sharing", "free": "✓", "sync": "✓", "catalyst": "✓"},
+        {"label": "Multi-device cloud sync", "free": "—", "sync": "✓ E2E encrypted", "catalyst": "Separate"},
+        {"label": "Version history", "free": "—", "sync": "12 months", "catalyst": "Separate"},
+        {"label": "Attachment cloud storage", "free": "—", "sync": "10 GB", "catalyst": "Separate"},
+        {"label": "Beta channel", "free": "—", "sync": "—", "catalyst": "✓"},
+        {"label": "Community badge", "free": "—", "sync": "—", "catalyst": "✓ Founder"}
+      ]
+    },
+    "commercialEyebrow": "Commercial / Self-hosted",
+    "commercialTitle": "Using tribox at a team, business, or organization?",
+    "commercialBody": "tribox has no commercial wall — you can freely use it for work. If you or your company depend on tribox to create value, consider a Commercial plan to support ongoing development, or self-host tribox-sync-server (open source) for internal deployment.",
+    "commercialCta": "Contact us",
+    "faqTitle": "Frequently asked questions",
+    "faqs": [
+      {
+        "q": "Are there feature limits in the free version?",
+        "a": "No. The tribox base app is permanently free. All local features (editing, search, AI Copilot, plugins, snapshot sharing) are included with no signup required. Sync and Catalyst are independent optional add-ons — pay only when you need them."
+      },
+      {
+        "q": "Is Sync for team collaboration?",
+        "a": "No. tribox Sync exists to stitch together your own devices — jot an idea on your phone, continue at your desktop. To share notes with someone else, use the free Snapshot Sharing feature: they get an independent local copy they can freely modify, no interference between yours and theirs."
+      },
+      {
+        "q": "Are my notes uploaded to the cloud?",
+        "a": "By default, no. The base app runs entirely locally with zero telemetry. Only after you subscribe to Sync do files get uploaded — end-to-end encrypted, so we can't read them either. You can leave Sync at any time and your local files remain the source of truth."
+      },
+      {
+        "q": "Do I need to pay for commercial use?",
+        "a": "Not required. tribox has no commercial wall — you can use it freely at work. But if you or your company depend on tribox to create value, subscribing to Sync or Catalyst helps a small team keep investing in development and maintenance."
+      },
+      {
+        "q": "What happens to my notes if I cancel?",
+        "a": "Nothing changes. All notes exist as Markdown files on your local disk. Sync is just a transport — canceling stops new changes from syncing to the cloud, but your files are untouched."
+      },
+      {
+        "q": "Do you offer refunds?",
+        "a": "Yes for Sync — full refund within 14 days of first payment, no questions asked. Catalyst (one-time) is non-refundable (it's a support tier, similar to crowdfunding)."
+      },
+      {
+        "q": "Discounts for students, teachers, or non-profits?",
+        "a": "In planning. Please email hello@tribox.md with your verification — we reply individually."
+      },
+      {
+        "q": "Self-hosted option?",
+        "a": "Yes. tribox-sync-server is open source (under the same GitHub organization as the desktop app) and can be self-hosted. Suitable for corporate intranets or users with stricter data sovereignty requirements."
+      }
+    ],
+    "faqContact": "Still have questions? Email"
+  },
+  "about": {
+    "eyebrow": "About",
+    "title": "Building a tool you'll still want in ten years.",
+    "intro": "tribox is built by a small team that believes tools should make users more free, not more dependent.",
+    "whyTitle": "Why we built tribox",
+    "whyBody": "Team members have used Obsidian, Notion, Roam and others for years — and each of us was eventually hit by the same fear: data locked in the cloud, software dictating workflow, vendors going under and notes disappearing. So we decided to build our own. <strong>First make sure no user ever pays that price. Then talk about features.</strong>",
+    "promisesTitle": "Product promises",
+    "promisesIntro": "These are not marketing copy — they are hard constraints written into the tribox architecture:",
+    "promise1Title": "We don't lock your notes in a database.",
+    "promise1Body": "Every note is a real Markdown file on your disk. VSCode, Sublime, vim — anything can open it.",
+    "promise2Title": "AI never writes your files silently.",
+    "promise2Body": "AI-generated content always goes through draft → preview → accept before landing in a note.",
+    "promise3Title": "Local-first, fully usable offline.",
+    "promise3Body": "Core features don't depend on the cloud. Sync and cloud AI are optional extensions, not the core.",
+    "promise4Title": "No feature wall.",
+    "promise4Body": "The base app is permanently free with all local features. Sync and other paid products provide cloud infrastructure, not feature gates.",
+    "promise5Title": "End-to-end encrypted sync.",
+    "promise5Body": "When you subscribe to Sync, notes are encrypted locally before upload — tribox staff and servers cannot read the content.",
+    "businessTitle": "How we sustain",
+    "businessIntro": "tribox's operating costs are covered by user-paid add-ons:",
+    "businessSync": "tribox Sync — multi-device sync subscription ($4-5/mo)",
+    "businessCatalyst": "tribox Catalyst — one-time founder tier ($35)",
+    "businessCommercial": "Commercial License — for businesses and organizations",
+    "businessClosing": "Paid plans help a small team keep investing in development. The base app is forever free — local features will never be paywalled.",
+    "contactTitle": "Contact us",
+    "contactEmail": "Email:",
+    "contactBusiness": "Business inquiries:",
+    "contactGithub": "GitHub:",
+    "backHome": "← Back to home"
+  },
+  "download": {
+    "eyebrow": "Download",
+    "title": "Install tribox on your machine.",
+    "subtitleWithVersion": "Local-first desktop notes, current version {version}. Install and use immediately, no account required.",
+    "subtitleNoVersion": "Local-first desktop notes, first public release coming soon. Install and use immediately, no account required.",
+    "notReadyTitle": "🚧 Public version not yet released",
+    "notReadyBody": "tribox is preparing its first public release, expected within 2026.",
+    "notReadyCta": "Want to be notified? Email hello@tribox.md with \"Launch notification\".",
+    "macosTitle": "macOS",
+    "macosNote": "macOS 11 Big Sur and above",
+    "windowsTitle": "Windows",
+    "windowsNote": "Windows 10 / 11, x64",
+    "linuxTitle": "Linux",
+    "linuxNote": "In development, expected with v1.1",
+    "comingSoon": "Coming soon",
+    "inDevelopment": "In development",
+    "mobileEyebrow": "Mobile",
+    "mobileTitle": "iOS / Android client",
+    "mobileBody": "tribox mobile is in development (Tauri Mobile) as an extension of the desktop client — sync ideas on your phone, continue at your desk. Public testing expected in late 2026.",
+    "securityTitle": "⚠️ About security warnings",
+    "securityMacos": "**macOS**: Unsigned versions are blocked by Gatekeeper on first launch. Right-click → \"Open\", or allow it in System Settings → Privacy & Security.",
+    "securityWindows": "**Windows**: Unsigned versions trigger SmartScreen warnings. Click \"More info\" → \"Run anyway\".",
+    "securityCert": "Code signing certificates cost hundreds of dollars per year. tribox hasn't purchased them yet. All releases publish SHA256 checksums so you can verify integrity.",
+    "backHome": "← Back to home",
+    "assetFormats": {
+      "appleSilicon": "Apple Silicon (M1/M2/M3/M4)",
+      "intel": "Intel x86_64",
+      "winInstaller": "x64 — installer",
+      "winMsi": "x64 — MSI deployment package",
+      "linuxAll": "AppImage / deb"
+    }
+  },
+  "privacy": {
+    "eyebrow": "Legal",
+    "title": "Privacy Policy",
+    "lastUpdated": "Last updated:",
+    "tldrTitle": "TL;DR",
+    "tldrBody": "The tribox desktop app runs entirely locally by default — zero telemetry, zero analytics. Cloud services (Sync, Catalyst, snapshot sharing) only collect the minimum information needed when you actively register an account, and all note content is end-to-end encrypted in transit and at rest.",
+    "section1Title": "1. Desktop client (base app)",
+    "section1Body": "The tribox desktop client does not send any data to our servers by default:",
+    "section1List": [
+      "No telemetry, no usage stats, no automatic crash reporting",
+      "No built-in ad SDKs, no third-party tracking",
+      "All notes, settings, and attachments live on your local disk",
+      "Local AI (Ollama) runs fully offline; cloud AI only connects when you actively configure an API key and make a request"
+    ],
+    "section1Note": "You do not need to register an account to use the tribox desktop client.",
+    "section2Title": "2. What we collect on account registration",
+    "section2Body": "When you subscribe to Sync, Catalyst, or accept a snapshot share, an account is required. We only collect:",
+    "section2List": [
+      "Email address (for login, password reset, subscription notifications)",
+      "Encrypted password (bcrypt hash — never stored as plaintext)",
+      "Device ID (for multi-device session management and revocation)",
+      "Registration timestamp and last login time"
+    ],
+    "section2Note": "We do not collect names, phone numbers, addresses, gender, birthday — and we don't require social account linking.",
+    "section3Title": "3. tribox Sync — encryption of note sync",
+    "section3Body": "After subscribing to Sync, notes are synced between your devices through our servers — but the servers cannot read note content:",
+    "section3List": [
+      "End-to-end encryption: notes are encrypted with AES-256 locally before upload, with a key derived from your password",
+      "Zero-knowledge architecture: tribox staff, server admins, and the database cannot see your note content",
+      "Forgetting your password = data cannot be recovered, unless you set up a recovery key in advance"
+    ],
+    "section4Title": "4. Payment information",
+    "section4Body": "Payments are processed by Stripe. We never touch your credit card number, CVV, or bank account. Stripe only relays:",
+    "section4List": [
+      "Subscription status (active / past_due / canceled)",
+      "Current subscription tier",
+      "Next billing date",
+      "Invoice ID (for customer support)"
+    ],
+    "section4Stripe": "Stripe's privacy policy:",
+    "section5Title": "5. Minimal site analytics",
+    "section5Body": "The tribox website (the one you're browsing) collects the following anonymous metrics to understand what content is useful:",
+    "section5List": [
+      "Page views (path, referer, UA), not linked to identity",
+      "Download button clicks",
+      "Pricing page CTA clicks"
+    ],
+    "section5Note": "We don't use Google Analytics or Facebook Pixel. No cookie banner because we don't set tracking cookies.",
+    "section6Title": "6. Your rights",
+    "section6Body": "You can at any time:",
+    "section6List": [
+      "Export all your notes (they're already on your local disk as .md files)",
+      "Delete your account (email hello@tribox.md, processed within 3 business days)",
+      "Cancel subscription while keeping the account",
+      "Query what data tribox servers hold about you"
+    ],
+    "section7Title": "7. Contact",
+    "section7Body": "Privacy questions:",
+    "backHome": "← Back to home"
+  },
+  "terms": {
+    "eyebrow": "Legal",
+    "title": "Terms of Service",
+    "lastUpdated": "Last updated:",
+    "tldrBody": "Using the tribox desktop client or subscribing to tribox cloud services means you've read and agree to the terms below. Any questions, please email hello@tribox.md before subscribing.",
+    "section1Title": "1. Services",
+    "section1Body": "tribox offers:",
+    "section1List": [
+      "Desktop client — local-first notes & knowledge management tool, permanently free, no feature limits, no signup required",
+      "tribox Sync — paid subscription for E2E encrypted multi-device sync, version history, and attachment cloud storage",
+      "tribox Catalyst — one-time founder tier for beta access and community badge",
+      "Snapshot sharing — feature for passing note copies between users (free)"
+    ],
+    "section2Title": "2. Account responsibility",
+    "section2List": [
+      "Password security is your responsibility. tribox uses zero-knowledge encryption — losing your password means sync data cannot be recovered.",
+      "Simultaneous logins per account are limited by subscription tier and can be viewed/revoked in the user portal.",
+      "Don't transfer, rent, or share your account. Subscription licenses are for an individual or single organizational entity, not \"team seats\".",
+      "Notice any account anomaly? Change your password immediately and email hello@tribox.md."
+    ],
+    "section3Title": "3. Subscription and refund",
+    "section3List": [
+      "Subscription cycle — Sync is billed monthly or annually with auto-renewal; cancel anytime",
+      "Refund policy — Sync subscriptions are fully refundable within 14 days of first payment; Catalyst is non-refundable (similar to crowdfunding)",
+      "Price changes — tribox may adjust future-cycle prices with 30-day email notice. Current paid cycle is unaffected.",
+      "Tax — Displayed prices exclude local taxes that may apply"
+    ],
+    "section4Title": "4. Cancellation",
+    "section4List": [
+      "Cancel anytime via the Stripe Customer Portal — no support contact needed",
+      "Service continues through the end of the current paid period, after which sync stops",
+      "Your local notes are completely unaffected — all Markdown files stay on your disk",
+      "The account itself is retained for 12 months — re-subscribing during that window restores sync"
+    ],
+    "section5Title": "5. Acceptable use",
+    "section5Body": "By using tribox services, you agree not to:",
+    "section5List": [
+      "Store or distribute content that violates the law in your jurisdiction",
+      "Reverse-engineer or attempt to disrupt tribox servers",
+      "Use automated scripts to abnormally consume cloud resources (API abuse, scraping, etc.)",
+      "Infringe others' copyrights, trademarks, or privacy"
+    ],
+    "section5Note": "Violations may result in account suspension or termination. tribox reserves the right to review content but <strong>will never proactively scan or read</strong> your notes (the zero-knowledge architecture makes this technically impossible for us either).",
+    "section6Title": "6. Service availability",
+    "section6List": [
+      "tribox strives for 99.9% monthly availability for cloud services, but does not provide an SLA guarantee",
+      "During outages, the local client remains fully usable — this is the core promise of local-first architecture",
+      "Planned maintenance windows are announced 48 hours in advance via email or site notice"
+    ],
+    "section7Title": "7. Liability limitation",
+    "section7Body": "To the maximum extent permitted by law, tribox is not liable for indirect, special, or consequential damages from service use. Total liability shall not exceed the subscription fees you paid in the past 12 months.",
+    "section8Title": "8. Changes to terms",
+    "section8Body": "tribox may update these terms periodically. Material changes are notified to all paying subscribers by email and announced 30 days in advance on the site. Continued use after such notice constitutes acceptance.",
+    "section9Title": "9. Governing law",
+    "section9Body": "These terms are governed by applicable local laws. Disputes are resolved by negotiation first.",
+    "section10Title": "10. Contact",
+    "section10Body": "Terms questions:",
+    "backHome": "← Back to home"
+  },
+  "refund": {
+    "eyebrow": "Legal",
+    "title": "Refund Policy",
+    "lastUpdated": "Last updated:",
+    "summaryTitle": "Summary",
+    "summaryList": [
+      "**tribox Sync**: full refund within 14 days of first payment, no questions asked",
+      "**tribox Catalyst** (one-time): non-refundable",
+      "**Cancellation**: anytime via Customer Portal — service continues through the current paid period"
+    ],
+    "section1Title": "1. tribox Sync refund",
+    "section1Sub1": "14-day no-questions-asked refund",
+    "section1Body1": "Within 14 calendar days of your <strong>first</strong> subscription to tribox Sync, you can request a full refund regardless of usage. Refunds go back to the original payment method, typically arriving in 5-10 business days (depending on your card issuer).",
+    "section1Sub2": "Renewal cycles are not refundable",
+    "section1Body2": "The 14-day no-questions-asked refund <strong>applies only to the first payment</strong>. Once auto-renewal occurs, the renewal cycle is not refundable. You can cancel auto-renewal anytime (service continues through the paid period), but the current paid cycle is not pro-rated.",
+    "section1Sub3": "How to request a refund",
+    "section1Body3": "Email hello@tribox.md with:",
+    "section1Body3List": [
+      "The email address used to register",
+      "Approximate subscription date",
+      "A brief reason (optional but helpful for our improvement)"
+    ],
+    "section1Body3End": "We respond and process within 2 business days.",
+    "section2Title": "2. tribox Catalyst one-time purchase",
+    "section2Body": "tribox Catalyst (the founder tier) is <strong>non-refundable</strong>. Reasons:",
+    "section2List": [
+      "Catalyst is essentially a vote of support for the tribox team, similar to crowdfunding",
+      "Upon purchase, all benefits (beta channel, community badge, credits-page name) are unlocked immediately",
+      "These benefits cannot be reclaimed once granted"
+    ],
+    "section2Note": "Please understand the nature of Catalyst before purchase. If you just want to try tribox's features, use the permanently free base app — you don't need to buy Catalyst.",
+    "section3Title": "3. Cancellation vs refund",
+    "section3Body": "These are distinct operations:",
+    "section3List": [
+      "**Cancellation**: stops next auto-renewal; you continue to use the service through the current cycle. No support contact needed — self-serve in Stripe Customer Portal.",
+      "**Refund**: returns money already paid and terminates service immediately. Requires emailing hello@tribox.md and meeting the 14-day window."
+    ],
+    "section3Note": "In most cases, <strong>cancellation</strong> is the better option — you keep using the service until the cycle ends.",
+    "section4Title": "4. Edge cases",
+    "section4Sub1": "Service unavailability",
+    "section4Body1": "If tribox Sync is unavailable for more than 24 continuous hours during your subscription, without prior notice, you can request a pro-rated refund for the affected period.",
+    "section4Sub2": "Mistakes / duplicate charges",
+    "section4Body2": "Duplicate or mistaken charges due to system issues are fully refunded unconditionally, not limited by the 14-day window. Email us with the Stripe receipt.",
+    "section4Sub3": "Disputes",
+    "section4Body3": "We prefer to resolve disputes amicably by email. If you've already filed a chargeback with your card issuer, we'll suspend the account until the dispute is resolved. Please email us first — we typically respond faster than the chargeback process.",
+    "section5Title": "5. Contact",
+    "section5Body": "Refund questions:",
+    "backHome": "← Back to home"
+  },
+  "login": {
+    "title": "Sign in to tribox",
+    "subtitle": "Use the account you registered in the desktop client",
+    "fromPricing": "Sign in to subscribe to tribox Sync",
+    "emailLabel": "Email",
+    "passwordLabel": "Password",
+    "deriving": "Deriving key…",
+    "submitting": "Signing in…",
+    "submit": "Sign in",
+    "noAccount": "Don't have a tribox account?",
+    "signupLink": "Get started",
+    "fillBoth": "Please fill in both email and password",
+    "errorDefault": "Sign-in failed. Please try again.",
+    "errorInvalidCreds": "Incorrect email or password",
+    "errorRateLimit": "Too many requests, please try again later",
+    "termsConsent": "By signing in you agree to tribox's",
+    "termsLink": "Terms",
+    "privacyAnd": "and",
+    "privacyLink": "Privacy Policy"
+  },
+  "signup": {
+    "title": "Register in the desktop client",
+    "subtitle": "tribox account involves end-to-end encryption key derivation. Registering inside the desktop client is more secure.",
+    "step1Title": "Download and install tribox",
+    "step1Body": "Pick your OS. Once installed, all local features work without any signup.",
+    "step2Title": "Register in Settings → Account",
+    "step2Body": "Open tribox Settings and choose \"Create account\". Fill in your email and password. The whole key generation happens locally.",
+    "step3Title": "Come back to tribox.md to sign in",
+    "step3Body": "Use the same email and password to sign in on the web. Subscribe to Sync or manage existing subscriptions from there.",
+    "ctaDownload": "Download desktop client",
+    "ctaLogin": "Already have an account? Sign in",
+    "whyNoWebSignup": "Why no web signup?",
+    "whyBody": "Signup involves generating end-to-end encryption keys for your vault. Doing it inside the desktop client avoids the risk of keys ever transiting the web."
+  },
+  "account": {
+    "subscribedToast": "🎉 Subscription successful!",
+    "subscribedNote": "Sign in to the same account in your tribox desktop client to start syncing.",
+    "eyebrow": "Account",
+    "title": "Your tribox account",
+    "loadError": "Load failed",
+    "retry": "Retry",
+    "subscriptionTitle": "Subscription",
+    "subscriptionFree": "Free tier",
+    "subscriptionPaid": "Paid subscription",
+    "statusActive": "Active",
+    "statusTrialing": "Trial",
+    "statusPastDue": "Payment failed",
+    "statusCanceled": "Canceled",
+    "statCurrentPlan": "Current plan",
+    "statRenewalDate": "Renewal date",
+    "statStorage": "Attachment storage",
+    "upgradeButton": "Upgrade to Sync",
+    "manageButton": "Manage subscription (coming soon)",
+    "manageTooltip": "Stripe Customer Portal coming soon",
+    "viewAllPlans": "View all plans",
+    "devicesTitle": "Logged-in devices",
+    "devicesSubtitle": "{count} devices · max 20 per account",
+    "deviceCurrent": "current",
+    "deviceLastSeen": "Last active",
+    "deviceNote": "To remove a single device, use Desktop Settings → Account → Devices.",
+    "logoutTitle": "Sign out",
+    "logoutSubtitle": "\"Sign out of this browser only\" doesn't affect the desktop client. \"Sign out of all devices\" forces every device to re-authenticate.",
+    "logoutLocal": "Sign out of this browser only",
+    "logoutAll": "Sign out of all devices",
+    "logoutAllConfirm": "Sign out of all devices? Every device (including the desktop client) will be forced to re-authenticate.",
+    "logoutWorking": "Working…",
+    "planLabels": {
+      "free": "Free · base app",
+      "pro": "tribox Sync",
+      "team": "Commercial",
+      "enterprise": "Enterprise"
+    },
+    "platformLabels": {
+      "mac": "🍎",
+      "windows": "🪟",
+      "linux": "🐧",
+      "ios": "📱",
+      "android": "🤖",
+      "web": "🌐",
+      "default": "💻"
+    },
+    "timeAgo": {
+      "justNow": "just now",
+      "minutes": "{n} min ago",
+      "hours": "{n} h ago",
+      "days": "{n} d ago"
+    }
+  },
+  "invite": {
+    "toastNotInstalled": "tribox not detected — please install first",
+    "inviterShared": "{name} shared",
+    "withYou": "with you",
+    "lastUpdated": "Last updated {time}",
+    "roleEditor": "editable copy",
+    "roleViewer": "read-only copy",
+    "snapshotNote": "After accepting, you'll get an independent local copy you can freely modify and manage.",
+    "expiresAt": "Invite expires {date}",
+    "downloadCta": "Download tribox (free)",
+    "openInApp": "Open in tribox",
+    "needAppCta": "Don't have tribox? Go to the download page",
+    "invalidTitle": "Invite link no longer valid",
+    "invalidBody": "This link may have expired, been revoked, or you don't have access. Please ask the inviter to generate a new link.",
+    "backHome": "Back to home"
+  },
+  "onboarding": {
+    "step": "{current}/{total}",
+    "stepNames": ["Choose use case", "Download app", "Accept share", "Done"],
+    "step1Title": "What will you mainly use tribox for?",
+    "step1Subtitle": "Helps us tailor your experience",
+    "useCases": [
+      {"id": "knowledge", "icon": "🧠", "label": "Knowledge management", "desc": "Build a personal knowledge base with bidirectional links"},
+      {"id": "team", "icon": "📤", "label": "Snapshot sharing", "desc": "Pack notes and send to others, they get independent copies"},
+      {"id": "personal", "icon": "📝", "label": "Personal notes", "desc": "Journals, ideas, study notes"},
+      {"id": "project", "icon": "🚀", "label": "Project management", "desc": "Task tracking, @due dates, project docs"}
+    ],
+    "step1Continue": "Continue",
+    "step2Title": "Download the desktop client",
+    "step2Subtitle": "tribox is a native desktop app. Pick your operating system.",
+    "platforms": [
+      {"os": "macOS", "icon": "🍎", "note": "Apple Silicon + Intel · .dmg"},
+      {"os": "Windows", "icon": "🪟", "note": "x64 / ARM64 · .msi"},
+      {"os": "Linux", "icon": "🐧", "note": ".AppImage / .deb / .rpm"}
+    ],
+    "step2Footer": "After downloading, double-click the installer — no admin privileges needed",
+    "step3Title": "Accept share",
+    "step3Subtitle": "Processing your share link, you'll get an independent copy after accepting…",
+    "step3Cta": "Accept share, download copy",
+    "step3Loading": "Joining…",
+    "step3Retry": "Retry",
+    "step4Title": "Welcome to tribox!",
+    "step4TitleJoined": "Copy of \"{name}\" received!",
+    "step4Body": "Open the tribox desktop client to start your knowledge management journey.",
+    "step4BodyJoined": "Open the tribox desktop client — your copy is ready locally.",
+    "step4Cta": "Open in tribox",
+    "errorAuthRequired": "Please complete registration or sign-in first, then accept the share"
+  }
+}

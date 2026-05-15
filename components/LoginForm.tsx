@@ -1,8 +1,8 @@
 'use client'
 
 import { useState } from 'react'
-import Link from 'next/link'
-import { useRouter } from 'next/navigation'
+import { useTranslations } from 'next-intl'
+import { Link, useRouter } from '@/i18n/navigation'
 import { login, saveTokens, type AuthErrorPayload } from '@/lib/auth'
 import { track } from '@/lib/analytics'
 
@@ -14,6 +14,7 @@ interface Props {
 type FormState = 'idle' | 'submitting' | 'deriving' | 'error'
 
 export function LoginForm({ redirectTo, cameFrom }: Props) {
+  const t = useTranslations('login')
   const router = useRouter()
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
@@ -23,20 +24,23 @@ export function LoginForm({ redirectTo, cameFrom }: Props) {
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
     if (!email || !password) {
-      setError('请填写邮箱和密码')
+      setError(t('fillBoth'))
       return
     }
     setState('deriving')
     setError(null)
     try {
-      // 客户端 Argon2id 计算可能耗时 0.5-2s，UI 上提示
       const tokens = await login(email, password, navigator.userAgent.slice(0, 80))
       saveTokens(tokens)
-      track({ event: 'cta_click', cta: 'pricing' }) // 暂复用现有事件，后续 analytics.ts 扩展 login_success
+      track({ event: 'cta_click', cta: 'pricing' })
       router.push(redirectTo)
     } catch (e) {
       const err = e as AuthErrorPayload
-      setError(err?.message ?? '登录失败，请重试')
+      let msg = t('errorDefault')
+      if (err?.code === 'invalid_credentials') msg = t('errorInvalidCreds')
+      else if (err?.code === 'rate_limited') msg = t('errorRateLimit')
+      else if (err?.message) msg = err.message
+      setError(msg)
       setState('error')
     }
   }
@@ -47,21 +51,19 @@ export function LoginForm({ redirectTo, cameFrom }: Props) {
     <div className="w-full max-w-md">
       <div className="rounded-2xl border border-white/10 bg-white/5 p-8">
         <div className="mb-8 text-center">
-          <h1 className="text-3xl font-bold text-white mb-2 tracking-tight">登录 tribox</h1>
-          <p className="text-slate-400 text-sm">
-            使用桌面客户端注册的账号
-          </p>
+          <h1 className="text-3xl font-bold text-white mb-2 tracking-tight">{t('title')}</h1>
+          <p className="text-slate-400 text-sm">{t('subtitle')}</p>
         </div>
 
         {cameFrom === 'pricing' && (
           <div className="mb-6 rounded-xl border border-indigo-500/30 bg-indigo-500/10 p-3 text-sm text-indigo-200">
-            登录后即可订阅 tribox Sync
+            {t('fromPricing')}
           </div>
         )}
 
         <form onSubmit={handleSubmit} className="flex flex-col gap-4">
           <Field
-            label="邮箱"
+            label={t('emailLabel')}
             type="email"
             value={email}
             onChange={setEmail}
@@ -70,7 +72,7 @@ export function LoginForm({ redirectTo, cameFrom }: Props) {
             disabled={submitting}
           />
           <Field
-            label="密码"
+            label={t('passwordLabel')}
             type="password"
             value={password}
             onChange={setPassword}
@@ -90,33 +92,39 @@ export function LoginForm({ redirectTo, cameFrom }: Props) {
             disabled={submitting}
             className="mt-2 w-full rounded-xl bg-indigo-500 hover:bg-indigo-400 disabled:opacity-50 disabled:cursor-not-allowed px-6 py-3 text-sm font-semibold text-white transition-colors shadow-lg shadow-indigo-500/20"
           >
-            {state === 'deriving' && '正在派生密钥…'}
-            {state === 'submitting' && '登录中…'}
-            {(state === 'idle' || state === 'error') && '登录'}
+            {state === 'deriving' && t('deriving')}
+            {state === 'submitting' && t('submitting')}
+            {(state === 'idle' || state === 'error') && t('submit')}
           </button>
         </form>
 
         <div className="mt-6 text-center">
           <p className="text-sm text-slate-500">
-            还没有 tribox 账号？
+            {t('noAccount')}
             <Link
               href="/signup"
               className="ml-1 text-indigo-300 hover:text-indigo-200 transition-colors"
             >
-              注册指引
+              {t('signupLink')}
             </Link>
           </p>
         </div>
       </div>
 
       <p className="mt-6 text-center text-xs text-slate-600">
-        登录即视为同意 tribox 的
-        <Link href="/terms" className="text-slate-500 hover:text-slate-300 mx-1 underline underline-offset-2">
-          服务条款
+        {t('termsConsent')}
+        <Link
+          href="/terms"
+          className="text-slate-500 hover:text-slate-300 mx-1 underline underline-offset-2"
+        >
+          {t('termsLink')}
         </Link>
-        与
-        <Link href="/privacy" className="text-slate-500 hover:text-slate-300 mx-1 underline underline-offset-2">
-          隐私政策
+        {t('privacyAnd')}
+        <Link
+          href="/privacy"
+          className="text-slate-500 hover:text-slate-300 mx-1 underline underline-offset-2"
+        >
+          {t('privacyLink')}
         </Link>
         。
       </p>

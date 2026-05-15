@@ -1,39 +1,46 @@
 'use client'
 
 import { useState } from 'react'
+import { useTranslations } from 'next-intl'
+import { AppleIcon, WindowsIcon, MobileIcon, DownloadArrow } from '@/components/PlatformIcon'
 import { track } from '@/lib/analytics'
 import { acceptInvite } from '@/lib/api'
 
 type UseCase = 'knowledge' | 'team' | 'personal' | 'project'
 type Step = 1 | 2 | 3 | 4
 
-const USE_CASES: Array<{ id: UseCase; icon: string; label: string; desc: string }> = [
-  { id: 'knowledge', icon: '🧠', label: '知识管理', desc: '构建个人知识库，双向链接，思维图谱' },
-  { id: 'team', icon: '📤', label: '快照分享', desc: '把笔记打包发给别人，对方拿到独立副本' },
-  { id: 'personal', icon: '📝', label: '个人笔记', desc: '日记、灵感记录、学习笔记' },
-  { id: 'project', icon: '🚀', label: '项目管理', desc: '任务跟踪，@due 日期，项目文档' },
-]
-
-const STEPS = ['选择用途', '下载应用', '接受分享', '完成']
+interface UseCaseDef {
+  id: UseCase
+  icon: string
+  label: string
+  desc: string
+}
 
 interface Props {
   inviteToken?: string
   sessionToken?: string
 }
 
+const PLATFORM_KEYS: Array<{ id: 'macos' | 'windows' | 'mobile'; label: string; Icon: typeof AppleIcon }> = [
+  { id: 'macos', label: 'macOS', Icon: AppleIcon },
+  { id: 'windows', label: 'Windows', Icon: WindowsIcon },
+  { id: 'mobile', label: 'iOS / Android', Icon: MobileIcon },
+]
+
 export function OnboardingFlow({ inviteToken, sessionToken = '' }: Props) {
+  const t = useTranslations('onboarding')
   const [step, setStep] = useState<Step>(1)
   const [selectedUseCase, setSelectedUseCase] = useState<UseCase | null>(null)
   const [joinState, setJoinState] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
   const [joinedSpaceName, setJoinedSpaceName] = useState('')
   const [joinError, setJoinError] = useState('')
 
+  const useCases = t.raw('useCases') as UseCaseDef[]
+  const stepNames = t.raw('stepNames') as string[]
+  const platformNotes = t.raw('platforms') as Array<{ os: string; icon: string; note: string }>
+
   function goToStep(s: Step) {
     setStep(s)
-  }
-
-  function handleUseCaseSelect(id: UseCase) {
-    setSelectedUseCase(id)
   }
 
   function handleUseCaseConfirm() {
@@ -45,22 +52,17 @@ export function OnboardingFlow({ inviteToken, sessionToken = '' }: Props) {
   function handleDownloadClick() {
     track({ event: 'cta_click', cta: 'download' })
     track({ event: 'onboarding_step_complete', step: 'download', inviteToken })
-    // 如果有邀请 token 则跳 Step 3，否则跳 Step 4
     goToStep(inviteToken ? 3 : 4)
   }
 
   async function handleJoinSpace() {
     if (!inviteToken) return
-
-    // 无 session token 时提示用户先注册/登录，不发送必定 401 的请求
     if (!sessionToken) {
       setJoinState('error')
-      setJoinError('请先完成注册或登录，再接受分享')
+      setJoinError(t('errorAuthRequired'))
       return
     }
-
     setJoinState('loading')
-
     const result = await acceptInvite(inviteToken, sessionToken)
     if (result.success) {
       setJoinState('success')
@@ -69,7 +71,7 @@ export function OnboardingFlow({ inviteToken, sessionToken = '' }: Props) {
       goToStep(4)
     } else {
       setJoinState('error')
-      setJoinError(result.errorMessage ?? '加入失败，请重试')
+      setJoinError(result.errorMessage ?? t('errorAuthRequired'))
     }
   }
 
@@ -89,29 +91,28 @@ export function OnboardingFlow({ inviteToken, sessionToken = '' }: Props) {
         {/* 进度条 */}
         <div className="mb-8">
           <div className="flex items-center justify-between mb-3">
-            <span className="text-sm text-slate-400">{step}/{STEPS.length}</span>
-            <span className="text-sm text-indigo-300 font-medium">{STEPS[step - 1]}</span>
+            <span className="text-sm text-slate-400">{t('step', { current: step, total: stepNames.length })}</span>
+            <span className="text-sm text-indigo-300 font-medium">{stepNames[step - 1]}</span>
           </div>
           <div className="h-1.5 w-full rounded-full bg-white/10">
             <div
               className="h-full rounded-full bg-indigo-500 transition-all duration-500"
-              style={{ width: `${(step / STEPS.length) * 100}%` }}
+              style={{ width: `${(step / stepNames.length) * 100}%` }}
             />
           </div>
         </div>
 
-        {/* Step 1: 选择用途 */}
         {step === 1 && (
           <div className="rounded-2xl border border-white/10 bg-white/5 p-8">
-            <h1 className="text-2xl font-bold text-white mb-2">你主要用 tribox 做什么？</h1>
-            <p className="text-slate-400 text-sm mb-6">帮助我们为你优化体验</p>
+            <h1 className="text-2xl font-bold text-white mb-2">{t('step1Title')}</h1>
+            <p className="text-slate-400 text-sm mb-6">{t('step1Subtitle')}</p>
 
             <div className="grid grid-cols-2 gap-3 mb-6">
-              {USE_CASES.map((uc) => (
+              {useCases.map((uc) => (
                 <button
                   key={uc.id}
                   type="button"
-                  onClick={() => handleUseCaseSelect(uc.id)}
+                  onClick={() => setSelectedUseCase(uc.id)}
                   className={`rounded-xl border p-4 text-left transition-all ${
                     selectedUseCase === uc.id
                       ? 'border-indigo-500 bg-indigo-500/10 shadow shadow-indigo-500/20'
@@ -131,54 +132,50 @@ export function OnboardingFlow({ inviteToken, sessionToken = '' }: Props) {
               disabled={!selectedUseCase}
               className="w-full rounded-xl bg-indigo-500 hover:bg-indigo-400 disabled:opacity-40 disabled:cursor-not-allowed px-6 py-3 text-sm font-semibold text-white transition-colors"
             >
-              继续
+              {t('step1Continue')}
             </button>
           </div>
         )}
 
-        {/* Step 2: 下载客户端 */}
         {step === 2 && (
           <div className="rounded-2xl border border-white/10 bg-white/5 p-8">
-            <h1 className="text-2xl font-bold text-white mb-2">下载桌面客户端</h1>
-            <p className="text-slate-400 text-sm mb-6">tribox 是桌面原生应用，请选择你的操作系统</p>
+            <h1 className="text-2xl font-bold text-white mb-2">{t('step2Title')}</h1>
+            <p className="text-slate-400 text-sm mb-6">{t('step2Subtitle')}</p>
 
             <div className="flex flex-col gap-3 mb-6">
-              {[
-                { os: 'macOS', icon: '🍎', note: 'Apple Silicon + Intel · .dmg' },
-                { os: 'Windows', icon: '🪟', note: 'x64 / ARM64 · .msi' },
-                { os: 'Linux', icon: '🐧', note: '.AppImage / .deb / .rpm' },
-              ].map((d) => (
-                <a
-                  key={d.os}
-                  href="/download"
-                  onClick={handleDownloadClick}
-                  className="flex items-center gap-4 rounded-xl border border-white/10 bg-white/5 hover:border-indigo-500/40 px-5 py-4 transition-colors group"
-                >
-                  <span className="text-2xl">{d.icon}</span>
-                  <div className="flex-1">
-                    <div className="font-semibold text-white group-hover:text-indigo-300 transition-colors text-sm">
-                      {d.os}
+              {PLATFORM_KEYS.map(({ id, label, Icon }) => {
+                const note = platformNotes.find((p) => p.os === label)?.note ?? ''
+                return (
+                  <a
+                    key={id}
+                    href="/download"
+                    onClick={handleDownloadClick}
+                    className="flex items-center gap-4 rounded-xl border border-white/10 bg-white/5 hover:border-indigo-500/40 px-5 py-4 transition-colors group"
+                  >
+                    <Icon size={28} className="text-slate-200" />
+                    <div className="flex-1">
+                      <div className="font-semibold text-white group-hover:text-indigo-300 transition-colors text-sm">
+                        {label}
+                      </div>
+                      <div className="text-xs text-slate-500">{note}</div>
                     </div>
-                    <div className="text-xs text-slate-500">{d.note}</div>
-                  </div>
-                  <span className="text-slate-500 group-hover:text-indigo-400 transition-colors">↓</span>
-                </a>
-              ))}
+                    <DownloadArrow
+                      size={18}
+                      className="text-slate-500 group-hover:text-indigo-400 transition-colors"
+                    />
+                  </a>
+                )
+              })}
             </div>
 
-            <p className="text-center text-xs text-slate-600">
-              下载后，双击安装包完成安装，无需管理员权限
-            </p>
+            <p className="text-center text-xs text-slate-600">{t('step2Footer')}</p>
           </div>
         )}
 
-        {/* Step 3: 接受分享 */}
         {step === 3 && inviteToken && (
           <div className="rounded-2xl border border-white/10 bg-white/5 p-8 text-center">
-            <h1 className="text-2xl font-bold text-white mb-2">接受分享</h1>
-            <p className="text-slate-400 text-sm mb-8">
-              正在处理你的分享链接，接受后将获得独立副本…
-            </p>
+            <h1 className="text-2xl font-bold text-white mb-2">{t('step3Title')}</h1>
+            <p className="text-slate-400 text-sm mb-8">{t('step3Subtitle')}</p>
 
             {joinState === 'idle' && (
               <button
@@ -186,14 +183,14 @@ export function OnboardingFlow({ inviteToken, sessionToken = '' }: Props) {
                 onClick={handleJoinSpace}
                 className="w-full rounded-xl bg-indigo-500 hover:bg-indigo-400 px-6 py-3 text-sm font-semibold text-white transition-colors"
               >
-                接受分享，下载副本
+                {t('step3Cta')}
               </button>
             )}
 
             {joinState === 'loading' && (
               <div className="flex flex-col items-center gap-4">
                 <div className="h-10 w-10 rounded-full border-2 border-indigo-500/30 border-t-indigo-500 animate-spin" />
-                <p className="text-slate-400 text-sm">正在加入…</p>
+                <p className="text-slate-400 text-sm">{t('step3Loading')}</p>
               </div>
             )}
 
@@ -206,26 +203,23 @@ export function OnboardingFlow({ inviteToken, sessionToken = '' }: Props) {
                   onClick={() => setJoinState('idle')}
                   className="rounded-xl border border-white/20 hover:border-white/40 px-5 py-2.5 text-sm font-medium text-slate-300 hover:text-white transition-colors"
                 >
-                  重试
+                  {t('step3Retry')}
                 </button>
               </div>
             )}
           </div>
         )}
 
-        {/* Step 4: 完成 */}
         {step === 4 && (
           <div className="rounded-2xl border border-white/10 bg-white/5 p-8 text-center">
             <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-indigo-500/20 border-2 border-indigo-500/30 text-3xl">
               🎉
             </div>
             <h1 className="text-2xl font-bold text-white mb-3">
-              {joinedSpaceName ? `已接收「${joinedSpaceName}」副本！` : '欢迎使用 tribox！'}
+              {joinedSpaceName ? t('step4TitleJoined', { name: joinedSpaceName }) : t('step4Title')}
             </h1>
             <p className="text-slate-400 text-sm mb-8">
-              {joinedSpaceName
-                ? '打开 tribox 桌面客户端，副本已在本地等你。'
-                : '打开 tribox 桌面客户端，开始你的知识管理之旅。'}
+              {joinedSpaceName ? t('step4BodyJoined') : t('step4Body')}
             </p>
 
             <button
@@ -233,7 +227,7 @@ export function OnboardingFlow({ inviteToken, sessionToken = '' }: Props) {
               onClick={handleOpenInApp}
               className="w-full rounded-xl bg-indigo-500 hover:bg-indigo-400 px-6 py-3 text-sm font-semibold text-white transition-colors shadow-lg shadow-indigo-500/20"
             >
-              在 tribox 中打开
+              {t('step4Cta')}
             </button>
           </div>
         )}
