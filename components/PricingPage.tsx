@@ -8,7 +8,7 @@ import { startCheckout } from '@/lib/billing'
 import { isLoggedIn } from '@/lib/auth'
 
 type BillingCycle = 'monthly' | 'annual'
-type ProductId = 'free' | 'sync' | 'catalyst' | 'commercial'
+type ProductId = 'free' | 'pro' | 'credits' | 'commercial'
 
 interface Product {
   id: ProductId
@@ -32,31 +32,37 @@ const PRODUCTS: Product[] = [
     featuresCount: 8,
   },
   {
-    id: 'sync',
-    priceMonthly: '$5',
-    priceAnnual: '$4',
+    id: 'pro',
+    priceMonthly: '$9',
+    priceAnnual: '$90',
     priceOneTime: null,
     ctaStyle: 'primary',
     highlight: true,
     featuresCount: 7,
-    annualTotalDisplay: '$48',
+    annualTotalDisplay: '$90',
   },
   {
-    id: 'catalyst',
+    id: 'credits',
     priceMonthly: null,
     priceAnnual: null,
-    priceOneTime: '$35',
+    priceOneTime: '$10',
     ctaStyle: 'outline',
     highlight: false,
     featuresCount: 5,
   },
 ]
 
+const PRO_PRICE_IDS: Partial<Record<BillingCycle, string>> = {
+  monthly: process.env.NEXT_PUBLIC_STRIPE_PRICE_ID_PRO_MONTHLY?.trim(),
+  annual: process.env.NEXT_PUBLIC_STRIPE_PRICE_ID_PRO_YEARLY?.trim(),
+}
+const AI_CREDIT_PACK_PRICE_ID = process.env.NEXT_PUBLIC_STRIPE_PRICE_ID_AI_CREDIT_PACK?.trim()
+
 interface ComparisonRow {
   label: string
   free: string
-  sync: string
-  catalyst: string
+  pro: string
+  credits: string
 }
 
 interface FaqItem {
@@ -93,7 +99,24 @@ export function PricingPage() {
 
     setCheckingOut(productId)
     try {
-      await startCheckout({ planTier: 'pro' })
+      if (productId === 'credits') {
+        await startCheckout({
+          checkoutType: 'ai_credit_pack',
+          ...(AI_CREDIT_PACK_PRICE_ID ? { priceId: AI_CREDIT_PACK_PRICE_ID } : {}),
+        })
+      } else {
+        const priceId = PRO_PRICE_IDS[billing]
+        if (billing === 'annual' && !priceId) {
+          setCheckoutError(t('annualCheckoutUnavailable'))
+          setCheckingOut(null)
+          return
+        }
+        await startCheckout({
+          checkoutType: 'subscription',
+          planTier: 'pro',
+          ...(priceId ? { priceId } : {}),
+        })
+      }
     } catch (e) {
       const msg = e instanceof Error ? e.message : String(e)
       if (msg.includes('需要登录') || msg.includes('会话已过期')) {
@@ -169,7 +192,7 @@ export function PricingPage() {
 
             let priceNote: string
             if (product.id === 'free') priceNote = t('forever')
-            else if (product.id === 'sync')
+            else if (product.id === 'pro')
               priceNote =
                 billing === 'annual'
                   ? t('annualNote', { price: product.annualTotalDisplay ?? '' })
@@ -196,7 +219,7 @@ export function PricingPage() {
                   <p className="text-xs text-slate-500 mb-4">{t(`${product.id}.tagline`)}</p>
                   <div className="flex items-end gap-1">
                     <span className="text-4xl font-bold text-white">{displayPrice}</span>
-                    {isSubscription && product.id !== 'free' && (
+                    {isSubscription && product.id !== 'free' && billing === 'monthly' && (
                       <span className="text-slate-500 text-sm mb-1">{t('perMonth')}</span>
                     )}
                   </div>
@@ -264,8 +287,8 @@ export function PricingPage() {
                     {t('comparison.headerFeature')}
                   </th>
                   <th className="py-4 px-4 text-center text-slate-300 font-semibold">tribox</th>
-                  <th className="py-4 px-4 text-center text-indigo-300 font-semibold">Sync</th>
-                  <th className="py-4 px-4 text-center text-slate-300 font-semibold">Catalyst</th>
+                  <th className="py-4 px-4 text-center text-indigo-300 font-semibold">Pro</th>
+                  <th className="py-4 px-4 text-center text-slate-300 font-semibold">AI credits</th>
                 </tr>
               </thead>
               <tbody>
@@ -277,9 +300,9 @@ export function PricingPage() {
                     <td className="py-3.5 px-6 text-slate-300">{row.label}</td>
                     <td className="py-3.5 px-4 text-center text-slate-400">{row.free}</td>
                     <td className="py-3.5 px-4 text-center text-indigo-300 font-medium">
-                      {row.sync}
+                      {row.pro}
                     </td>
-                    <td className="py-3.5 px-4 text-center text-slate-300">{row.catalyst}</td>
+                    <td className="py-3.5 px-4 text-center text-slate-300">{row.credits}</td>
                   </tr>
                 ))}
               </tbody>

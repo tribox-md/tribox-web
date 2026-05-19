@@ -77,16 +77,17 @@
     "eyebrow": "料金",
     "title": "基本は無料、必要なときだけ支払う。",
     "subtitle1": "tribox 本体は永久無料、機能制限なし、登録不要です。",
-    "subtitle2": "Sync と Catalyst は独立したオプションのアドオンで、必要なときだけ支払います。",
+    "subtitle2": "Pro はホステッド同期、バージョン履歴、Hosted AI credits のアカウント階層です。credit pack は active Pro ユーザー向けの任意購入です。",
     "billingMonthly": "月払い",
     "billingAnnual": "年払い",
-    "billingSave": "20% お得",
+    "billingSave": "$18 お得",
     "popular": "人気",
     "perMonth": "/月",
     "forever": "永久無料",
     "annualNote": "年額 {price}、年払い",
     "monthlyNote": "月額",
     "oneTimeNote": "一括購入、継続課金なし",
+    "annualCheckoutUnavailable": "年払いのチェックアウトはまだ設定されていません。月払いを選ぶか、hello@tribox.md までご連絡ください。",
     "free": {
       "name": "tribox",
       "tagline": "基本アプリ —— 永久無料、登録不要",
@@ -102,47 +103,47 @@
         "コミュニティサポート"
       ]
     },
-    "sync": {
-      "name": "tribox Sync",
-      "tagline": "1 つのアカウント、複数のデバイス、同じノート",
-      "cta": "Sync を購読",
+    "pro": {
+      "name": "tribox Pro",
+      "tagline": "クラウド同期、バージョン履歴、Hosted AI credits",
+      "cta": "Pro を購読",
       "features": [
         "エンドツーエンド暗号化のマルチデバイス同期（AES-256）",
         "最長 12 か月のバージョン履歴",
         "削除ファイルの復元",
         "フォルダ単位の同期選択",
         "設定・テーマ・プラグインの同期",
-        "添付ファイル 10 GB のクラウドストレージ",
+        "請求サイクルごとに 100 Hosted AI credits",
         "メールテクニカルサポート"
       ]
     },
-    "catalyst": {
-      "name": "tribox Catalyst",
-      "tagline": "創設メンバー枠 —— 一括購入、永久に残る",
-      "cta": "創設メンバーになる",
+    "credits": {
+      "name": "AI credit pack",
+      "tagline": "active Pro アカウント向けの一回限りの Hosted AI credits",
+      "cta": "credits を購入",
       "features": [
-        "ベータチャネルと新機能への早期アクセス",
-        "公式サイトの謝辞ページに名前掲載（任意）",
-        "コミュニティの創設メンバーバッジ",
-        "プラグイン開発者向け優先アクセス",
-        "プロダクト開発の直接支援"
+        "1000 Hosted AI credits",
+        "一回限りの購入、サブスクリプションではありません",
+        "active Pro アカウントのみ購入可能",
+        "チェックアウト前に地域 / provider gate を適用",
+        "未使用 credits はアカウントに残ります"
       ]
     },
     "comparisonTitle": "機能比較",
-    "comparisonSubtitle": "基本アプリにはすべてのローカル機能が含まれます。Sync と Catalyst は追加機能を解除します。",
+    "comparisonSubtitle": "基本アプリにはすべてのローカル機能が含まれます。Pro はホステッド同期と Hosted AI 利用を解除します。",
     "comparison": {
       "headerFeature": "機能",
       "rows": [
-        {"label": "ローカル Markdown ファイル保存", "free": "✓", "sync": "✓", "catalyst": "✓"},
-        {"label": "双方向リンク + グラフ", "free": "✓", "sync": "✓", "catalyst": "✓"},
-        {"label": "全文 + セマンティック検索", "free": "✓", "sync": "✓", "catalyst": "✓"},
-        {"label": "AI Copilot（ローカルモデル）", "free": "✓", "sync": "✓", "catalyst": "✓"},
-        {"label": "スナップショット共有", "free": "✓", "sync": "✓", "catalyst": "✓"},
-        {"label": "マルチデバイスクラウド同期", "free": "—", "sync": "✓ E2E 暗号化", "catalyst": "別途"},
-        {"label": "バージョン履歴", "free": "—", "sync": "12 か月", "catalyst": "別途"},
-        {"label": "添付ファイルストレージ", "free": "—", "sync": "10 GB", "catalyst": "別途"},
-        {"label": "ベータチャネル", "free": "—", "sync": "—", "catalyst": "✓"},
-        {"label": "コミュニティバッジ", "free": "—", "sync": "—", "catalyst": "✓ 創設"}
+        {"label": "ローカル Markdown ファイル保存", "free": "✓", "pro": "✓", "credits": "Pro 必須"},
+        {"label": "双方向リンク + グラフ", "free": "✓", "pro": "✓", "credits": "Pro 必須"},
+        {"label": "全文 + セマンティック検索", "free": "✓", "pro": "✓", "credits": "Pro 必須"},
+        {"label": "AI Copilot（ローカルモデル）", "free": "✓", "pro": "✓", "credits": "Pro 必須"},
+        {"label": "スナップショット共有", "free": "✓", "pro": "✓", "credits": "Pro 必須"},
+        {"label": "マルチデバイスクラウド同期", "free": "—", "pro": "✓ E2E 暗号化", "credits": "—"},
+        {"label": "バージョン履歴", "free": "—", "pro": "12 か月", "credits": "—"},
+        {"label": "Hosted AI 付属 credits", "free": "少量トライアル", "pro": "サイクルごとに 100", "credits": "+1000"},
+        {"label": "AI credits 購入", "free": "—", "pro": "購入可能", "credits": "一回限り"},
+        {"label": "サポート", "free": "コミュニティ", "pro": "メール", "credits": "アカウントサポート"}
       ]
     },
     "commercialEyebrow": "Commercial / Self-hosted",
@@ -153,7 +154,7 @@
     "faqs": [
       {
         "q": "無料版に機能制限はありますか？",
-        "a": "ありません。tribox 基本アプリは永久無料で、すべてのローカル機能（編集、検索、AI Copilot、プラグイン、スナップショット共有）が含まれます。アカウント登録も不要です。Sync と Catalyst は独立したオプションのアドオンで、必要なときだけ支払います。"
+        "a": "ありません。tribox 基本アプリは永久無料で、すべてのローカル機能（編集、検索、AI Copilot、プラグイン、スナップショット共有）が含まれます。アカウント登録も不要です。Pro は任意のサブスクリプションで、クラウド同期、バージョン履歴、Hosted AI credits を含みます。"
       },
       {
         "q": "Sync は複数人での協同編集ですか？",
@@ -165,7 +166,7 @@
       },
       {
         "q": "tribox を仕事（商用）で使うには追加料金が必要ですか？",
-        "a": "必須ではありません。tribox には「商用の壁」はなく、仕事で無料利用できます。ただ、あなたや会社が tribox に価値を見出しているなら、Sync または Catalyst の購読は小規模チームの開発・メンテナンス継続に役立ちます。"
+        "a": "必須ではありません。tribox には「商用の壁」はなく、仕事で無料利用できます。ただ、あなたや会社が tribox に価値を見出しているなら、Pro の購読は小規模チームの開発・メンテナンス継続に役立ちます。"
       },
       {
         "q": "解約するとノートはどうなりますか？",
@@ -173,7 +174,7 @@
       },
       {
         "q": "返金は可能ですか？",
-        "a": "Sync の初回購入から 14 日以内なら無条件で全額返金します。Catalyst の一括購入は返金不可です（クラウドファンディングに近い支援枠です）。"
+        "a": "Pro は購入から 7 日以内なら無条件で全額返金します。AI credit pack は、法令で必要な場合または未使用 credits を回収できる場合のみ返金します。"
       },
       {
         "q": "学生・教員・非営利組織への割引はありますか？",
@@ -205,9 +206,9 @@
     "promise5Title": "エンドツーエンド暗号化の同期。",
     "promise5Body": "Sync を購読すると、ノートはローカルで暗号化されてからアップロードされます——tribox のスタッフもサーバーも内容を読めません。",
     "businessTitle": "ビジネスモデル",
-    "businessIntro": "tribox の運営資金は、ユーザーが支払うアドオンプロダクトから得ています：",
-    "businessSync": "tribox Sync — マルチデバイス同期サブスクリプション（$4-5/月）",
-    "businessCatalyst": "tribox Catalyst — 一括購入の創設メンバー枠（$35）",
+    "businessIntro": "tribox の運営資金は、ユーザーが支払うプロダクトから得ています：",
+    "businessSync": "tribox Pro — hosted sync と AI credits（$9/月または $90/年）",
+    "businessCredits": "AI credit pack — 一回限りの Hosted AI credits（$10）",
     "businessCommercial": "Commercial License — 企業 / 組織向けライセンス",
     "businessClosing": "有料プランの収入は、小規模チームが開発に集中するために使われます。基本アプリは永久無料です。すべてのローカル機能がペイウォールの背後に隠されることはありません。",
     "contactTitle": "お問い合わせ",
@@ -253,7 +254,7 @@
     "title": "プライバシーポリシー",
     "lastUpdated": "最終更新：",
     "tldrTitle": "要約",
-    "tldrBody": "tribox デスクトップアプリはデフォルトで完全にローカル動作し、テレメトリ・分析もありません。クラウドサービス（Sync、Catalyst、共有招待）はアカウント登録時に必要最小限の情報のみを収集し、ノートの内容はすべて転送中・保存中にエンドツーエンド暗号化されます。",
+    "tldrBody": "tribox デスクトップアプリはデフォルトで完全にローカル動作し、テレメトリ・分析もありません。クラウドサービス（Pro sync、Hosted AI credits、共有招待）はアカウント登録時に必要最小限の情報のみを収集し、ノートの内容はすべて転送中・保存中にエンドツーエンド暗号化されます。",
     "section1Title": "1. デスクトップクライアント（基本アプリ）",
     "section1Body": "tribox デスクトップクライアントは、デフォルトで私たちのサーバーにデータを送信しません：",
     "section1List": [
@@ -264,7 +265,7 @@
     ],
     "section1Note": "tribox デスクトップクライアントの利用にアカウント登録は不要です。",
     "section2Title": "2. アカウント登録時に収集する情報",
-    "section2Body": "Sync、Catalyst の購読、またはスナップショット共有の受け取りにはアカウントが必要です。収集するのは：",
+    "section2Body": "Pro の購読、AI credit pack の購入、またはスナップショット共有の受け取りにはアカウントが必要です。収集するのは：",
     "section2List": [
       "メールアドレス（ログイン、パスワードリセット、購読通知用）",
       "暗号化されたパスワード（bcrypt ハッシュ、原文は保存されない）",
@@ -317,8 +318,8 @@
     "section1Body": "tribox は以下のサービスを提供します：",
     "section1List": [
       "デスクトップクライアント：ローカルファーストのノート・ナレッジ管理ツール、永久無料、機能制限なし、登録不要",
-      "tribox Sync：エンドツーエンド暗号化のマルチデバイス同期、バージョン履歴、添付ストレージを提供する有料サブスクリプション",
-      "tribox Catalyst：一括購入の創設メンバー枠、ベータチャネルとコミュニティバッジを提供",
+      "tribox Pro：エンドツーエンド暗号化のマルチデバイス同期、バージョン履歴、Hosted AI credits を提供する有料サブスクリプション",
+      "AI credit pack：active Pro アカウント向けの一回限りの Hosted AI credits",
       "スナップショット共有：ユーザー間でノートのコピーを受け渡す機能（無料）"
     ],
     "section2Title": "2. アカウント責任",
@@ -330,8 +331,8 @@
     ],
     "section3Title": "3. 課金と返金",
     "section3List": [
-      "サブスクリプション周期：Sync は月次または年次サブスクリプションで、満了時に自動更新、いつでも解約可能",
-      "返金ポリシー：Sync は初回支払いから 14 日以内なら全額返金可能；Catalyst の一括購入は返金不可（クラウドファンディングに近い）",
+      "サブスクリプション周期：Pro は月次または年次サブスクリプションで、満了時に自動更新、いつでも解約可能",
+      "返金ポリシー：Pro は購入から 7 日以内なら全額返金可能；AI credit pack は法令で必要な場合または未使用 credits を回収できる場合のみ返金",
       "価格改定：tribox は将来の周期の価格を 30 日前のメール通知を経て変更する権利を持ちます。支払い済みの現周期には影響しません",
       "税金：表示価格に該当する地域の税金は含まれません"
     ],
@@ -373,15 +374,15 @@
     "lastUpdated": "最終更新：",
     "summaryTitle": "要約",
     "summaryList": [
-      "**tribox Sync**：初回支払いから 14 日以内なら無条件で全額返金",
-      "**tribox Catalyst**（一括購入）：返金不可",
+      "**tribox Pro**：購入から 7 日以内なら無条件で全額返金",
+      "**AI credit pack**：法令で必要な場合または未使用 credits を回収できる場合のみ返金",
       "**解約**：いつでも Customer Portal から実行可能、サービスは支払い済み周期の終了まで継続"
     ],
-    "section1Title": "1. tribox Sync サブスクリプションの返金",
-    "section1Sub1": "14 日間の無条件返金",
-    "section1Body1": "tribox Sync を<strong>初めて</strong>購読してから 14 暦日以内なら、利用量に関係なく全額返金を申請できます。支払いに使用したクレジットカードまたは決済方法に返金され、通常 5-10 営業日以内に処理されます（カード発行会社によります）。",
+    "section1Title": "1. tribox Pro の返金",
+    "section1Sub1": "7 日間の無条件返金",
+    "section1Body1": "tribox Pro の購入から 7 暦日以内なら、利用量に関係なく全額返金を申請できます。支払いに使用したクレジットカードまたは決済方法に返金され、通常 5-10 営業日以内に処理されます（カード発行会社によります）。",
     "section1Sub2": "更新周期は返金対象外",
-    "section1Body2": "14 日間の無条件返金は<strong>初回支払いのみ</strong>に適用されます。サブスクリプションが自動更新された後、更新周期の費用は返金されません。自動更新はいつでも解約できます（サービスは現周期終了まで継続）が、支払い済みの現周期は按分返金されません。",
+    "section1Body2": "7 日間の無条件返金は<strong>初回支払いのみ</strong>に適用されます。サブスクリプションが自動更新された後、更新周期の費用は返金されません。自動更新はいつでも解約できます（サービスは現周期終了まで継続）が、支払い済みの現周期は按分返金されません。",
     "section1Sub3": "返金の申請方法",
     "section1Body3": "hello@tribox.md に以下を添えてメールください：",
     "section1Body3List": [
@@ -390,26 +391,26 @@
       "返金理由の簡潔な説明（任意ですが、製品改善に役立ちます）"
     ],
     "section1Body3End": "2 営業日以内に返信・処理します。",
-    "section2Title": "2. tribox Catalyst 一括購入",
-    "section2Body": "tribox Catalyst（創設メンバー枠）は<strong>返金不可</strong>です。理由：",
+    "section2Title": "2. AI credit pack",
+    "section2Body": "AI credit pack は active Pro アカウント向けの一回限りの credits です。法令で必要な場合または未使用 credits を回収できる場合のみ返金します。理由：",
     "section2List": [
-      "Catalyst の本質はクラウドファンディング的な支援で、購入は tribox チームへの信頼投票です",
-      "購入後すぐにすべての特典（ベータチャネル、コミュニティバッジ、謝辞ページの名前掲載）が解禁されます",
-      "これらの特典は一度付与されると取り消せません"
+      "Credits は Hosted AI の使用後に消費されます",
+      "Credit pack checkout は Pro と地域 / provider gate を通過した場合のみ利用できます",
+      "使用済み credits は回収できません"
     ],
-    "section2Note": "Catalyst を購入する前にその性質を十分にご理解ください。tribox の機能を試したいだけなら、永久無料の基本アプリをご利用ください——Catalyst を購入する必要はありません。",
+    "section2Note": "tribox のローカル機能を試したいだけなら、永久無料の基本アプリをご利用ください。Pro や AI credit pack を購入する必要はありません。",
     "section3Title": "3. 解約 vs 返金",
     "section3Body": "これらは別の操作です：",
     "section3List": [
       "**解約**：次回の自動更新を停止します。現在の支払い済み周期内はサービスを正常に利用できます。サポートへの連絡は不要で、Stripe Customer Portal でセルフで実行できます",
-      "**返金**：支払い済みの費用を返金し、即座にサービスを終了します。hello@tribox.md への連絡が必要で、14 日間の無条件条件を満たす必要があります"
+      "**返金**：支払い済みの費用を返金し、即座にサービスを終了します。hello@tribox.md への連絡が必要で、7 日間の無条件条件を満たす必要があります"
     ],
     "section3Note": "ほとんどの場合、<strong>解約</strong>がより適切な選択です——現周期の終了まで使い続けることができます。",
     "section4Title": "4. 例外的なケース",
     "section4Sub1": "サービス利用不能",
-    "section4Body1": "サブスクリプション期間中に tribox Sync が事前通知なく 24 時間以上連続して利用できなかった場合、影響を受けた期間の費用を按分で返金申請できます。",
+    "section4Body1": "サブスクリプション期間中に tribox Pro hosted sync が事前通知なく 24 時間以上連続して利用できなかった場合、影響を受けた期間の費用を按分で返金申請できます。",
     "section4Sub2": "誤操作 / 重複請求",
-    "section4Body2": "システムの問題による重複請求や誤請求は、14 日間の制限なく無条件で全額返金します。Stripe の領収書を添えてメールしてください。",
+    "section4Body2": "システムの問題による重複請求や誤請求は、7 日間の制限なく無条件で全額返金します。Stripe の領収書を添えてメールしてください。",
     "section4Sub3": "紛争処理",
     "section4Body3": "私たちは紛争をメールで友好的に解決することを望みます。すでにカード発行会社にチャージバックを起こしている場合、アカウントを一時停止して紛争解決を待ちます。先にメールでご連絡ください——チャージバックよりも早く処理できます。",
     "section5Title": "5. お問い合わせ",
@@ -419,7 +420,7 @@
   "login": {
     "title": "tribox にサインイン",
     "subtitle": "デスクトップクライアントで登録したアカウントを使用",
-    "fromPricing": "サインインして tribox Sync を購読",
+    "fromPricing": "サインインして tribox Pro を購読",
     "emailLabel": "メールアドレス",
     "passwordLabel": "パスワード",
     "deriving": "鍵を派生中…",
@@ -468,7 +469,7 @@
     "statCurrentPlan": "現在のプラン",
     "statRenewalDate": "更新日",
     "statStorage": "添付ストレージ",
-    "upgradeButton": "Sync にアップグレード",
+    "upgradeButton": "Pro にアップグレード",
     "manageButton": "サブスクリプション管理（近日公開）",
     "manageTooltip": "Stripe Customer Portal の対応中",
     "viewAllPlans": "すべてのプランを見る",
@@ -485,7 +486,7 @@
     "logoutWorking": "処理中…",
     "planLabels": {
       "free": "無料 · 基本アプリ",
-      "pro": "tribox Sync",
+      "pro": "tribox Pro",
       "team": "Commercial",
       "enterprise": "Enterprise"
     },

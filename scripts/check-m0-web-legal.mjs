@@ -48,6 +48,17 @@ function requireMessageNamespace(locale, namespace) {
   }
 }
 
+function stringValues(value, out = []) {
+  if (typeof value === 'string') {
+    out.push(value)
+  } else if (Array.isArray(value)) {
+    for (const item of value) stringValues(item, out)
+  } else if (value && typeof value === 'object') {
+    for (const item of Object.values(value)) stringValues(item, out)
+  }
+  return out
+}
+
 for (const path of [
   'app/[locale]/privacy/page.tsx',
   'app/[locale]/terms/page.tsx',
@@ -97,8 +108,12 @@ for (const [legacyRoute, destination] of [
 
 for (const locale of ['en', 'zh', 'ja']) {
   const rawMessages = read(`messages/${locale}.json`)
+  const publicCopy = stringValues(JSON.parse(rawMessages)).join('\n')
   if (/\bM0\b/.test(rawMessages)) {
     failures.push(`messages/${locale}.json must not expose internal phase name M0 in public copy`)
+  }
+  if (/\$4-5|\$4–5|\$35|Catalyst|14-day|14 days|14 天|14 日間|14 日以内|14 日/.test(publicCopy)) {
+    failures.push(`messages/${locale}.json must not expose retired pricing/refund copy`)
   }
   for (const key of ['footer.privacy', 'footer.terms', 'footer.cookie', 'footer.subprocessors', 'footer.refund']) {
     requireMessage(locale, key)
@@ -126,9 +141,39 @@ requireMatch(
   'analytics must require explicit local consent before sending',
 )
 requireMatch(
+  'components/PricingPage.tsx',
+  /priceMonthly:\s*'\$9'[\s\S]*priceAnnual:\s*'\$90'[\s\S]*priceOneTime:\s*'\$10'/,
+  'pricing page must expose current M0 prices: Pro $9/month, Pro $90/year, AI credit pack $10',
+)
+requireMatch(
+  'components/PricingPage.tsx',
+  /NEXT_PUBLIC_STRIPE_PRICE_ID_PRO_YEARLY/,
+  'pricing page must use the public yearly Stripe price ID for annual checkout selection',
+)
+requireMatch(
+  'messages/en.json',
+  /7 days of purchase/,
+  'English refund copy must use the 7-day purchase window',
+)
+requireMatch(
+  'messages/zh.json',
+  /购买后 7 天/,
+  'Chinese refund copy must use the 7-day purchase window',
+)
+requireMatch(
+  'messages/ja.json',
+  /購入から 7 日/,
+  'Japanese refund copy must use the 7-day purchase window',
+)
+requireMatch(
   'docs/M0-VERCEL-LAUNCH-RUNBOOK.md',
   /WEB-01[\s\S]*WEB-07/,
   'Vercel launch runbook must track WEB-01 through WEB-07',
+)
+requireMatch(
+  'docs/M0-VERCEL-LAUNCH-RUNBOOK.md',
+  /NEXT_PUBLIC_STRIPE_PRICE_ID_PRO_YEARLY/,
+  'Vercel launch runbook must document the public yearly Stripe price ID env var',
 )
 
 if (failures.length > 0) {

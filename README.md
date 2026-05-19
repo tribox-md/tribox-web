@@ -12,7 +12,7 @@ a local-first notes & knowledge management desktop application.
 | Path | Purpose |
 |------|---------|
 | `/` | Marketing homepage — five product promises + capabilities |
-| `/pricing` | Free + Sync ($4–5/mo) + Catalyst ($35) + Commercial |
+| `/pricing` | Free + Pro ($9/mo or $90/year) + AI credit pack ($10) + Commercial |
 | `/download` | Desktop client (macOS / Windows) + mobile (in development) |
 | `/about` | Team, philosophy, business model |
 | `/privacy` `/terms` `/refund` | Legal pages (Stripe-ready) |
@@ -52,6 +52,9 @@ All variables are exposed to the browser (`NEXT_PUBLIC_` prefix).
 | `NEXT_PUBLIC_SITE_URL` | Canonical site URL for sitemap / OG / metadata | `https://tribox.md` |
 | `NEXT_PUBLIC_API_BASE_URL` | Backend HTTP API base (auth, billing, share-links) | `https://api.tribox.md` |
 | `NEXT_PUBLIC_APP_SCHEME` | Custom URL scheme for desktop app deep-link | `tribox` |
+| `NEXT_PUBLIC_STRIPE_PRICE_ID_PRO_MONTHLY` | Optional public Stripe price ID for Pro monthly checkout selection | `price_...` |
+| `NEXT_PUBLIC_STRIPE_PRICE_ID_PRO_YEARLY` | Public Stripe price ID for Pro yearly checkout selection | `price_...` |
+| `NEXT_PUBLIC_STRIPE_PRICE_ID_AI_CREDIT_PACK` | Optional public Stripe price ID for AI credit pack checkout selection | `price_...` |
 | `NEXT_PUBLIC_RELEASE_BASE_URL` | GitHub Release base URL for installer downloads | `https://github.com/tribox-md/tribox-desktop/releases/download/v1.0.0` |
 | `NEXT_PUBLIC_RELEASE_VERSION` | Current desktop release version | `1.0.0` |
 | `NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY` | Stripe.js publishable key (optional, future use) | `pk_live_...` |

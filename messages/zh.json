@@ -77,16 +77,17 @@
     "eyebrow": "定价",
     "title": "基础免费，按需付费。",
     "subtitle1": "tribox 本身永久免费、无功能墙、无注册要求。",
-    "subtitle2": "Sync 与 Catalyst 是独立的可选附加产品，只在你需要时付费。",
+    "subtitle2": "Pro 是云同步、版本历史与 Hosted AI credits 的账户层级；credit pack 仅供 active Pro 用户按需购买。",
     "billingMonthly": "月付",
     "billingAnnual": "年付",
-    "billingSave": "省 20%",
+    "billingSave": "省 $18",
     "popular": "最受欢迎",
     "perMonth": "/月",
     "forever": "永久免费",
     "annualNote": "按年计费 {price}/年",
     "monthlyNote": "按月计费",
     "oneTimeNote": "一次性买断，无续费",
+    "annualCheckoutUnavailable": "年付结账尚未配置。请先选择月付，或邮件联系 hello@tribox.md。",
     "free": {
       "name": "tribox",
       "tagline": "基础 app —— 永久免费，无需注册",
@@ -102,47 +103,47 @@
         "社区支持"
       ]
     },
-    "sync": {
-      "name": "tribox Sync",
-      "tagline": "一个账号，多台设备，同一份笔记",
-      "cta": "订阅 Sync",
+    "pro": {
+      "name": "tribox Pro",
+      "tagline": "云同步、版本历史与 Hosted AI credits",
+      "cta": "订阅 Pro",
       "features": [
         "端到端加密的多端同步（AES-256）",
         "版本历史，最长 12 个月",
         "已删除文件可恢复",
         "可选择按文件夹同步",
         "设置、主题、插件同步",
-        "附件云存储 10 GB",
+        "每个计费周期 100 Hosted AI credits",
         "邮件技术支持"
       ]
     },
-    "catalyst": {
-      "name": "tribox Catalyst",
-      "tagline": "创始会员档 —— 一次买断，永久铭记",
-      "cta": "成为创始会员",
+    "credits": {
+      "name": "AI credit pack",
+      "tagline": "active Pro 账户可购买的一次性 Hosted AI credits",
+      "cta": "购买 credits",
       "features": [
-        "提前体验 beta 通道与新功能",
-        "官网致谢页留名（可选）",
-        "社区创始会员徽章",
-        "插件开发者优先访问",
-        "直接资助产品开发与维护"
+        "1000 Hosted AI credits",
+        "一次性购买，不是订阅",
+        "仅 active Pro 账户可购买",
+        "结账前执行地区 / provider gate",
+        "未使用 credits 保留在账户中"
       ]
     },
     "comparisonTitle": "功能对比",
-    "comparisonSubtitle": "基础 app 已包含全部本地功能。Sync 与 Catalyst 解锁额外能力。",
+    "comparisonSubtitle": "基础 app 已包含全部本地功能。Pro 解锁 hosted sync 与 hosted AI 使用。",
     "comparison": {
       "headerFeature": "功能",
       "rows": [
-        {"label": "本地 Markdown 文件存储", "free": "✓", "sync": "✓", "catalyst": "✓"},
-        {"label": "双向链接 + 图谱", "free": "✓", "sync": "✓", "catalyst": "✓"},
-        {"label": "全文搜索 + 语义检索", "free": "✓", "sync": "✓", "catalyst": "✓"},
-        {"label": "AI Copilot（本地模型）", "free": "✓", "sync": "✓", "catalyst": "✓"},
-        {"label": "快照分享", "free": "✓", "sync": "✓", "catalyst": "✓"},
-        {"label": "多端云同步", "free": "—", "sync": "✓ E2E 加密", "catalyst": "需另订"},
-        {"label": "版本历史", "free": "—", "sync": "12 个月", "catalyst": "需另订"},
-        {"label": "附件云存储", "free": "—", "sync": "10 GB", "catalyst": "需另订"},
-        {"label": "beta 通道", "free": "—", "sync": "—", "catalyst": "✓"},
-        {"label": "社区徽章", "free": "—", "sync": "—", "catalyst": "✓ 创始会员"}
+        {"label": "本地 Markdown 文件存储", "free": "✓", "pro": "✓", "credits": "需 Pro"},
+        {"label": "双向链接 + 图谱", "free": "✓", "pro": "✓", "credits": "需 Pro"},
+        {"label": "全文搜索 + 语义检索", "free": "✓", "pro": "✓", "credits": "需 Pro"},
+        {"label": "AI Copilot（本地模型）", "free": "✓", "pro": "✓", "credits": "需 Pro"},
+        {"label": "快照分享", "free": "✓", "pro": "✓", "credits": "需 Pro"},
+        {"label": "多端云同步", "free": "—", "pro": "✓ E2E 加密", "credits": "—"},
+        {"label": "版本历史", "free": "—", "pro": "12 个月", "credits": "—"},
+        {"label": "Hosted AI 包含 credits", "free": "少量试用", "pro": "每周期 100", "credits": "+1000"},
+        {"label": "AI credits 购买", "free": "—", "pro": "可购买", "credits": "一次性包"},
+        {"label": "客户支持", "free": "社区", "pro": "邮件", "credits": "账户支持"}
       ]
     },
     "commercialEyebrow": "Commercial / Self-hosted",
@@ -153,7 +154,7 @@
     "faqs": [
       {
         "q": "免费版有功能限制吗？",
-        "a": "没有。tribox 基础 app 永久免费，所有本地功能（编辑、搜索、AI Copilot、插件、快照分享）都包含在内，不强制注册账号。Sync 和 Catalyst 是独立的可选附加产品，只有当你需要时才付费。"
+        "a": "没有。tribox 基础 app 永久免费，所有本地功能（编辑、搜索、AI Copilot、插件、快照分享）都包含在内，不强制注册账号。Pro 是可选订阅，覆盖云同步、版本历史和 Hosted AI credits。"
       },
       {
         "q": "Sync 是多人协作吗？",
@@ -165,7 +166,7 @@
       },
       {
         "q": "我用 tribox 工作（商业用途）需要额外付费吗？",
-        "a": "不强制。tribox 没有\"商业墙\"，你完全可以免费用于工作。但如果你或你的公司在依赖 tribox 创造价值，欢迎订阅 Sync 或 Catalyst——付费帮助小团队持续投入开发与维护。"
+        "a": "不强制。tribox 没有\"商业墙\"，你完全可以免费用于工作。但如果你或你的公司在依赖 tribox 创造价值，欢迎订阅 Pro——付费帮助小团队持续投入开发与维护。"
       },
       {
         "q": "取消订阅后我的笔记会怎样？",
@@ -173,7 +174,7 @@
       },
       {
         "q": "支持退款吗？",
-        "a": "Sync 订阅 14 天内无理由全额退款。Catalyst 一次性买断不退款（这是支持档，类似众筹）。"
+        "a": "Pro 购买后 7 天内无理由全额退款。AI credit pack 仅在法律要求或 unused credits 可回收时退款。"
       },
       {
         "q": "学生 / 教师 / 非营利组织有折扣吗？",
@@ -205,9 +206,9 @@
     "promise5Title": "端到端加密的同步。",
     "promise5Body": "订阅 Sync 后，笔记在你本地加密后才上传——tribox 工作人员和服务器都看不到内容。",
     "businessTitle": "商业模式",
-    "businessIntro": "tribox 的运营资金来自用户付费的附加产品：",
-    "businessSync": "tribox Sync — 多端同步订阅（$4-5/月）",
-    "businessCatalyst": "tribox Catalyst — 一次性创始会员档（$35）",
+    "businessIntro": "tribox 的运营资金来自用户付费产品：",
+    "businessSync": "tribox Pro — hosted sync 与 AI credits（$9/月或 $90/年）",
+    "businessCredits": "AI credit pack — 一次性 Hosted AI credits（$10）",
     "businessCommercial": "Commercial License — 企业 / 组织许可",
     "businessClosing": "付费帮助小团队持续投入开发，把更多精力放在产品本身。基础 app 永远免费，所有本地功能不会被锁。",
     "contactTitle": "联系我们",
@@ -253,7 +254,7 @@
     "title": "隐私政策",
     "lastUpdated": "最后更新：",
     "tldrTitle": "一句话总结",
-    "tldrBody": "tribox 桌面 app 默认完全本地运行，零遥测，零分析。云端服务（Sync、Catalyst、邀请分享）仅在你主动注册账号并使用时才收集必要的最少信息，且所有笔记内容在传输和存储时均端到端加密。",
+    "tldrBody": "tribox 桌面 app 默认完全本地运行，零遥测，零分析。云端服务（Pro sync、Hosted AI credits、邀请分享）仅在你主动注册账号并使用时才收集必要的最少信息，且所有笔记内容在传输和存储时均端到端加密。",
     "section1Title": "1. 桌面客户端（基础 app）",
     "section1Body": "tribox 桌面客户端默认不向我们的服务器发送任何数据。具体来说：",
     "section1List": [
@@ -264,7 +265,7 @@
     ],
     "section1Note": "你不需要注册账号就能使用 tribox 桌面客户端。",
     "section2Title": "2. 注册账号时收集什么",
-    "section2Body": "当你订阅 Sync、Catalyst 或接受快照分享时需要注册账号。我们仅收集：",
+    "section2Body": "当你订阅 Pro、购买 AI credit pack 或接受快照分享时需要注册账号。我们仅收集：",
     "section2List": [
       "邮箱地址（用于登录、密码重置、订阅通知）",
       "加密后的密码（bcrypt 哈希，原文从不存储）",
@@ -317,8 +318,8 @@
     "section1Body": "tribox 提供以下服务：",
     "section1List": [
       "桌面客户端：本地优先的笔记与知识管理工具，永久免费、无功能限制、无注册要求",
-      "tribox Sync：付费订阅服务，提供端到端加密的多端同步、版本历史、附件云存储",
-      "tribox Catalyst：一次性买断的创始会员档，提供 beta 通道与社区徽章",
+      "tribox Pro：付费订阅服务，提供端到端加密的多端同步、版本历史与 Hosted AI credits",
+      "AI credit pack：active Pro 账户可购买的一次性 Hosted AI credits",
       "快照分享：在用户之间传递笔记副本的功能（免费）"
     ],
     "section2Title": "2. 账号责任",
@@ -330,8 +331,8 @@
     ],
     "section3Title": "3. 订阅计费与退款",
     "section3List": [
-      "订阅周期：Sync 按月或按年订阅，到期自动续费，可随时取消续费",
-      "退款政策：Sync 订阅首次付款后 14 天内可申请全额退款；Catalyst 一次性买断不退款（性质类似众筹支持）",
+      "订阅周期：Pro 按月或按年订阅，到期自动续费，可随时取消续费",
+      "退款政策：Pro 购买后 7 天内可申请全额退款；AI credit pack 仅在法律要求或 unused credits 可回收时退款",
       "价格调整：tribox 有权调整未来订阅周期的价格，调整前 30 天会邮件通知。已支付的当前周期不受影响",
       "税费：展示价格不含可能适用的当地税费"
     ],
@@ -373,15 +374,15 @@
     "lastUpdated": "最后更新：",
     "summaryTitle": "速览",
     "summaryList": [
-      "**tribox Sync**：首次付款后 14 天内无理由全额退款",
-      "**tribox Catalyst**（一次性买断）：不支持退款",
+      "**tribox Pro**：购买后 7 天内无理由全额退款",
+      "**AI credit pack**：仅在法律要求或 unused credits 可回收时退款",
       "**取消订阅**：随时可在 Customer Portal 取消，服务持续到付费周期结束"
     ],
-    "section1Title": "1. tribox Sync 订阅退款",
-    "section1Sub1": "14 天无理由退款",
-    "section1Body1": "自你<strong>首次</strong>订阅 tribox Sync 之日起 14 个自然日内，无论使用了多少，都可申请全额退款。退款会原路退回支付时使用的信用卡或其他支付方式，通常 5-10 个工作日内到账（具体取决于发卡行）。",
+    "section1Title": "1. tribox Pro 退款",
+    "section1Sub1": "7 天无理由退款",
+    "section1Body1": "自你购买 tribox Pro 之日起 7 个自然日内，无论使用了多少，都可申请全额退款。退款会原路退回支付时使用的信用卡或其他支付方式，通常 5-10 个工作日内到账（具体取决于发卡行）。",
     "section1Sub2": "续费周期不再退款",
-    "section1Body2": "14 天无理由退款<strong>仅适用于首次付款</strong>。订阅自动续费后，续费周期的费用不退款。你可以随时取消自动续费（服务持续到当前周期结束），但已支付的当前周期不会按比例退款。",
+    "section1Body2": "7 天无理由退款<strong>仅适用于首次付款</strong>。订阅自动续费后，续费周期的费用不退款。你可以随时取消自动续费（服务持续到当前周期结束），但已支付的当前周期不会按比例退款。",
     "section1Sub3": "如何申请退款",
     "section1Body3": "发邮件到 hello@tribox.md，包含：",
     "section1Body3List": [
@@ -390,26 +391,26 @@
       "简单说明退款原因（可选，但有助于我们改进产品）"
     ],
     "section1Body3End": "我们会在 2 个工作日内回复并处理。",
-    "section2Title": "2. tribox Catalyst 一次性买断",
-    "section2Body": "tribox Catalyst（创始会员档）<strong>不支持退款</strong>。原因是：",
+    "section2Title": "2. AI credit pack",
+    "section2Body": "AI credit pack 是 active Pro 账户可购买的一次性 credits。仅在法律要求或 unused credits 可回收时退款。原因是：",
     "section2List": [
-      "Catalyst 的本质类似众筹支持，购买即代表对 tribox 团队的信任投票",
-      "购买后立即解锁全部权益（beta 通道、社区徽章、致谢页留名）",
-      "这些权益一旦授予无法收回"
+      "Credits 会在 Hosted AI 使用后被消耗",
+      "Credit pack 结账只会在 Pro 与地区 / provider gate 通过后开放",
+      "已使用 credits 无法回收"
     ],
-    "section2Note": "请在购买 Catalyst 前充分了解其性质。如果你只是想试用 tribox 的功能，请使用永久免费的基础 app，不需要购买 Catalyst。",
+    "section2Note": "如果你只是想试用 tribox 的本地功能，请使用永久免费的基础 app，不需要购买 Pro 或 AI credit pack。",
     "section3Title": "3. 取消订阅 vs 退款",
     "section3Body": "这两个操作不同：",
     "section3List": [
       "**取消订阅**：停止下次自动续费，当前付费周期内服务正常使用直到到期。无须联系客服，可在 Stripe Customer Portal 自助操作",
-      "**退款**：退还已支付的费用并立即终止服务。需联系 hello@tribox.md 并符合 14 天无理由条件"
+      "**退款**：退还已支付的费用并立即终止服务。需联系 hello@tribox.md 并符合 7 天无理由条件"
     ],
     "section3Note": "大多数情况下，<strong>取消订阅</strong>是更合适的选择——可以继续使用到当前周期结束。",
     "section4Title": "4. 异常情况",
     "section4Sub1": "服务无法使用",
-    "section4Body1": "如果你的订阅期间 tribox Sync 服务持续 24 小时以上无法使用，且我们未提前通知，可申请按比例退还受影响时段的费用。",
+    "section4Body1": "如果你的订阅期间 tribox Pro hosted sync 服务持续 24 小时以上无法使用，且我们未提前通知，可申请按比例退还受影响时段的费用。",
     "section4Sub2": "误操作 / 重复扣费",
-    "section4Body2": "因系统问题导致的重复扣费、误扣费，将无条件全额退还，不受 14 天限制。发邮件附上 Stripe 收据即可。",
+    "section4Body2": "因系统问题导致的重复扣费、误扣费，将无条件全额退还，不受 7 天限制。发邮件附上 Stripe 收据即可。",
     "section4Sub3": "争议处理",
     "section4Body3": "我们倾向于通过邮件友好解决争议。如果你已经向发卡行发起 chargeback（争议扣款），我们将暂停账号直到争议结束。请优先邮件联系我们——我们处理速度通常快于 chargeback 流程。",
     "section5Title": "5. 联系",
@@ -419,7 +420,7 @@
   "login": {
     "title": "登录 tribox",
     "subtitle": "使用桌面客户端注册的账号",
-    "fromPricing": "登录后即可订阅 tribox Sync",
+    "fromPricing": "登录后即可订阅 tribox Pro",
     "emailLabel": "邮箱",
     "passwordLabel": "密码",
     "deriving": "正在派生密钥…",
@@ -467,7 +468,7 @@
     "statCurrentPlan": "当前计划",
     "statRenewalDate": "续费日期",
     "statStorage": "附件存储",
-    "upgradeButton": "升级到 Sync",
+    "upgradeButton": "升级到 Pro",
     "manageButton": "管理订阅（即将开放）",
     "manageTooltip": "Stripe Customer Portal 接入中",
     "viewAllPlans": "查看所有计划",
@@ -484,7 +485,7 @@
     "logoutWorking": "处理中…",
     "planLabels": {
       "free": "免费 · 基础 app",
-      "pro": "tribox Sync",
+      "pro": "tribox Pro",
       "team": "Commercial",
       "enterprise": "Enterprise"
     },

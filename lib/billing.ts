@@ -2,7 +2,7 @@
 //
 // 后端 POST /api/v1/billing/checkout-session：
 //   - 必须 Bearer access_token
-//   - body: { planTier?: 'pro' | 'team', priceId?: string }
+//   - body: { checkoutType?: 'subscription' | 'ai_credit_pack', planTier?: 'pro', priceId?: string }
 //   - response: { url, sessionId } — 前端直接 window.location = url 跳转
 //
 // 后端 POST /api/v1/billing/portal-session：调用 Stripe billing_portal API，
@@ -19,8 +19,17 @@ export interface CheckoutSessionResponse {
 }
 
 export interface CheckoutOptions {
-  planTier?: 'pro' | 'team'
+  checkoutType?: 'subscription' | 'ai_credit_pack'
+  planTier?: 'pro'
   priceId?: string
+}
+
+interface ApiErrorBody {
+  code?: string
+  error?: string
+  message?: string
+  detail?: string
+  reason?: string
 }
 
 /** 带认证的 fetch，自动 refresh token 一次 */
@@ -66,6 +75,7 @@ export async function createCheckoutSession(
   opts: CheckoutOptions = {},
 ): Promise<CheckoutSessionResponse> {
   const body: Record<string, string> = {}
+  if (opts.checkoutType) body.checkoutType = opts.checkoutType
   if (opts.planTier) body.planTier = opts.planTier
   if (opts.priceId) body.priceId = opts.priceId
 
@@ -75,14 +85,18 @@ export async function createCheckoutSession(
   })
 
   if (res.status === 400) {
-    const err = (await res.json().catch(() => ({}))) as { code?: string; message?: string }
-    if (err.code === 'invalid_price_selection') {
+    const err = (await res.json().catch(() => ({}))) as ApiErrorBody
+    if (err.code === 'invalid_price_selection' || err.error === 'invalid_price_selection') {
       throw new Error('当前产品价目未配置，请稍后再试或联系 hello@tribox.md')
     }
-    throw new Error(err.message ?? '请求参数有误')
+    throw new Error(err.message ?? err.detail ?? '请求参数有误')
   }
   if (!res.ok) {
-    throw new Error(`创建支付会话失败 (${res.status})`)
+    const err = (await res.json().catch(() => ({}))) as ApiErrorBody
+    if (err.error === 'credit_pack_checkout_not_available') {
+      throw new Error('AI credit pack 仅限 active Pro 且 Hosted AI 可服务地区购买')
+    }
+    throw new Error(err.message ?? err.detail ?? err.reason ?? `创建支付会话失败 (${res.status})`)
   }
 
   return (await res.json()) as CheckoutSessionResponse

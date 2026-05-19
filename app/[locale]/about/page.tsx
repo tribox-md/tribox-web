@@ -54,7 +54,7 @@ function AboutContent() {
           <p>{t('businessIntro')}</p>
           <ul className="list-disc pl-5 space-y-2 text-slate-400">
             <li>{t('businessSync')}</li>
-            <li>{t('businessCatalyst')}</li>
+            <li>{t('businessCredits')}</li>
             <li>{t('businessCommercial')}</li>
           </ul>
           <p>{t('businessClosing')}</p>

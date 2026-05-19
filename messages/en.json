@@ -77,16 +77,17 @@
     "eyebrow": "Pricing",
     "title": "Free at the core, paid when you need more.",
     "subtitle1": "tribox itself is permanently free with no feature wall and no signup.",
-    "subtitle2": "Sync and Catalyst are independent optional add-ons — pay only when you need them.",
+    "subtitle2": "Pro is the hosted sync and AI credit account tier; credit packs are optional for active Pro users.",
     "billingMonthly": "Monthly",
     "billingAnnual": "Annual",
-    "billingSave": "Save 20%",
+    "billingSave": "Save $18",
     "popular": "Most popular",
     "perMonth": "/mo",
     "forever": "Free forever",
     "annualNote": "{price}/year, billed annually",
     "monthlyNote": "billed monthly",
     "oneTimeNote": "One-time purchase",
+    "annualCheckoutUnavailable": "Annual checkout is not configured yet. Choose Monthly or email hello@tribox.md.",
     "free": {
       "name": "tribox",
       "tagline": "The base app — free forever, no account required",
@@ -102,47 +103,47 @@
         "Community support"
       ]
     },
-    "sync": {
-      "name": "tribox Sync",
-      "tagline": "One account, many devices, one set of notes",
-      "cta": "Subscribe to Sync",
+    "pro": {
+      "name": "tribox Pro",
+      "tagline": "Sync, version history, and hosted AI credits",
+      "cta": "Subscribe to Pro",
       "features": [
         "End-to-end encrypted multi-device sync (AES-256)",
         "Version history up to 12 months",
         "Recover deleted files",
         "Selective folder sync",
         "Settings, themes, plugin sync",
-        "10 GB attachment cloud storage",
+        "100 hosted AI credits per billing cycle",
         "Email technical support"
       ]
     },
-    "catalyst": {
-      "name": "tribox Catalyst",
-      "tagline": "Founder tier — one-time purchase, lasting recognition",
-      "cta": "Become a founder",
+    "credits": {
+      "name": "AI credit pack",
+      "tagline": "One-time hosted AI credits for active Pro accounts",
+      "cta": "Buy credits",
       "features": [
-        "Early access to beta channel and new features",
-        "Optional name on the credits page",
-        "Founder badge in the community",
-        "Priority access for plugin developers",
-        "Direct funding of product development"
+        "1000 hosted AI credits",
+        "One-time purchase, not a subscription",
+        "Available only to active Pro accounts",
+        "Region/provider gate applies before checkout",
+        "Unused credits remain on the account"
       ]
     },
     "comparisonTitle": "Feature comparison",
-    "comparisonSubtitle": "Base app already includes every local feature. Sync and Catalyst unlock additional capabilities.",
+    "comparisonSubtitle": "Base app already includes every local feature. Pro unlocks hosted sync and hosted AI usage.",
     "comparison": {
       "headerFeature": "Feature",
       "rows": [
-        {"label": "Local Markdown file storage", "free": "✓", "sync": "✓", "catalyst": "✓"},
-        {"label": "Bidirectional links + graph", "free": "✓", "sync": "✓", "catalyst": "✓"},
-        {"label": "Full-text + semantic search", "free": "✓", "sync": "✓", "catalyst": "✓"},
-        {"label": "AI Copilot (local models)", "free": "✓", "sync": "✓", "catalyst": "✓"},
-        {"label": "Snapshot sharing", "free": "✓", "sync": "✓", "catalyst": "✓"},
-        {"label": "Multi-device cloud sync", "free": "—", "sync": "✓ E2E encrypted", "catalyst": "Separate"},
-        {"label": "Version history", "free": "—", "sync": "12 months", "catalyst": "Separate"},
-        {"label": "Attachment cloud storage", "free": "—", "sync": "10 GB", "catalyst": "Separate"},
-        {"label": "Beta channel", "free": "—", "sync": "—", "catalyst": "✓"},
-        {"label": "Community badge", "free": "—", "sync": "—", "catalyst": "✓ Founder"}
+        {"label": "Local Markdown file storage", "free": "✓", "pro": "✓", "credits": "Requires Pro"},
+        {"label": "Bidirectional links + graph", "free": "✓", "pro": "✓", "credits": "Requires Pro"},
+        {"label": "Full-text + semantic search", "free": "✓", "pro": "✓", "credits": "Requires Pro"},
+        {"label": "AI Copilot (local models)", "free": "✓", "pro": "✓", "credits": "Requires Pro"},
+        {"label": "Snapshot sharing", "free": "✓", "pro": "✓", "credits": "Requires Pro"},
+        {"label": "Multi-device cloud sync", "free": "—", "pro": "✓ E2E encrypted", "credits": "—"},
+        {"label": "Version history", "free": "—", "pro": "12 months", "credits": "—"},
+        {"label": "Hosted AI included credits", "free": "Limited trial", "pro": "100 per cycle", "credits": "+1000"},
+        {"label": "AI credit purchase", "free": "—", "pro": "Eligible", "credits": "One-time pack"},
+        {"label": "Customer support", "free": "Community", "pro": "Email", "credits": "Account support"}
       ]
     },
     "commercialEyebrow": "Commercial / Self-hosted",
@@ -153,7 +154,7 @@
     "faqs": [
       {
         "q": "Are there feature limits in the free version?",
-        "a": "No. The tribox base app is permanently free. All local features (editing, search, AI Copilot, plugins, snapshot sharing) are included with no signup required. Sync and Catalyst are independent optional add-ons — pay only when you need them."
+        "a": "No. The tribox base app is permanently free. All local features (editing, search, AI Copilot, plugins, snapshot sharing) are included with no signup required. Pro is optional and covers hosted sync, version history, and hosted AI credits."
       },
       {
         "q": "Is Sync for team collaboration?",
@@ -165,7 +166,7 @@
       },
       {
         "q": "Do I need to pay for commercial use?",
-        "a": "Not required. tribox has no commercial wall — you can use it freely at work. But if you or your company depend on tribox to create value, subscribing to Sync or Catalyst helps a small team keep investing in development and maintenance."
+        "a": "Not required. tribox has no commercial wall — you can use it freely at work. But if you or your company depend on tribox to create value, subscribing to Pro helps a small team keep investing in development and maintenance."
       },
       {
         "q": "What happens to my notes if I cancel?",
@@ -173,7 +174,7 @@
       },
       {
         "q": "Do you offer refunds?",
-        "a": "Yes for Sync — full refund within 14 days of first payment, no questions asked. Catalyst (one-time) is non-refundable (it's a support tier, similar to crowdfunding)."
+        "a": "Yes for Pro — full refund within 7 days of purchase, no questions asked. AI credit packs are refundable only when required by law or when unused credits can be reversed."
       },
       {
         "q": "Discounts for students, teachers, or non-profits?",
@@ -205,9 +206,9 @@
     "promise5Title": "End-to-end encrypted sync.",
     "promise5Body": "When you subscribe to Sync, notes are encrypted locally before upload — tribox staff and servers cannot read the content.",
     "businessTitle": "How we sustain",
-    "businessIntro": "tribox's operating costs are covered by user-paid add-ons:",
-    "businessSync": "tribox Sync — multi-device sync subscription ($4-5/mo)",
-    "businessCatalyst": "tribox Catalyst — one-time founder tier ($35)",
+    "businessIntro": "tribox's operating costs are covered by user-paid products:",
+    "businessSync": "tribox Pro — hosted sync and AI credits ($9/mo or $90/year)",
+    "businessCredits": "AI credit pack — one-time hosted AI credits ($10)",
     "businessCommercial": "Commercial License — for businesses and organizations",
     "businessClosing": "Paid plans help a small team keep investing in development. The base app is forever free — local features will never be paywalled.",
     "contactTitle": "Contact us",
@@ -253,7 +254,7 @@
     "title": "Privacy Policy",
     "lastUpdated": "Last updated:",
     "tldrTitle": "TL;DR",
-    "tldrBody": "The tribox desktop app runs entirely locally by default — zero telemetry, zero analytics. Cloud services (Sync, Catalyst, snapshot sharing) only collect the minimum information needed when you actively register an account, and all note content is end-to-end encrypted in transit and at rest.",
+    "tldrBody": "The tribox desktop app runs entirely locally by default — zero telemetry, zero analytics. Cloud services (Pro sync, hosted AI credits, snapshot sharing) only collect the minimum information needed when you actively register an account, and all note content is end-to-end encrypted in transit and at rest.",
     "section1Title": "1. Desktop client (base app)",
     "section1Body": "The tribox desktop client does not send any data to our servers by default:",
     "section1List": [
@@ -264,7 +265,7 @@
     ],
     "section1Note": "You do not need to register an account to use the tribox desktop client.",
     "section2Title": "2. What we collect on account registration",
-    "section2Body": "When you subscribe to Sync, Catalyst, or accept a snapshot share, an account is required. We only collect:",
+    "section2Body": "When you subscribe to Pro, buy an AI credit pack, or accept a snapshot share, an account is required. We only collect:",
     "section2List": [
       "Email address (for login, password reset, subscription notifications)",
       "Encrypted password (bcrypt hash — never stored as plaintext)",
@@ -317,8 +318,8 @@
     "section1Body": "tribox offers:",
     "section1List": [
       "Desktop client — local-first notes & knowledge management tool, permanently free, no feature limits, no signup required",
-      "tribox Sync — paid subscription for E2E encrypted multi-device sync, version history, and attachment cloud storage",
-      "tribox Catalyst — one-time founder tier for beta access and community badge",
+      "tribox Pro — paid subscription for E2E encrypted multi-device sync, version history, and hosted AI credits",
+      "AI credit pack — one-time hosted AI credits for active Pro accounts",
       "Snapshot sharing — feature for passing note copies between users (free)"
     ],
     "section2Title": "2. Account responsibility",
@@ -330,8 +331,8 @@
     ],
     "section3Title": "3. Subscription and refund",
     "section3List": [
-      "Subscription cycle — Sync is billed monthly or annually with auto-renewal; cancel anytime",
-      "Refund policy — Sync subscriptions are fully refundable within 14 days of first payment; Catalyst is non-refundable (similar to crowdfunding)",
+      "Subscription cycle — Pro is billed monthly or annually with auto-renewal; cancel anytime",
+      "Refund policy — Pro subscriptions are fully refundable within 7 days of purchase; AI credit packs are refundable only when required by law or when unused credits can be reversed",
       "Price changes — tribox may adjust future-cycle prices with 30-day email notice. Current paid cycle is unaffected.",
       "Tax — Displayed prices exclude local taxes that may apply"
     ],
@@ -373,15 +374,15 @@
     "lastUpdated": "Last updated:",
     "summaryTitle": "Summary",
     "summaryList": [
-      "**tribox Sync**: full refund within 14 days of first payment, no questions asked",
-      "**tribox Catalyst** (one-time): non-refundable",
+      "**tribox Pro**: full refund within 7 days of purchase, no questions asked",
+      "**AI credit pack**: refundable only when required by law or when unused credits can be reversed",
       "**Cancellation**: anytime via Customer Portal — service continues through the current paid period"
     ],
-    "section1Title": "1. tribox Sync refund",
-    "section1Sub1": "14-day no-questions-asked refund",
-    "section1Body1": "Within 14 calendar days of your <strong>first</strong> subscription to tribox Sync, you can request a full refund regardless of usage. Refunds go back to the original payment method, typically arriving in 5-10 business days (depending on your card issuer).",
+    "section1Title": "1. tribox Pro refund",
+    "section1Sub1": "7-day no-questions-asked refund",
+    "section1Body1": "Within 7 calendar days of purchasing tribox Pro, you can request a full refund regardless of usage. Refunds go back to the original payment method, typically arriving in 5-10 business days (depending on your card issuer).",
     "section1Sub2": "Renewal cycles are not refundable",
-    "section1Body2": "The 14-day no-questions-asked refund <strong>applies only to the first payment</strong>. Once auto-renewal occurs, the renewal cycle is not refundable. You can cancel auto-renewal anytime (service continues through the paid period), but the current paid cycle is not pro-rated.",
+    "section1Body2": "The 7-day no-questions-asked refund <strong>applies only to the first payment</strong>. Once auto-renewal occurs, the renewal cycle is not refundable. You can cancel auto-renewal anytime (service continues through the paid period), but the current paid cycle is not pro-rated.",
     "section1Sub3": "How to request a refund",
     "section1Body3": "Email hello@tribox.md with:",
     "section1Body3List": [
@@ -390,26 +391,26 @@
       "A brief reason (optional but helpful for our improvement)"
     ],
     "section1Body3End": "We respond and process within 2 business days.",
-    "section2Title": "2. tribox Catalyst one-time purchase",
-    "section2Body": "tribox Catalyst (the founder tier) is <strong>non-refundable</strong>. Reasons:",
+    "section2Title": "2. AI credit pack",
+    "section2Body": "AI credit packs are one-time purchases for active Pro accounts. They are refundable only when required by law or when unused credits can be reversed. Reasons:",
     "section2List": [
-      "Catalyst is essentially a vote of support for the tribox team, similar to crowdfunding",
-      "Upon purchase, all benefits (beta channel, community badge, credits-page name) are unlocked immediately",
-      "These benefits cannot be reclaimed once granted"
+      "Credits are consumed by hosted AI usage after purchase",
+      "Credit pack checkout is available only after the Pro and region/provider gates pass",
+      "Used credits cannot be reclaimed once spent"
     ],
-    "section2Note": "Please understand the nature of Catalyst before purchase. If you just want to try tribox's features, use the permanently free base app — you don't need to buy Catalyst.",
+    "section2Note": "If you only want to try tribox's local features, use the permanently free base app. You don't need Pro or an AI credit pack.",
     "section3Title": "3. Cancellation vs refund",
     "section3Body": "These are distinct operations:",
     "section3List": [
       "**Cancellation**: stops next auto-renewal; you continue to use the service through the current cycle. No support contact needed — self-serve in Stripe Customer Portal.",
-      "**Refund**: returns money already paid and terminates service immediately. Requires emailing hello@tribox.md and meeting the 14-day window."
+      "**Refund**: returns money already paid and terminates service immediately. Requires emailing hello@tribox.md and meeting the 7-day window."
     ],
     "section3Note": "In most cases, <strong>cancellation</strong> is the better option — you keep using the service until the cycle ends.",
     "section4Title": "4. Edge cases",
     "section4Sub1": "Service unavailability",
-    "section4Body1": "If tribox Sync is unavailable for more than 24 continuous hours during your subscription, without prior notice, you can request a pro-rated refund for the affected period.",
+    "section4Body1": "If tribox Pro hosted sync is unavailable for more than 24 continuous hours during your subscription, without prior notice, you can request a pro-rated refund for the affected period.",
     "section4Sub2": "Mistakes / duplicate charges",
-    "section4Body2": "Duplicate or mistaken charges due to system issues are fully refunded unconditionally, not limited by the 14-day window. Email us with the Stripe receipt.",
+    "section4Body2": "Duplicate or mistaken charges due to system issues are fully refunded unconditionally, not limited by the 7-day window. Email us with the Stripe receipt.",
     "section4Sub3": "Disputes",
     "section4Body3": "We prefer to resolve disputes amicably by email. If you've already filed a chargeback with your card issuer, we'll suspend the account until the dispute is resolved. Please email us first — we typically respond faster than the chargeback process.",
     "section5Title": "5. Contact",
@@ -419,7 +420,7 @@
   "login": {
     "title": "Sign in to tribox",
     "subtitle": "Use the account you registered in the desktop client",
-    "fromPricing": "Sign in to subscribe to tribox Sync",
+    "fromPricing": "Sign in to subscribe to tribox Pro",
     "emailLabel": "Email",
     "passwordLabel": "Password",
     "deriving": "Deriving key…",
@@ -467,7 +468,7 @@
     "statCurrentPlan": "Current plan",
     "statRenewalDate": "Renewal date",
     "statStorage": "Attachment storage",
-    "upgradeButton": "Upgrade to Sync",
+    "upgradeButton": "Upgrade to Pro",
     "manageButton": "Manage subscription (coming soon)",
     "manageTooltip": "Stripe Customer Portal coming soon",
     "viewAllPlans": "View all plans",
@@ -484,7 +485,7 @@
     "logoutWorking": "Working…",
     "planLabels": {
       "free": "Free · base app",
-      "pro": "tribox Sync",
+      "pro": "tribox Pro",
       "team": "Commercial",
       "enterprise": "Enterprise"
     },
