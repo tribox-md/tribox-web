@@ -54,9 +54,9 @@ Clear pass condition:
 | ID | Status | Artifact | Reviewer | Notes |
 |---|---|---|---|---|
 | WEB-01 | Pending |  |  |  |
-| WEB-02 | Pending |  |  |  |
-| WEB-03 | Pending |  |  |  |
-| WEB-04 | Pending |  |  |  |
-| WEB-05 | Pending |  |  |  |
-| WEB-06 | Pending |  |  |  |
+| WEB-02 | Configured | User browser check | sc | `tribox.md` HTTPS routes open; final `curl -I` smoke still pending after next deployment. |
+| WEB-03 | Configured | User screenshots + code gate | sc | Internal `M0` wording was removed from public cookie copy; final legal smoke pending after next deployment. |
+| WEB-04 | Configured | Vercel env screenshot | sc | Product analytics remains unset/disabled for M0. |
+| WEB-05 | Configured | Vercel env screenshot | sc | `NEXT_PUBLIC_API_BASE_URL=https://api.tribox.md`; live monthly/yearly/AI credit pack price IDs configured in Vercel. |
+| WEB-06 | Configured | Stripe dashboard screenshots | sc | Checkout success/cancel routes configured; Customer Portal configured for invoices, customer info, payment method updates, and period-end cancellation. Live Checkout return test still pending after server deployment. |
 | WEB-07 | Pending |  |  |  |

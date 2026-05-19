@@ -73,7 +73,7 @@ interface FaqItem {
 export function PricingPage() {
   const t = useTranslations('pricing')
   const router = useRouter()
-  const [billing, setBilling] = useState<BillingCycle>('annual')
+  const [billing, setBilling] = useState<BillingCycle>('monthly')
   const [checkingOut, setCheckingOut] = useState<ProductId | null>(null)
   const [checkoutError, setCheckoutError] = useState<string | null>(null)
 
