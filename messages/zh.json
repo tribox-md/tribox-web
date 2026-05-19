@@ -289,7 +289,7 @@
     ],
     "section4Stripe": "Stripe 的隐私政策见：",
     "section5Title": "5. 网站的极简埋点",
-    "section5Body": "M0 默认关闭产品分析。如果之后启用可选分析，只会在用户同意后发送以下显式事件：",
+    "section5Body": "产品分析默认关闭。如果之后启用可选分析，只会在用户同意后发送以下显式事件：",
     "section5List": [
       "页面浏览（路径、referer、UA），不绑定个人身份",
       "下载按钮点击",
@@ -524,7 +524,7 @@
     "eyebrow": "法律",
     "title": "Cookie 说明",
     "lastUpdated": "最后更新：",
-    "summary": "M0 阶段 tribox.md 不设置追踪 cookie。网站可能使用浏览器本地存储保存登录状态和可选的同意偏好。",
+    "summary": "tribox.md 不设置追踪 cookie。网站可能使用浏览器本地存储保存登录状态和可选的同意偏好。",
     "sections": [
       {
         "title": "1. 当前 cookie 使用",
@@ -541,7 +541,7 @@
       },
       {
         "title": "3. 分析功能",
-        "body": "M0 默认关闭产品分析。若之后启用分析，必须经过同意闸门，并限制在显式白名单事件内。"
+        "body": "产品分析默认关闭。若之后启用分析，必须经过同意闸门，并限制在显式白名单事件内。"
       },
       {
         "title": "4. 联系",
@@ -578,7 +578,7 @@
       {
         "title": "4. 产品分析",
         "items": [
-          "仅当产品分析通过显式同意闸门启用时，才可能使用 PostHog Cloud US。M0 不包含 session replay、heatmap 或 autocapture。"
+          "仅当产品分析通过显式同意闸门启用时，才可能使用 PostHog Cloud US。当前分析范围不包含 session replay、heatmap 或 autocapture。"
         ]
       },
       {

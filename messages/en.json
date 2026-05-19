@@ -289,7 +289,7 @@
     ],
     "section4Stripe": "Stripe's privacy policy:",
     "section5Title": "5. Minimal site analytics",
-    "section5Body": "Product analytics are disabled by default for M0. If we enable optional analytics later, it will be limited to the following explicit events after consent:",
+    "section5Body": "Product analytics are disabled by default. If we enable optional analytics later, it will be limited to the following explicit events after consent:",
     "section5List": [
       "Page views (path, referer, UA), not linked to identity",
       "Download button clicks",
@@ -524,7 +524,7 @@
     "eyebrow": "Legal",
     "title": "Cookie Notice",
     "lastUpdated": "Last updated:",
-    "summary": "tribox.md does not set tracking cookies for M0. The website may use browser local storage for sign-in state and optional consent preferences.",
+    "summary": "tribox.md does not set tracking cookies. The website may use browser local storage for sign-in state and optional consent preferences.",
     "sections": [
       {
         "title": "1. Current cookie use",
@@ -541,7 +541,7 @@
       },
       {
         "title": "3. Analytics",
-        "body": "Product analytics are disabled by default for M0. If we enable analytics later, it must be consent-gated and limited to explicit allowlist events."
+        "body": "Product analytics are disabled by default. If we enable analytics later, it must be consent-gated and limited to explicit allowlist events."
       },
       {
         "title": "4. Contact",
@@ -578,7 +578,7 @@
       {
         "title": "4. Product analytics",
         "items": [
-          "PostHog Cloud US may be used only if product analytics is enabled with an explicit consent gate. Session replay, heatmaps, and autocapture are not part of M0."
+          "PostHog Cloud US may be used only if product analytics is enabled with an explicit consent gate. Session replay, heatmaps, and autocapture are not part of the current analytics scope."
         ]
       },
       {

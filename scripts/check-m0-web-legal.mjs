@@ -86,6 +86,10 @@ for (const [legacyRoute, destination] of [
 }
 
 for (const locale of ['en', 'zh', 'ja']) {
+  const rawMessages = read(`messages/${locale}.json`)
+  if (/\bM0\b/.test(rawMessages)) {
+    failures.push(`messages/${locale}.json must not expose internal phase name M0 in public copy`)
+  }
   for (const key of ['footer.privacy', 'footer.terms', 'footer.cookie', 'footer.subprocessors', 'footer.refund']) {
     requireMessage(locale, key)
   }
