@@ -18,6 +18,8 @@
     "legal": "リーガル",
     "privacy": "プライバシー",
     "terms": "利用規約",
+    "cookie": "Cookie 通知",
+    "subprocessors": "サブプロセッサ",
     "refund": "返金ポリシー",
     "contact": "お問い合わせ",
     "tagline": "Local-first by design.",
@@ -287,13 +289,13 @@
     ],
     "section4Stripe": "Stripe のプライバシーポリシー：",
     "section5Title": "5. サイトのミニマルな分析",
-    "section5Body": "tribox 公式サイト（あなたが今閲覧しているサイト）は、どのコンテンツがユーザーに役立つか把握するために以下の匿名指標を収集します：",
+    "section5Body": "M0 ではプロダクト分析をデフォルトで無効にしています。将来オプションの分析を有効にする場合も、同意後に以下の明示的イベントに限定します：",
     "section5List": [
       "ページビュー（パス、リファラ、UA）、個人特定情報と紐付けなし",
       "ダウンロードボタンのクリック",
       "料金ページの CTA クリック"
     ],
-    "section5Note": "Google Analytics や Facebook Pixel は使いません。トラッキング Cookie を設置しないため、Cookie バナーもありません。",
+    "section5Note": "Google Analytics や Facebook Pixel は使いません。このサイトはトラッキング Cookie を設定しません。将来の分析機能は同意ゲートが必須です。",
     "section6Title": "6. あなたの権利",
     "section6Body": "あなたはいつでも：",
     "section6List": [
@@ -517,6 +519,74 @@
     "needAppCta": "tribox をお持ちでない？ダウンロードページへ",
     "invalidTitle": "招待リンクは無効です",
     "invalidBody": "このリンクは期限切れ、取り消し済み、またはアクセス権がない可能性があります。招待者に新しいリンクを生成してもらってください。",
+    "backHome": "ホームに戻る"
+  },
+  "cookie": {
+    "eyebrow": "リーガル",
+    "title": "Cookie 通知",
+    "lastUpdated": "最終更新：",
+    "summary": "M0 の tribox.md はトラッキング Cookie を設定しません。Web サイトはサインイン状態や任意の同意設定のためにブラウザのローカルストレージを使う場合があります。",
+    "sections": [
+      {
+        "title": "1. 現在の Cookie 利用",
+        "body": "公開 Web サイトは広告、リターゲティング、クロスサイト追跡 Cookie を設定しません。"
+      },
+      {
+        "title": "2. ローカルストレージ",
+        "body": "一部のブラウザ側データは、お使いのデバイスにローカル保存されます。",
+        "items": [
+          "アカウントページ用の Web サインイントークン。サインアウトするまで localStorage に保存されます",
+          "将来分析機能を有効にする場合の任意の分析同意設定",
+          "サイトフレームワークが処理する言語ルーティングなどの基本設定"
+        ]
+      },
+      {
+        "title": "3. 分析",
+        "body": "M0 ではプロダクト分析をデフォルトで無効にしています。将来有効にする場合も、同意ゲートと明示的な許可イベントに限定します。"
+      },
+      {
+        "title": "4. お問い合わせ",
+        "body": "Cookie またはブラウザストレージに関するお問い合わせ：privacy@tribox.md"
+      }
+    ],
+    "backHome": "ホームに戻る"
+  },
+  "subprocessors": {
+    "eyebrow": "リーガル",
+    "title": "サブプロセッサ",
+    "lastUpdated": "最終更新：",
+    "summary": "このページは、tribox が決済、Hosted AI、クラウド基盤、任意のプロダクト分析を運用するために利用する可能性がある主な第三者サービスを示します。",
+    "sections": [
+      {
+        "title": "1. 決済",
+        "items": [
+          "Stripe：Checkout、Customer Portal、請求書、税計算、サブスクリプション状態、返金、異議申し立て"
+        ]
+      },
+      {
+        "title": "2. Hosted AI",
+        "items": [
+          "OpenRouter：tribox Hosted AI を利用する場合、サーバー側で許可されたモデルプロバイダへリクエストをルーティングします"
+        ]
+      },
+      {
+        "title": "3. インフラ",
+        "items": [
+          "AWS または互換クラウド基盤：サーバーホスティング、暗号化ストレージ、バックアップ、運用ログ",
+          "Vercel：公開 Web サイトのホスティングとデプロイ"
+        ]
+      },
+      {
+        "title": "4. プロダクト分析",
+        "items": [
+          "PostHog Cloud US は、明示的な同意ゲート付きでプロダクト分析を有効にした場合のみ利用される可能性があります。M0 には session replay、heatmap、autocapture は含まれません。"
+        ]
+      },
+      {
+        "title": "5. データ境界",
+        "body": "サブプロセッサは、あなたが選択したサービス経路でのみ使われます。デスクトップのローカル機能だけを使う場合、tribox アカウント、Stripe 決済、Hosted AI リクエストは不要です。"
+      }
+    ],
     "backHome": "ホームに戻る"
   },
   "onboarding": {

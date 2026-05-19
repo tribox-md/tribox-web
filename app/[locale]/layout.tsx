@@ -197,6 +197,16 @@ export default async function LocaleLayout({
                       </Link>
                     </li>
                     <li>
+                      <Link href="/cookie" className="hover:text-white transition-colors">
+                        {tFooter('cookie')}
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="/subprocessors" className="hover:text-white transition-colors">
+                        {tFooter('subprocessors')}
+                      </Link>
+                    </li>
+                    <li>
                       <Link href="/refund" className="hover:text-white transition-colors">
                         {tFooter('refund')}
                       </Link>

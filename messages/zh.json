@@ -18,6 +18,8 @@
     "legal": "法律",
     "privacy": "隐私政策",
     "terms": "服务条款",
+    "cookie": "Cookie 说明",
+    "subprocessors": "子处理者清单",
     "refund": "退款政策",
     "contact": "联系",
     "tagline": "Local-first by design.",
@@ -287,13 +289,13 @@
     ],
     "section4Stripe": "Stripe 的隐私政策见：",
     "section5Title": "5. 网站的极简埋点",
-    "section5Body": "tribox 官网（你正在浏览的这个站）收集以下匿名指标，用于了解哪些内容对用户有用：",
+    "section5Body": "M0 默认关闭产品分析。如果之后启用可选分析，只会在用户同意后发送以下显式事件：",
     "section5List": [
       "页面浏览（路径、referer、UA），不绑定个人身份",
       "下载按钮点击",
       "定价页 CTA 点击"
     ],
-    "section5Note": "我们不使用 Google Analytics 或 Facebook Pixel。无 cookie 弹窗，因为我们不放追踪 cookie。",
+    "section5Note": "我们不使用 Google Analytics 或 Facebook Pixel。网站不设置追踪 cookie；未来任何分析能力都必须经过同意闸门。",
     "section6Title": "6. 你的权利",
     "section6Body": "你随时可以：",
     "section6List": [
@@ -516,6 +518,74 @@
     "needAppCta": "没装 tribox？前往下载页",
     "invalidTitle": "邀请链接已失效",
     "invalidBody": "该链接可能已过期、被撤销，或者你没有访问权限。请联系邀请人重新生成链接。",
+    "backHome": "返回首页"
+  },
+  "cookie": {
+    "eyebrow": "法律",
+    "title": "Cookie 说明",
+    "lastUpdated": "最后更新：",
+    "summary": "M0 阶段 tribox.md 不设置追踪 cookie。网站可能使用浏览器本地存储保存登录状态和可选的同意偏好。",
+    "sections": [
+      {
+        "title": "1. 当前 cookie 使用",
+        "body": "公开网站不设置广告、重定向营销或跨站追踪 cookie。"
+      },
+      {
+        "title": "2. 本地存储",
+        "body": "部分浏览器侧数据会保存在你的设备本地。",
+        "items": [
+          "账号页面的 Web 登录 token，退出登录前保存在 localStorage",
+          "如果未来启用分析功能，会保存可选的分析同意偏好",
+          "站点框架处理的基础浏览器偏好，例如语言路由"
+        ]
+      },
+      {
+        "title": "3. 分析功能",
+        "body": "M0 默认关闭产品分析。若之后启用分析，必须经过同意闸门，并限制在显式白名单事件内。"
+      },
+      {
+        "title": "4. 联系",
+        "body": "Cookie 或浏览器存储相关问题：privacy@tribox.md"
+      }
+    ],
+    "backHome": "返回首页"
+  },
+  "subprocessors": {
+    "eyebrow": "法律",
+    "title": "子处理者清单",
+    "lastUpdated": "最后更新：",
+    "summary": "本页列出 tribox 可能用于计费、托管 AI、云基础设施和可选产品分析的主要第三方服务。",
+    "sections": [
+      {
+        "title": "1. 支付",
+        "items": [
+          "Stripe：Checkout、Customer Portal、发票、税费计算、订阅状态、退款和争议处理"
+        ]
+      },
+      {
+        "title": "2. 托管 AI",
+        "items": [
+          "OpenRouter：当你使用 tribox Hosted AI 时，将请求路由到服务端白名单内的模型提供方"
+        ]
+      },
+      {
+        "title": "3. 基础设施",
+        "items": [
+          "AWS 或兼容云基础设施：服务端托管、加密存储、备份和运行日志",
+          "Vercel：公开网站托管和部署"
+        ]
+      },
+      {
+        "title": "4. 产品分析",
+        "items": [
+          "仅当产品分析通过显式同意闸门启用时，才可能使用 PostHog Cloud US。M0 不包含 session replay、heatmap 或 autocapture。"
+        ]
+      },
+      {
+        "title": "5. 数据边界",
+        "body": "子处理者只用于你选择的服务路径。仅使用桌面本地功能时，不需要 tribox 账号、Stripe 支付或 Hosted AI 请求。"
+      }
+    ],
     "backHome": "返回首页"
   },
   "onboarding": {

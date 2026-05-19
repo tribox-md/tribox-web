@@ -64,6 +64,10 @@ The download page gracefully falls back to a "coming soon" placeholder when
 Push to `master` → Vercel auto-deploys. The free **Hobby** plan is sufficient
 because the repository is public.
 
+M0 website launch evidence lives in
+[`docs/M0-VERCEL-LAUNCH-RUNBOOK.md`](docs/M0-VERCEL-LAUNCH-RUNBOOK.md). Run
+`npm run -s check:m0-web-legal` before promoting a Vercel deployment.
+
 For self-hosting:
 
 ```bash

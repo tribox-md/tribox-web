@@ -18,6 +18,8 @@
     "legal": "Legal",
     "privacy": "Privacy",
     "terms": "Terms",
+    "cookie": "Cookie Notice",
+    "subprocessors": "Sub-processors",
     "refund": "Refund",
     "contact": "Contact",
     "tagline": "Local-first by design.",
@@ -287,13 +289,13 @@
     ],
     "section4Stripe": "Stripe's privacy policy:",
     "section5Title": "5. Minimal site analytics",
-    "section5Body": "The tribox website (the one you're browsing) collects the following anonymous metrics to understand what content is useful:",
+    "section5Body": "Product analytics are disabled by default for M0. If we enable optional analytics later, it will be limited to the following explicit events after consent:",
     "section5List": [
       "Page views (path, referer, UA), not linked to identity",
       "Download button clicks",
       "Pricing page CTA clicks"
     ],
-    "section5Note": "We don't use Google Analytics or Facebook Pixel. No cookie banner because we don't set tracking cookies.",
+    "section5Note": "We don't use Google Analytics or Facebook Pixel. The site does not set tracking cookies; any future analytics must be consent-gated.",
     "section6Title": "6. Your rights",
     "section6Body": "You can at any time:",
     "section6List": [
@@ -516,6 +518,74 @@
     "needAppCta": "Don't have tribox? Go to the download page",
     "invalidTitle": "Invite link no longer valid",
     "invalidBody": "This link may have expired, been revoked, or you don't have access. Please ask the inviter to generate a new link.",
+    "backHome": "Back to home"
+  },
+  "cookie": {
+    "eyebrow": "Legal",
+    "title": "Cookie Notice",
+    "lastUpdated": "Last updated:",
+    "summary": "tribox.md does not set tracking cookies for M0. The website may use browser local storage for sign-in state and optional consent preferences.",
+    "sections": [
+      {
+        "title": "1. Current cookie use",
+        "body": "The public website does not set advertising, retargeting, or cross-site tracking cookies."
+      },
+      {
+        "title": "2. Local storage",
+        "body": "Some browser-side data is stored locally on your device.",
+        "items": [
+          "Web sign-in tokens for account pages, stored in localStorage until you sign out",
+          "Optional analytics consent preference, if analytics is enabled in a future release",
+          "Basic browser preferences such as locale routing handled by the site framework"
+        ]
+      },
+      {
+        "title": "3. Analytics",
+        "body": "Product analytics are disabled by default for M0. If we enable analytics later, it must be consent-gated and limited to explicit allowlist events."
+      },
+      {
+        "title": "4. Contact",
+        "body": "Questions about cookies or browser storage: privacy@tribox.md"
+      }
+    ],
+    "backHome": "Back to home"
+  },
+  "subprocessors": {
+    "eyebrow": "Legal",
+    "title": "Sub-processors",
+    "lastUpdated": "Last updated:",
+    "summary": "This page lists the main third-party services tribox may use to operate billing, hosted AI, cloud infrastructure, and optional product analytics.",
+    "sections": [
+      {
+        "title": "1. Payment",
+        "items": [
+          "Stripe: Checkout, Customer Portal, invoices, tax calculation, subscription status, refunds, and disputes"
+        ]
+      },
+      {
+        "title": "2. Hosted AI",
+        "items": [
+          "OpenRouter: Hosted AI routing to allowlisted model providers when you use tribox Hosted AI"
+        ]
+      },
+      {
+        "title": "3. Infrastructure",
+        "items": [
+          "AWS or compatible cloud infrastructure: server hosting, encrypted storage, backups, and operational logs",
+          "Vercel: public website hosting and deployment"
+        ]
+      },
+      {
+        "title": "4. Product analytics",
+        "items": [
+          "PostHog Cloud US may be used only if product analytics is enabled with an explicit consent gate. Session replay, heatmaps, and autocapture are not part of M0."
+        ]
+      },
+      {
+        "title": "5. Data boundary",
+        "body": "Sub-processors are used only for the service path you choose. Desktop-only local use does not require a tribox account, Stripe payment, or Hosted AI request."
+      }
+    ],
     "backHome": "Back to home"
   },
   "onboarding": {

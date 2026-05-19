@@ -2,6 +2,8 @@
 
 const API_BASE = process.env.NEXT_PUBLIC_API_BASE_URL ?? 'http://localhost:8080'
 const ANALYTICS_ENDPOINT = `${API_BASE}/api/analytics`
+const ANALYTICS_ENABLED = process.env.NEXT_PUBLIC_ANALYTICS_ENABLED === 'true'
+const ANALYTICS_CONSENT_KEY = 'tribox.analyticsConsent'
 
 export type AnalyticsEvent =
   | { event: 'landing_page_view'; tokenValid: boolean; token: string }
@@ -20,6 +22,8 @@ export type AnalyticsEvent =
 export function track(data: AnalyticsEvent): void {
   // 仅在客户端运行
   if (typeof window === 'undefined') return
+  if (!ANALYTICS_ENABLED) return
+  if (!hasAnalyticsConsent()) return
 
   const payload = JSON.stringify({
     ...data,
@@ -40,5 +44,13 @@ export function track(data: AnalyticsEvent): void {
     }).catch(() => {
       // 埋点失败不影响主流程
     })
+  }
+}
+
+function hasAnalyticsConsent(): boolean {
+  try {
+    return window.localStorage.getItem(ANALYTICS_CONSENT_KEY) === 'granted'
+  } catch {
+    return false
   }
 }

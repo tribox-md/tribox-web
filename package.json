@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "type-check": "tsc --noEmit"
+    "type-check": "tsc --noEmit",
+    "check:m0-web-legal": "node scripts/check-m0-web-legal.mjs"
   },
   "dependencies": {
     "@noble/hashes": "^2.2.0",
