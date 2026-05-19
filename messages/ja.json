@@ -589,6 +589,22 @@
     ],
     "backHome": "ホームに戻る"
   },
+  "billingReturn": {
+    "success": {
+      "eyebrow": "請求",
+      "title": "お支払いを受け付けました",
+      "body": "Stripe から tribox に戻りました。Webhook の処理後、サブスクリプションまたは credits の更新が反映されるまで少し時間がかかる場合があります。",
+      "accountCta": "アカウントを開く",
+      "pricingCta": "料金ページに戻る"
+    },
+    "cancel": {
+      "eyebrow": "請求",
+      "title": "Checkout をキャンセルしました",
+      "body": "お支払いは完了していません。準備ができたら料金ページに戻るか、アカウントページで現在のプランを確認できます。",
+      "accountCta": "アカウントを開く",
+      "pricingCta": "料金ページに戻る"
+    }
+  },
   "onboarding": {
     "step": "{current}/{total}",
     "stepNames": ["用途を選択", "アプリをダウンロード", "共有を受け取る", "完了"],

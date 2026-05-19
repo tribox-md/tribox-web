@@ -54,6 +54,8 @@ for (const path of [
   'app/[locale]/cookie/page.tsx',
   'app/[locale]/subprocessors/page.tsx',
   'app/[locale]/refund/page.tsx',
+  'app/[locale]/billing/success/page.tsx',
+  'app/[locale]/billing/cancel/page.tsx',
   'docs/M0-VERCEL-LAUNCH-RUNBOOK.md',
 ]) {
   requireFile(path)
@@ -65,6 +67,14 @@ for (const route of ['/privacy', '/terms', '/cookie', '/subprocessors', '/refund
     new RegExp(`href="${route}"`),
     `footer must link to ${route}`,
   )
+  requireMatch(
+    'app/sitemap.ts',
+    new RegExp(`\\$\\{SITE_URL\\}${route}`),
+    `sitemap must include ${route}`,
+  )
+}
+
+for (const route of ['/billing/success', '/billing/cancel']) {
   requireMatch(
     'app/sitemap.ts',
     new RegExp(`\\$\\{SITE_URL\\}${route}`),
@@ -95,6 +105,14 @@ for (const locale of ['en', 'zh', 'ja']) {
   }
   requireMessageNamespace(locale, 'cookie')
   requireMessageNamespace(locale, 'subprocessors')
+  for (const path of [
+    'billingReturn.success.title',
+    'billingReturn.success.body',
+    'billingReturn.cancel.title',
+    'billingReturn.cancel.body',
+  ]) {
+    requireMessage(locale, path)
+  }
 }
 
 requireMatch(

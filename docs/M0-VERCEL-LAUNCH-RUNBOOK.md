@@ -26,6 +26,7 @@ Clear pass condition:
 - Footer links expose Privacy, Terms, Cookie Notice, Sub-processors, and Refund.
 - Sitemap includes all public legal pages.
 - Product analytics is disabled by default and requires explicit consent before sending.
+- `/billing/success` and `/billing/cancel` exist for Stripe Checkout redirects.
 - English, Chinese, and Japanese message files contain the legal footer and page namespaces.
 
 ## Manual Vercel / Website Tasks
@@ -37,7 +38,7 @@ Clear pass condition:
 | WEB-03 | Legal pages | Review `/privacy`, `/terms`, `/cookie`, `/subprocessors`, `/refund`, and `/legal/*` redirects | Footer links work in all locales, desktop app legal URLs do not 404, and pages match the M0 service surface | URL list + screenshots |
 | WEB-04 | Analytics decision | Keep `NEXT_PUBLIC_ANALYTICS_ENABLED` unset/false for M0, or enable only with a visible consent path | No analytics request is sent before consent; if disabled, no consent banner is required | Vercel env screenshot or browser network evidence |
 | WEB-05 | API URL | Confirm `NEXT_PUBLIC_API_BASE_URL` points at the intended sync-server environment | Login, account, billing, and invite flows call the intended API host | Vercel env screenshot with values redacted |
-| WEB-06 | Stripe redirects | Confirm Stripe success/cancel URLs point to public website routes used by the deployed app | Hosted Checkout returns to the expected public website URL | Stripe dashboard screenshot / Checkout session |
+| WEB-06 | Stripe redirects | Configure Stripe success/cancel URLs to `https://tribox.md/billing/success` and `https://tribox.md/billing/cancel` or equivalent deployed public routes | Hosted Checkout returns to a non-404 public website URL for both payment completion and cancellation | Stripe dashboard screenshot / Checkout session |
 | WEB-07 | Final copy smoke | Check public pricing, AI, sync, privacy, and E2EE claims against M0 wording | No zero-knowledge overclaim, no unsupported region claim, no request-count pricing promise | Reviewer sign-off |
 
 ## Stop Rules

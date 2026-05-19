@@ -588,6 +588,22 @@
     ],
     "backHome": "Back to home"
   },
+  "billingReturn": {
+    "success": {
+      "eyebrow": "Billing",
+      "title": "Payment received",
+      "body": "Stripe has returned you to tribox. It can take a short moment for the subscription or credit update to appear after the webhook is processed.",
+      "accountCta": "Open account",
+      "pricingCta": "Back to pricing"
+    },
+    "cancel": {
+      "eyebrow": "Billing",
+      "title": "Checkout canceled",
+      "body": "No payment was completed. You can return to pricing when you are ready, or open your account page to review your current plan.",
+      "accountCta": "Open account",
+      "pricingCta": "Back to pricing"
+    }
+  },
   "onboarding": {
     "step": "{current}/{total}",
     "stepNames": ["Choose use case", "Download app", "Accept share", "Done"],

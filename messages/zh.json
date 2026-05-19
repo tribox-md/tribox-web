@@ -588,6 +588,22 @@
     ],
     "backHome": "返回首页"
   },
+  "billingReturn": {
+    "success": {
+      "eyebrow": "计费",
+      "title": "付款已返回",
+      "body": "Stripe 已将你带回 tribox。订阅或 credits 更新需要等待 webhook 处理，可能会有短暂延迟。",
+      "accountCta": "打开账号页",
+      "pricingCta": "返回定价页"
+    },
+    "cancel": {
+      "eyebrow": "计费",
+      "title": "Checkout 已取消",
+      "body": "本次没有完成付款。你可以在准备好后回到定价页，也可以打开账号页查看当前方案。",
+      "accountCta": "打开账号页",
+      "pricingCta": "返回定价页"
+    }
+  },
   "onboarding": {
     "step": "{current}/{total}",
     "stepNames": ["选择用途", "下载应用", "接受分享", "完成"],
