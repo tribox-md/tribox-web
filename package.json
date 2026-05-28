@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "npm run -s check:sync-copy && next build",
     "start": "next start",
     "type-check": "tsc --noEmit",
     "check:m0-web-legal": "node scripts/check-m0-web-legal.mjs",
