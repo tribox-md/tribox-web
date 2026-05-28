@@ -16,7 +16,7 @@ a local-first notes & knowledge management desktop application.
 | `/download` | Desktop client (macOS / Windows) + mobile (in development) |
 | `/about` | Team, philosophy, business model |
 | `/privacy` `/terms` `/refund` | Legal pages (Stripe-ready) |
-| `/login` `/signup` | Sign-in via desktop-derived Argon2id; signup directs to desktop |
+| `/login` `/signup` | Account login and account-only signup via browser Argon2id; remote Sync vault setup happens later in desktop |
 | `/account` | Subscription tier · storage quota · device list · logout |
 | `/join/[token]` | Snapshot-share invite landing |
 | `/onboarding` | 4-step new-user flow |
@@ -80,9 +80,9 @@ npm run start   # serves on PORT, default 3000
 
 ## Backend dependency
 
-User-portal features (login, account, billing) talk to `tribox-sync-server`
+User-portal features (login, signup, account, billing) talk to `tribox-sync-server`
 over HTTP. The web app itself works in static mode without the backend —
-marketing and legal pages render fine; only `/login`, `/account`, and Stripe
+marketing and legal pages render fine; only `/login`, `/signup`, `/account`, and Stripe
 checkout require the backend to be reachable at `NEXT_PUBLIC_API_BASE_URL`.
 
 ## Project layout
