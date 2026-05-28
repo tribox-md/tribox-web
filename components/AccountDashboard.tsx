@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react'
 import { useTranslations, useLocale } from 'next-intl'
 import { Link, useRouter } from '@/i18n/navigation'
-import { loadTokens } from '@/lib/auth'
+import { loadTokens, type RemoteVaultSummary } from '@/lib/auth'
 import {
   getUserPlan,
   listDevices,
@@ -25,6 +25,7 @@ export function AccountDashboard({ justSubscribed }: Props) {
   const router = useRouter()
   const [state, setState] = useState<LoadState>('checking_auth')
   const [plan, setPlan] = useState<UserPlan | null>(null)
+  const [remoteVaults, setRemoteVaults] = useState<RemoteVaultSummary[]>([])
   const [devices, setDevices] = useState<DeviceInfo[]>([])
   const [error, setError] = useState<string | null>(null)
   const [logoutBusy, setLogoutBusy] = useState(false)
@@ -35,6 +36,7 @@ export function AccountDashboard({ justSubscribed }: Props) {
       router.replace('/login?redirect=/account')
       return
     }
+    setRemoteVaults(tokens.remoteVaults ?? [])
     setState('loading')
     Promise.all([getUserPlan(), listDevices()])
       .then(([p, d]) => {
@@ -103,6 +105,7 @@ export function AccountDashboard({ justSubscribed }: Props) {
   }
   const statusInfo = statusKeyMap[plan.status] ?? { key: 'statusActive', tone: 'good' as const }
   const isFree = plan.planTier === 'free'
+  const syncStatus = resolveSyncStatus(plan, remoteVaults)
 
   const dateLocale = locale === 'zh' ? 'zh-CN' : locale === 'ja' ? 'ja-JP' : 'en-US'
 
@@ -181,6 +184,23 @@ export function AccountDashboard({ justSubscribed }: Props) {
           </div>
         </section>
 
+        {/* 远程 Sync vault 状态 */}
+        <section className="mb-10 rounded-2xl border border-white/10 bg-white/5 p-6">
+          <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+            <div>
+              <h2 className="text-lg font-semibold text-white mb-1">{t('syncVaultTitle')}</h2>
+              <p className="text-sm text-slate-500">{t(syncStatus.descriptionKey)}</p>
+            </div>
+            <StatusBadge text={t(syncStatus.labelKey)} tone={syncStatus.tone} />
+          </div>
+
+          {syncStatus.kind === 'missing_pro' && (
+            <p className="mt-4 rounded-xl border border-yellow-500/20 bg-yellow-500/10 p-3 text-sm text-yellow-100">
+              {t('syncVaultSetupDesktop')}
+            </p>
+          )}
+        </section>
+
         {/* 设备列表 */}
         <section className="mb-10 rounded-2xl border border-white/10 bg-white/5 p-6">
           <h2 className="text-lg font-semibold text-white mb-1">{t('devicesTitle')}</h2>
@@ -243,6 +263,40 @@ export function AccountDashboard({ justSubscribed }: Props) {
       </div>
     </div>
   )
+}
+
+function resolveSyncStatus(plan: UserPlan, vaults: RemoteVaultSummary[]) {
+  const primaryVault = vaults[0]
+  if (primaryVault?.encryptionMode === 'standard_managed') {
+    return {
+      kind: 'standard',
+      labelKey: 'syncVaultStandard',
+      descriptionKey: 'syncVaultStandardDesc',
+      tone: 'good' as const,
+    }
+  }
+  if (primaryVault?.encryptionMode === 'private_e2ee') {
+    return {
+      kind: 'private',
+      labelKey: 'syncVaultPrivate',
+      descriptionKey: 'syncVaultPrivateDesc',
+      tone: 'good' as const,
+    }
+  }
+  if (plan.planTier === 'pro' && (plan.status === 'active' || plan.status === 'trialing')) {
+    return {
+      kind: 'missing_pro',
+      labelKey: 'syncVaultMissingPro',
+      descriptionKey: 'syncVaultMissingProDesc',
+      tone: 'warn' as const,
+    }
+  }
+  return {
+    kind: 'missing_free',
+    labelKey: 'syncVaultNotConfigured',
+    descriptionKey: 'syncVaultNotConfiguredDesc',
+    tone: 'warn' as const,
+  }
 }
 
 function StatusBadge({ text, tone }: { text: string; tone: 'good' | 'warn' | 'bad' }) {

@@ -61,9 +61,9 @@ async function authedFetch(
     try {
       const refreshed = await refresh(tokens.refreshToken)
       const next: AuthTokens = {
+        ...tokens,
         accessToken: refreshed.accessToken,
         refreshToken: refreshed.refreshToken,
-        deviceId: tokens.deviceId,
       }
       saveTokens(next)
       return authedFetch(path, init, true)

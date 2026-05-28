@@ -6,7 +6,8 @@
 //   2. 客户端 Argon2id(password, salt, kdfParams) → 32 字节 → base64
 //   3. POST /auth/login { email, serverPassword: <base64>, deviceName } → 返回 accessToken + refreshToken
 //
-// 注意：完整注册（含 vault key 生成）仍由桌面客户端完成，web 端只做"登录已有账号"。
+// Web signup only creates an account. Remote Sync vault creation is a separate
+// desktop setup step so managed and client-held key modes stay separate.
 //
 
 const API_BASE = process.env.NEXT_PUBLIC_API_BASE_URL ?? 'http://localhost:8080'
@@ -27,13 +28,32 @@ export interface AuthTokens {
   accessToken: string
   refreshToken: string
   deviceId: string
+  email?: string
+  plan?: string
+  emailVerified?: boolean
+  remoteVaults?: RemoteVaultSummary[]
+}
+
+export interface RemoteVaultSummary {
+  id: string
+  name: string
+  encryptionMode: 'standard_managed' | 'private_e2ee' | string
 }
 
 export interface AuthErrorPayload {
   status: number
-  code: 'invalid_credentials' | 'rate_limited' | 'network' | 'unknown'
+  code: 'invalid_credentials' | 'rate_limited' | 'conflict' | 'network' | 'unknown'
   message: string
 }
+
+const DEFAULT_SIGNUP_KDF_PARAMS = {
+  algorithm: 'argon2id',
+  iterations: 3,
+  memory: 65536,
+  parallelism: 4,
+} satisfies KdfParams
+
+const DEFAULT_SIGNUP_KDF_PARAMS_JSON = JSON.stringify(DEFAULT_SIGNUP_KDF_PARAMS)
 
 /** Step 1 — 拿 KDF 参数 */
 export async function getAuthParams(email: string): Promise<AuthParamsResponse> {
@@ -136,6 +156,52 @@ export async function login(
   return (await res.json()) as AuthTokens
 }
 
+export async function signup(
+  email: string,
+  password: string,
+  deviceName: string = 'tribox web',
+): Promise<AuthTokens> {
+  const salt = generateSaltBase64()
+  const serverPassword = await deriveServerPassword(password, salt, DEFAULT_SIGNUP_KDF_PARAMS_JSON)
+
+  const res = await fetch(`${API_BASE}/api/v1/auth/signup`, {
+    method: 'POST',
+    signal: AbortSignal.timeout(10000),
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      email,
+      serverPassword,
+      salt,
+      kdfParams: DEFAULT_SIGNUP_KDF_PARAMS_JSON,
+      deviceName,
+    }),
+  })
+
+  if (res.status === 409) {
+    throw {
+      status: 409,
+      code: 'conflict',
+      message: '该邮箱已经注册',
+    } satisfies AuthErrorPayload
+  }
+  if (res.status === 429) {
+    throw {
+      status: 429,
+      code: 'rate_limited',
+      message: '请求过于频繁，请稍后再试',
+    } satisfies AuthErrorPayload
+  }
+  if (!res.ok) {
+    throw {
+      status: res.status,
+      code: 'unknown',
+      message: `注册失败 (${res.status})`,
+    } satisfies AuthErrorPayload
+  }
+
+  return (await res.json()) as AuthTokens
+}
+
 /** 刷新 access token（refresh token 同时轮换） */
 export async function refresh(refreshToken: string): Promise<Omit<AuthTokens, 'deviceId'>> {
   const res = await fetch(`${API_BASE}/api/v1/auth/refresh`, {
@@ -195,4 +261,10 @@ function bytesToBase64(bytes: Uint8Array): string {
   let binary = ''
   for (let i = 0; i < bytes.length; i++) binary += String.fromCharCode(bytes[i])
   return btoa(binary)
+}
+
+function generateSaltBase64(): string {
+  const salt = new Uint8Array(16)
+  crypto.getRandomValues(salt)
+  return bytesToBase64(salt)
 }

@@ -58,7 +58,7 @@
     "capability3Body": "Tantivy full-text index plus semantic vector search. Sub-50ms queries across thousands of notes. AI Copilot cites real notes, never hallucinates content.",
     "capability4Eyebrow": "Your multi-device",
     "capability4Title": "One account, many devices, one set of notes.",
-    "capability4Body": "tribox Sync stitches together your desktop, laptop, and phone for a single person. Jot an idea on the subway, continue it at your desk — same file, end-to-end encrypted.",
+    "capability4Body": "tribox Sync stitches together your desktop, laptop, and phone for a single person. Jot an idea on the subway, continue it at your desk — same file, with the vault mode you choose in the desktop app.",
     "capability5Eyebrow": "Snapshot sharing",
     "capability5Title": "What you share is a copy, not a live document.",
     "capability5Body": "Pack up a note or a folder, send it to someone, they get their own independent local copy to modify freely. Each person's notes stay on their own disk, completely separate.",
@@ -108,7 +108,7 @@
       "tagline": "Sync, version history, and hosted AI credits",
       "cta": "Subscribe to Pro",
       "features": [
-        "End-to-end encrypted multi-device sync (AES-256)",
+        "Multi-device sync with the managed mode by default, or Private E2EE Sync when you choose client-held vault keys",
         "Version history up to 12 months",
         "Recover deleted files",
         "Selective folder sync",
@@ -162,7 +162,7 @@
       },
       {
         "q": "Are my notes uploaded to the cloud?",
-        "a": "By default, no. The base app runs entirely locally with zero telemetry. Only after you subscribe to Sync do files get uploaded — end-to-end encrypted, so we can't read them either. You can leave Sync at any time and your local files remain the source of truth."
+        "a": "By default, no. The base app runs entirely locally with zero telemetry. Files are uploaded only after you subscribe to Sync and create or connect a remote Sync vault in the desktop app. The managed mode uses service-managed key wrapping. Private E2EE Sync uses client-held vault keys."
       },
       {
         "q": "Do I need to pay for commercial use?",
@@ -203,8 +203,8 @@
     "promise3Body": "Core features don't depend on the cloud. Sync and cloud AI are optional extensions, not the core.",
     "promise4Title": "No feature wall.",
     "promise4Body": "The base app is permanently free with all local features. Sync and other paid products provide cloud infrastructure, not feature gates.",
-    "promise5Title": "End-to-end encrypted sync.",
-    "promise5Body": "When you subscribe to Sync, notes are encrypted locally before upload — tribox staff and servers cannot read the content.",
+    "promise5Title": "Sync with explicit vault modes.",
+    "promise5Body": "The default Sync setup is managed for easier onboarding. Private E2EE Sync is available when you want client-held vault keys and accept the recovery responsibility.",
     "businessTitle": "How we sustain",
     "businessIntro": "tribox's operating costs are covered by user-paid products:",
     "businessSync": "tribox Pro — hosted sync and AI credits ($9/mo or $90/year)",
@@ -254,7 +254,7 @@
     "title": "Privacy Policy",
     "lastUpdated": "Last updated:",
     "tldrTitle": "TL;DR",
-    "tldrBody": "The tribox desktop app runs entirely locally by default — zero telemetry, zero analytics. Cloud services (Pro sync, hosted AI credits, snapshot sharing) only collect the minimum information needed when you actively register an account, and all note content is end-to-end encrypted in transit and at rest.",
+    "tldrBody": "The tribox desktop app runs entirely locally by default — zero telemetry, zero analytics. Cloud services (Pro sync, hosted AI credits, snapshot sharing) only collect the minimum information needed when you actively register an account. Sync encryption depends on your vault mode: the managed mode uses service-managed key wrapping, while Private E2EE Sync uses client-held vault keys.",
     "section1Title": "1. Desktop client (base app)",
     "section1Body": "The tribox desktop client does not send any data to our servers by default:",
     "section1List": [
@@ -276,9 +276,9 @@
     "section3Title": "3. tribox Sync — encryption of note sync",
     "section3Body": "After subscribing to Sync, notes are synced between your devices through our servers — but the servers cannot read note content:",
     "section3List": [
-      "End-to-end encryption: notes are encrypted with AES-256 locally before upload, with a key derived from your password",
-      "Zero-knowledge architecture: tribox staff, server admins, and the database cannot see your note content",
-      "Forgetting your password = data cannot be recovered, unless you set up a recovery key in advance"
+      "Standard Sync: notes are encrypted for hosted sync with service-managed vault key wrapping",
+      "Private E2EE Sync: notes use client-held vault key wrapping, so recovery depends on your local secret/recovery material",
+      "Forgetting Private E2EE recovery material can make synced data unrecoverable"
     ],
     "section4Title": "4. Payment information",
     "section4Body": "Payments are processed by Stripe. We never touch your credit card number, CVV, or bank account. Stripe only relays:",
@@ -318,13 +318,13 @@
     "section1Body": "tribox offers:",
     "section1List": [
       "Desktop client — local-first notes & knowledge management tool, permanently free, no feature limits, no signup required",
-      "tribox Pro — paid subscription for E2E encrypted multi-device sync, version history, and hosted AI credits",
+      "tribox Pro — paid subscription for multi-device sync, version history, and hosted AI credits; Private E2EE Sync is an optional vault mode",
       "AI credit pack — one-time hosted AI credits for active Pro accounts",
       "Snapshot sharing — feature for passing note copies between users (free)"
     ],
     "section2Title": "2. Account responsibility",
     "section2List": [
-      "Password security is your responsibility. tribox uses zero-knowledge encryption — losing your password means sync data cannot be recovered.",
+      "Password and recovery material security are your responsibility. Managed Sync and Private E2EE Sync have different recovery properties.",
       "Simultaneous logins per account are limited by subscription tier and can be viewed/revoked in the user portal.",
       "Don't transfer, rent, or share your account. Subscription licenses are for an individual or single organizational entity, not \"team seats\".",
       "Notice any account anomaly? Change your password immediately and email hello@tribox.md."
@@ -351,7 +351,7 @@
       "Use automated scripts to abnormally consume cloud resources (API abuse, scraping, etc.)",
       "Infringe others' copyrights, trademarks, or privacy"
     ],
-    "section5Note": "Violations may result in account suspension or termination. tribox reserves the right to review content but <strong>will never proactively scan or read</strong> your notes (the zero-knowledge architecture makes this technically impossible for us either).",
+    "section5Note": "Violations may result in account suspension or termination. tribox does not proactively scan or read your notes. Private E2EE Sync further limits server-side access by using client-held vault keys.",
     "section6Title": "6. Service availability",
     "section6List": [
       "tribox strives for 99.9% monthly availability for cloud services, but does not provide an SLA guarantee",
@@ -419,7 +419,7 @@
   },
   "login": {
     "title": "Sign in to tribox",
-    "subtitle": "Use the account you registered in the desktop client",
+    "subtitle": "Use your tribox account",
     "fromPricing": "Sign in to subscribe to tribox Pro",
     "emailLabel": "Email",
     "passwordLabel": "Password",
@@ -427,7 +427,7 @@
     "submitting": "Signing in…",
     "submit": "Sign in",
     "noAccount": "Don't have a tribox account?",
-    "signupLink": "Get started",
+    "signupLink": "Create one",
     "fillBoth": "Please fill in both email and password",
     "errorDefault": "Sign-in failed. Please try again.",
     "errorInvalidCreds": "Incorrect email or password",
@@ -438,22 +438,25 @@
     "privacyLink": "Privacy Policy"
   },
   "signup": {
-    "title": "Register in the desktop client",
-    "subtitle": "tribox account involves end-to-end encryption key derivation. Registering inside the desktop client is more secure.",
-    "step1Title": "Download and install tribox",
-    "step1Body": "Pick your OS. Once installed, all local features work without any signup.",
-    "step2Title": "Register in Settings → Account",
-    "step2Body": "Open tribox Settings and choose \"Create account\". Fill in your email and password. The whole key generation happens locally.",
-    "step3Title": "Come back to tribox.md to sign in",
-    "step3Body": "Use the same email and password to sign in on the web. Subscribe to Sync or manage existing subscriptions from there.",
-    "ctaDownload": "Download desktop client",
-    "ctaLogin": "Already have an account? Sign in",
-    "whyNoWebSignup": "Why no web signup?",
-    "whyBody": "Signup involves generating end-to-end encryption keys for your vault. Doing it inside the desktop client avoids the risk of keys ever transiting the web."
+    "title": "Create a tribox account",
+    "subtitle": "Create an account for Pro, hosted Sync, and account management. Your remote Sync vault is created later in the desktop app.",
+    "emailLabel": "Email",
+    "passwordLabel": "Password",
+    "deriving": "Deriving password key...",
+    "submitting": "Creating account...",
+    "submit": "Create account",
+    "fillBoth": "Please fill in both email and password",
+    "passwordTooShort": "Password must be at least 8 characters",
+    "errorDefault": "Signup failed. Please try again.",
+    "errorConflict": "This email is already registered",
+    "errorRateLimit": "Too many requests, please try again later",
+    "hasAccount": "Already have an account?",
+    "loginLink": "Sign in",
+    "setupNote": "After creating an account, open the desktop app to create or connect a remote Sync vault. The default Sync mode is managed; Private E2EE Sync is available when you want client-held vault keys."
   },
   "account": {
-    "subscribedToast": "🎉 Subscription successful!",
-    "subscribedNote": "Sign in to the same account in your tribox desktop client to start syncing.",
+    "subscribedToast": "Subscription successful!",
+    "subscribedNote": "After creating an account, open the desktop app to create or connect a remote Sync vault.",
     "eyebrow": "Account",
     "title": "Your tribox account",
     "loadError": "Load failed",
@@ -472,6 +475,16 @@
     "manageButton": "Manage subscription (coming soon)",
     "manageTooltip": "Stripe Customer Portal coming soon",
     "viewAllPlans": "View all plans",
+    "syncVaultTitle": "Remote Sync vault",
+    "syncVaultMissingPro": "Pro active · no remote Sync vault",
+    "syncVaultMissingProDesc": "Your Pro subscription is active. Sync starts after the desktop app creates or connects a remote Sync vault.",
+    "syncVaultSetupDesktop": "Create or connect a remote Sync vault in the desktop app. This does not block Pro Checkout or account management.",
+    "syncVaultStandard": "Standard Sync active",
+    "syncVaultStandardDesc": "Standard Sync stores a service-managed wrapped vault key for easier setup and device recovery.",
+    "syncVaultPrivate": "Private E2EE Sync active",
+    "syncVaultPrivateDesc": "Private E2EE Sync uses client-held vault key wrapping. Keep your recovery material safe.",
+    "syncVaultNotConfigured": "Sync vault not configured",
+    "syncVaultNotConfiguredDesc": "Create an account first, then use the desktop app to create or connect a remote Sync vault.",
     "devicesTitle": "Logged-in devices",
     "devicesSubtitle": "{count} devices · max 20 per account",
     "deviceCurrent": "current",

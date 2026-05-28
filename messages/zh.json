@@ -58,7 +58,7 @@
     "capability3Body": "Tantivy 全文索引 + 语义向量检索，几千篇笔记下查询不超过 50ms。AI Copilot 引用真实笔记内容，不臆造。",
     "capability4Eyebrow": "你的多端",
     "capability4Title": "一个账号，多台设备，同一份笔记。",
-    "capability4Body": "tribox Sync 服务于你一个人在桌面、笔电、手机之间的衔接。在地铁上记下灵感，回到桌面继续展开——同一份文件，端到端加密。",
+    "capability4Body": "tribox Sync 服务于你一个人在桌面、笔电、手机之间的衔接。在地铁上记下灵感，回到桌面继续展开——同一份文件，并使用你在桌面端选择的 vault 模式。",
     "capability5Eyebrow": "快照分享",
     "capability5Title": "发出去的是副本，不是活文档。",
     "capability5Body": "把一个笔记或一组笔记打包发给别人，接收者得到自己的独立副本，可以自由修改和管理。每个人的笔记仍在各自的本地磁盘上，互不干扰。",
@@ -108,7 +108,7 @@
       "tagline": "云同步、版本历史与 Hosted AI credits",
       "cta": "订阅 Pro",
       "features": [
-        "端到端加密的多端同步（AES-256）",
+        "默认托管模式的多端同步，也可选择客户端持有 vault key 的 Private E2EE Sync",
         "版本历史，最长 12 个月",
         "已删除文件可恢复",
         "可选择按文件夹同步",
@@ -162,7 +162,7 @@
       },
       {
         "q": "我的笔记会被上传到云端吗？",
-        "a": "默认不会。基础 app 完全本地运行，零遥测。只有当你主动订阅 Sync 后，文件才会以端到端加密的形式同步到 tribox 服务器（我们也读不到你的内容）。你可以随时退出 Sync，本地文件永远是真相源。"
+        "a": "默认不会。基础 app 完全本地运行，零遥测。只有当你订阅 Sync 并在桌面端创建或连接远程 Sync vault 后，文件才会上传。托管模式使用服务端管理的 key wrapping。Private E2EE Sync 使用客户端持有的 vault key。"
       },
       {
         "q": "我用 tribox 工作（商业用途）需要额外付费吗？",
@@ -203,8 +203,8 @@
     "promise3Body": "所有核心功能不依赖云端。同步、AI 云端等可选服务是延伸，不是核心。",
     "promise4Title": "没有\"功能墙\"。",
     "promise4Body": "基础 app 永久免费，所有本地功能都包含。Sync 等付费产品只提供云端基础设施，不是功能限制。",
-    "promise5Title": "端到端加密的同步。",
-    "promise5Body": "订阅 Sync 后，笔记在你本地加密后才上传——tribox 工作人员和服务器都看不到内容。",
+    "promise5Title": "明确区分 vault 模式的同步。",
+    "promise5Body": "默认 Sync 设置是便于上手的托管模式；如果你希望客户端持有 vault key，并接受对应恢复责任，可以选择 Private E2EE Sync。",
     "businessTitle": "商业模式",
     "businessIntro": "tribox 的运营资金来自用户付费产品：",
     "businessSync": "tribox Pro — hosted sync 与 AI credits（$9/月或 $90/年）",
@@ -254,7 +254,7 @@
     "title": "隐私政策",
     "lastUpdated": "最后更新：",
     "tldrTitle": "一句话总结",
-    "tldrBody": "tribox 桌面 app 默认完全本地运行，零遥测，零分析。云端服务（Pro sync、Hosted AI credits、邀请分享）仅在你主动注册账号并使用时才收集必要的最少信息，且所有笔记内容在传输和存储时均端到端加密。",
+    "tldrBody": "tribox 桌面 app 默认完全本地运行，零遥测，零分析。云端服务（Pro sync、Hosted AI credits、邀请分享）仅在你主动注册账号并使用时才收集必要的最少信息。同步加密取决于 vault 模式：托管模式使用服务端管理的 key wrapping；Private E2EE Sync 使用客户端持有的 vault key。",
     "section1Title": "1. 桌面客户端（基础 app）",
     "section1Body": "tribox 桌面客户端默认不向我们的服务器发送任何数据。具体来说：",
     "section1List": [
@@ -276,9 +276,9 @@
     "section3Title": "3. tribox Sync — 笔记同步的加密",
     "section3Body": "订阅 Sync 后，你的笔记会通过我们的服务器在你的设备之间同步。但服务器无法读取你的笔记内容：",
     "section3List": [
-      "端到端加密：所有笔记在你的本地设备用 AES-256 加密后才上传，密钥从你的密码派生",
-      "零知识架构：tribox 工作人员、服务器管理员、数据库都看不到你的笔记原文",
-      "忘记密码 = 数据无法找回，除非你提前设置了恢复密钥"
+      "Standard Sync：托管同步使用服务端管理的 vault key wrapping",
+      "Private E2EE Sync：使用客户端持有的 vault key wrapping，恢复依赖你的本地 secret / 恢复材料",
+      "丢失 Private E2EE 恢复材料可能导致同步数据无法恢复"
     ],
     "section4Title": "4. 支付信息",
     "section4Body": "付款通过 Stripe 处理。我们不接触你的信用卡号、CVV 或银行账户。Stripe 只把以下信息回传给我们：",
@@ -318,13 +318,13 @@
     "section1Body": "tribox 提供以下服务：",
     "section1List": [
       "桌面客户端：本地优先的笔记与知识管理工具，永久免费、无功能限制、无注册要求",
-      "tribox Pro：付费订阅服务，提供端到端加密的多端同步、版本历史与 Hosted AI credits",
+      "tribox Pro：付费订阅服务，提供多端同步、版本历史与 Hosted AI credits；Private E2EE Sync 是可选 vault 模式",
       "AI credit pack：active Pro 账户可购买的一次性 Hosted AI credits",
       "快照分享：在用户之间传递笔记副本的功能（免费）"
     ],
     "section2Title": "2. 账号责任",
     "section2List": [
-      "账号密码由你自行保管。tribox 采用零知识加密，密码丢失意味着同步数据无法找回。",
+      "账号密码和恢复材料由你自行保管。托管同步与 Private E2EE Sync 的恢复属性不同。",
       "同一账号同时登录的设备数受订阅档位限制，可在用户中心查看与撤销。",
       "禁止将账号转让、出租、共享给他人。订阅许可面向个人或单一组织实体，不是\"团队席位\"。",
       "如发现账号异常，应立即修改密码并联系 hello@tribox.md。"
@@ -351,7 +351,7 @@
       "使用自动化脚本异常消耗云端资源（API 滥用、爬取等）",
       "侵犯他人版权、商标、隐私权"
     ],
-    "section5Note": "违反上述条款可能导致账号被暂停或终止。tribox 保留对内容的最终审核权，但<strong>不会主动扫描或读取</strong>你的笔记内容（零知识架构使我们也读不到）。",
+    "section5Note": "违反上述条款可能导致账号被暂停或终止。tribox 不会主动扫描或读取你的笔记内容。Private E2EE Sync 通过客户端持有 vault key 进一步限制服务端访问。",
     "section6Title": "6. 服务可用性",
     "section6List": [
       "tribox 努力维持云端服务 99.9% 的月度可用性，但不提供 SLA 担保",
@@ -419,7 +419,7 @@
   },
   "login": {
     "title": "登录 tribox",
-    "subtitle": "使用桌面客户端注册的账号",
+    "subtitle": "使用你的 tribox 账号",
     "fromPricing": "登录后即可订阅 tribox Pro",
     "emailLabel": "邮箱",
     "passwordLabel": "密码",
@@ -427,7 +427,7 @@
     "submitting": "登录中…",
     "submit": "登录",
     "noAccount": "还没有 tribox 账号？",
-    "signupLink": "注册指引",
+    "signupLink": "创建账号",
     "fillBoth": "请填写邮箱和密码",
     "errorDefault": "登录失败，请重试",
     "errorInvalidCreds": "邮箱或密码错误",
@@ -438,22 +438,25 @@
     "privacyLink": "隐私政策"
   },
   "signup": {
-    "title": "在桌面客户端注册",
-    "subtitle": "tribox 账号涉及端到端加密的密钥派生，注册流程在桌面客户端完成更安全。",
-    "step1Title": "下载并安装 tribox",
-    "step1Body": "选择适合你的操作系统，安装后无需注册即可开始使用全部本地功能。",
-    "step2Title": "在设置 → 账号中注册",
-    "step2Body": "打开 tribox 设置面板，选择「创建账号」，填写邮箱和密码。整个过程在你本地完成密钥生成。",
-    "step3Title": "回到 tribox.md 登录",
-    "step3Body": "用同一组邮箱密码在网页登录，即可订阅 Sync 或管理已有订阅。",
-    "ctaDownload": "下载桌面客户端",
-    "ctaLogin": "已有账号？登录",
-    "whyNoWebSignup": "为什么不在网页直接注册？",
-    "whyBody": "注册涉及为你的 vault 生成端到端加密密钥，由桌面客户端完成可避免密钥经网页传输的风险。"
+    "title": "创建 tribox 账号",
+    "subtitle": "账号用于 Pro、Hosted Sync 和账号管理。远程 Sync vault 会在桌面端单独创建。",
+    "emailLabel": "邮箱",
+    "passwordLabel": "密码",
+    "deriving": "正在派生密码密钥...",
+    "submitting": "正在创建账号...",
+    "submit": "创建账号",
+    "fillBoth": "请填写邮箱和密码",
+    "passwordTooShort": "密码至少需要 8 个字符",
+    "errorDefault": "注册失败，请重试",
+    "errorConflict": "该邮箱已经注册",
+    "errorRateLimit": "请求过于频繁，请稍后再试",
+    "hasAccount": "已有账号？",
+    "loginLink": "登录",
+    "setupNote": "创建账号后，请在桌面端创建或连接远程 Sync vault。默认 Sync 模式是托管模式；需要客户端持有 vault key 时再选择 Private E2EE Sync。"
   },
   "account": {
-    "subscribedToast": "🎉 订阅成功！",
-    "subscribedNote": "在你的桌面 tribox 客户端登录同一账号即可开始同步。",
+    "subscribedToast": "订阅成功！",
+    "subscribedNote": "创建账号后，请在桌面端创建或连接远程 Sync vault。",
     "eyebrow": "账号",
     "title": "你的 tribox 账号",
     "loadError": "加载失败",
@@ -472,6 +475,16 @@
     "manageButton": "管理订阅（即将开放）",
     "manageTooltip": "Stripe Customer Portal 接入中",
     "viewAllPlans": "查看所有计划",
+    "syncVaultTitle": "远程 Sync vault",
+    "syncVaultMissingPro": "Pro 已激活 · 尚无远程 Sync vault",
+    "syncVaultMissingProDesc": "你的 Pro 订阅已激活。同步会在桌面端创建或连接远程 Sync vault 后开始。",
+    "syncVaultSetupDesktop": "请在桌面端创建或连接远程 Sync vault。这不会阻断 Pro Checkout 或账号管理。",
+    "syncVaultStandard": "Standard Sync 已启用",
+    "syncVaultStandardDesc": "Standard Sync 使用服务端管理的 wrapped vault key，便于设置和设备恢复。",
+    "syncVaultPrivate": "Private E2EE Sync 已启用",
+    "syncVaultPrivateDesc": "Private E2EE Sync 使用客户端持有的 vault key wrapping。请妥善保存恢复材料。",
+    "syncVaultNotConfigured": "尚未配置 Sync vault",
+    "syncVaultNotConfiguredDesc": "先创建账号，再在桌面端创建或连接远程 Sync vault。",
     "devicesTitle": "已登录设备",
     "devicesSubtitle": "{count} 台设备 · 单个用户最多 20 台",
     "deviceCurrent": "当前",

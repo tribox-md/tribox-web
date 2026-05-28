@@ -7,7 +7,7 @@ const ANALYTICS_CONSENT_KEY = 'tribox.analyticsConsent'
 
 export type AnalyticsEvent =
   | { event: 'landing_page_view'; tokenValid: boolean; token: string }
-  | { event: 'cta_click'; cta: 'download' | 'open_app' | 'pricing'; token?: string }
+  | { event: 'cta_click'; cta: 'download' | 'open_app' | 'pricing' | 'signup'; token?: string }
   | {
       event: 'onboarding_step_complete'
       step: 'use_case' | 'download' | 'space_join'
