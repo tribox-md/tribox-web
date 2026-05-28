@@ -108,7 +108,8 @@
       "tagline": "Sync, version history, and hosted AI credits",
       "cta": "Subscribe to Pro",
       "features": [
-        "Multi-device sync with the managed mode by default, or Private E2EE Sync when you choose client-held vault keys",
+        "Multi-device sync with the managed mode by default",
+        "Private E2EE Sync is available when you choose client-held vault keys",
         "Version history up to 12 months",
         "Recover deleted files",
         "Selective folder sync",
@@ -139,7 +140,7 @@
         {"label": "Full-text + semantic search", "free": "✓", "pro": "✓", "credits": "Requires Pro"},
         {"label": "AI Copilot (local models)", "free": "✓", "pro": "✓", "credits": "Requires Pro"},
         {"label": "Snapshot sharing", "free": "✓", "pro": "✓", "credits": "Requires Pro"},
-        {"label": "Multi-device cloud sync", "free": "—", "pro": "✓ E2E encrypted", "credits": "—"},
+        {"label": "Multi-device cloud sync", "free": "—", "pro": "✓ encrypted by vault mode", "credits": "—"},
         {"label": "Version history", "free": "—", "pro": "12 months", "credits": "—"},
         {"label": "Hosted AI included credits", "free": "Limited trial", "pro": "100 per cycle", "credits": "+1000"},
         {"label": "AI credit purchase", "free": "—", "pro": "Eligible", "credits": "One-time pack"},
@@ -254,7 +255,7 @@
     "title": "Privacy Policy",
     "lastUpdated": "Last updated:",
     "tldrTitle": "TL;DR",
-    "tldrBody": "The tribox desktop app runs entirely locally by default — zero telemetry, zero analytics. Cloud services (Pro sync, hosted AI credits, snapshot sharing) only collect the minimum information needed when you actively register an account. Sync encryption depends on your vault mode: the managed mode uses service-managed key wrapping, while Private E2EE Sync uses client-held vault keys.",
+    "tldrBody": "The tribox desktop app runs entirely locally by default — zero telemetry, zero analytics. Cloud services only collect the minimum information needed when you actively register an account. Sync encryption depends on your vault mode: the managed mode uses service-managed key wrapping, while Private E2EE Sync uses client-held vault keys. Hosted AI credits are a separate cloud service and are not part of the E2EE promise.",
     "section1Title": "1. Desktop client (base app)",
     "section1Body": "The tribox desktop client does not send any data to our servers by default:",
     "section1List": [
@@ -318,7 +319,8 @@
     "section1Body": "tribox offers:",
     "section1List": [
       "Desktop client — local-first notes & knowledge management tool, permanently free, no feature limits, no signup required",
-      "tribox Pro — paid subscription for multi-device sync, version history, and hosted AI credits; Private E2EE Sync is an optional vault mode",
+      "tribox Pro — paid subscription for multi-device sync, version history, and hosted AI credits",
+      "Private E2EE Sync — optional vault mode for client-held Sync keys",
       "AI credit pack — one-time hosted AI credits for active Pro accounts",
       "Snapshot sharing — feature for passing note copies between users (free)"
     ],

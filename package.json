@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "type-check": "tsc --noEmit",
-    "check:m0-web-legal": "node scripts/check-m0-web-legal.mjs"
+    "check:m0-web-legal": "node scripts/check-m0-web-legal.mjs",
+    "check:sync-copy": "node scripts/check-sync-copy.mjs"
   },
   "dependencies": {
     "@noble/hashes": "^2.2.0",

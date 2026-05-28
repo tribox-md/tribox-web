@@ -108,7 +108,8 @@
       "tagline": "クラウド同期、バージョン履歴、Hosted AI credits",
       "cta": "Pro を購読",
       "features": [
-        "標準はマネージドモード。クライアント保持の vault key が必要な場合は Private E2EE Sync も選択可能",
+        "標準はマネージドモードのマルチデバイス同期",
+        "クライアント保持の vault key が必要な場合は Private E2EE Sync も選択可能",
         "最長 12 か月のバージョン履歴",
         "削除ファイルの復元",
         "フォルダ単位の同期選択",
@@ -139,7 +140,7 @@
         {"label": "全文 + セマンティック検索", "free": "✓", "pro": "✓", "credits": "Pro 必須"},
         {"label": "AI Copilot（ローカルモデル）", "free": "✓", "pro": "✓", "credits": "Pro 必須"},
         {"label": "スナップショット共有", "free": "✓", "pro": "✓", "credits": "Pro 必須"},
-        {"label": "マルチデバイスクラウド同期", "free": "—", "pro": "✓ E2E 暗号化", "credits": "—"},
+        {"label": "マルチデバイスクラウド同期", "free": "—", "pro": "✓ vault モードに応じて暗号化", "credits": "—"},
         {"label": "バージョン履歴", "free": "—", "pro": "12 か月", "credits": "—"},
         {"label": "Hosted AI 付属 credits", "free": "少量トライアル", "pro": "サイクルごとに 100", "credits": "+1000"},
         {"label": "AI credits 購入", "free": "—", "pro": "購入可能", "credits": "一回限り"},
@@ -254,7 +255,7 @@
     "title": "プライバシーポリシー",
     "lastUpdated": "最終更新：",
     "tldrTitle": "要約",
-    "tldrBody": "tribox デスクトップアプリはデフォルトで完全にローカル動作し、テレメトリ・分析もありません。クラウドサービス（Pro sync、Hosted AI credits、共有招待）はアカウント登録時に必要最小限の情報のみを収集します。Sync の暗号化は vault モードによって異なります。マネージドモードはサービス管理の key wrapping を使い、Private E2EE Sync はクライアント保持の vault key を使います。",
+    "tldrBody": "tribox デスクトップアプリはデフォルトで完全にローカル動作し、テレメトリ・分析もありません。クラウドサービスはアカウント登録時に必要最小限の情報のみを収集します。Sync の暗号化は vault モードによって異なります。マネージドモードはサービス管理の key wrapping を使い、Private E2EE Sync はクライアント保持の vault key を使います。Hosted AI credits は別のクラウドサービスであり、E2EE の約束には含まれません。",
     "section1Title": "1. デスクトップクライアント（基本アプリ）",
     "section1Body": "tribox デスクトップクライアントは、デフォルトで私たちのサーバーにデータを送信しません：",
     "section1List": [
@@ -318,7 +319,8 @@
     "section1Body": "tribox は以下のサービスを提供します：",
     "section1List": [
       "デスクトップクライアント：ローカルファーストのノート・ナレッジ管理ツール、永久無料、機能制限なし、登録不要",
-      "tribox Pro：マルチデバイス同期、バージョン履歴、Hosted AI credits を提供する有料サブスクリプション。Private E2EE Sync は任意の vault モードです",
+      "tribox Pro：マルチデバイス同期、バージョン履歴、Hosted AI credits を提供する有料サブスクリプション",
+      "Private E2EE Sync：クライアント保持の Sync key を使う任意の vault モード",
       "AI credit pack：active Pro アカウント向けの一回限りの Hosted AI credits",
       "スナップショット共有：ユーザー間でノートのコピーを受け渡す機能（無料）"
     ],
