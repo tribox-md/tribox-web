@@ -1,7 +1,8 @@
 import { useTranslations } from 'next-intl'
 import { Link } from '@/i18n/navigation'
+import { accountPath } from '@/lib/account-origin'
 
-export function BillingReturnPage({ status }: { status: 'success' | 'cancel' }) {
+export function BillingReturnPage({ status, locale }: { status: 'success' | 'cancel'; locale: string }) {
   const t = useTranslations(`billingReturn.${status}`)
 
   return (
@@ -15,12 +16,12 @@ export function BillingReturnPage({ status }: { status: 'success' | 'cancel' }) 
         </h1>
         <p className="text-lg text-slate-400 leading-relaxed mb-10">{t('body')}</p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-          <Link
-            href="/account"
+          <a
+            href={accountPath('/account', locale)}
             className="rounded-xl bg-indigo-500 hover:bg-indigo-400 px-5 py-3 text-sm font-semibold text-white transition-colors"
           >
             {t('accountCta')}
-          </Link>
+          </a>
           <Link
             href="/pricing"
             className="rounded-xl border border-white/10 px-5 py-3 text-sm font-semibold text-slate-200 hover:bg-white/5 transition-colors"

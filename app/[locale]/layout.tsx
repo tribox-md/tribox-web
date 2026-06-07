@@ -6,6 +6,7 @@ import { notFound } from 'next/navigation'
 import { routing, type Locale } from '@/i18n/routing'
 import { Link } from '@/i18n/navigation'
 import { LanguageSwitcher } from '@/components/LanguageSwitcher'
+import { accountPath } from '@/lib/account-origin'
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://tribox.md'
 
@@ -88,6 +89,7 @@ export default async function LocaleLayout({
   const tFooter = await getTranslations({ locale, namespace: 'footer' })
 
   const htmlLang = locale === 'zh' ? 'zh-CN' : locale === 'ja' ? 'ja-JP' : 'en'
+  const accountHref = accountPath('/account', locale)
 
   return (
     <html lang={htmlLang}>
@@ -125,12 +127,12 @@ export default async function LocaleLayout({
                   >
                     {t('about')}
                   </Link>
-                  <Link
-                    href="/account"
+                  <a
+                    href={accountHref}
                     className="px-3 py-2 text-sm text-slate-400 hover:text-white transition-colors rounded-lg hover:bg-white/5"
                   >
                     {t('account')}
-                  </Link>
+                  </a>
                   <LanguageSwitcher />
                   <Link
                     href="/download"

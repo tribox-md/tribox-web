@@ -1,11 +1,10 @@
 'use client'
 
 import { useState } from 'react'
-import { useTranslations } from 'next-intl'
-import { Link, useRouter } from '@/i18n/navigation'
+import { useLocale, useTranslations } from 'next-intl'
+import { Link } from '@/i18n/navigation'
 import { track } from '@/lib/analytics'
-import { startCheckout } from '@/lib/billing'
-import { isLoggedIn } from '@/lib/auth'
+import { accountPath } from '@/lib/account-origin'
 
 type BillingCycle = 'monthly' | 'annual'
 type ProductId = 'free' | 'pro' | 'credits' | 'commercial'
@@ -52,12 +51,6 @@ const PRODUCTS: Product[] = [
   },
 ]
 
-const PRO_PRICE_IDS: Partial<Record<BillingCycle, string>> = {
-  monthly: process.env.NEXT_PUBLIC_STRIPE_PRICE_ID_PRO_MONTHLY?.trim(),
-  annual: process.env.NEXT_PUBLIC_STRIPE_PRICE_ID_PRO_YEARLY?.trim(),
-}
-const AI_CREDIT_PACK_PRICE_ID = process.env.NEXT_PUBLIC_STRIPE_PRICE_ID_AI_CREDIT_PACK?.trim()
-
 interface ComparisonRow {
   label: string
   free: string
@@ -72,17 +65,14 @@ interface FaqItem {
 
 export function PricingPage() {
   const t = useTranslations('pricing')
-  const router = useRouter()
+  const locale = useLocale()
   const [billing, setBilling] = useState<BillingCycle>('monthly')
-  const [checkingOut, setCheckingOut] = useState<ProductId | null>(null)
-  const [checkoutError, setCheckoutError] = useState<string | null>(null)
 
   const rows = t.raw('comparison.rows') as ComparisonRow[]
   const faqs = t.raw('faqs') as FaqItem[]
 
-  async function handleCta(productId: ProductId) {
+  function handleCta(productId: ProductId) {
     track({ event: 'cta_click', cta: 'pricing' })
-    setCheckoutError(null)
 
     if (productId === 'free') {
       window.location.href = '/download'
@@ -92,40 +82,7 @@ export function PricingPage() {
       window.location.href = 'mailto:hello@tribox.md?subject=Commercial%20License%20Inquiry'
       return
     }
-    if (!isLoggedIn()) {
-      router.push(`/login?redirect=/pricing&from=pricing`)
-      return
-    }
-
-    setCheckingOut(productId)
-    try {
-      if (productId === 'credits') {
-        await startCheckout({
-          checkoutType: 'ai_credit_pack',
-          ...(AI_CREDIT_PACK_PRICE_ID ? { priceId: AI_CREDIT_PACK_PRICE_ID } : {}),
-        })
-      } else {
-        const priceId = PRO_PRICE_IDS[billing]
-        if (billing === 'annual' && !priceId) {
-          setCheckoutError(t('annualCheckoutUnavailable'))
-          setCheckingOut(null)
-          return
-        }
-        await startCheckout({
-          checkoutType: 'subscription',
-          planTier: 'pro',
-          ...(priceId ? { priceId } : {}),
-        })
-      }
-    } catch (e) {
-      const msg = e instanceof Error ? e.message : String(e)
-      if (msg.includes('需要登录') || msg.includes('会话已过期')) {
-        router.push('/login?redirect=/pricing&from=pricing')
-        return
-      }
-      setCheckoutError(msg)
-      setCheckingOut(null)
-    }
+    window.location.href = accountPath('/login?redirect=/account/billing&from=pricing', locale)
   }
 
   return (
@@ -170,13 +127,6 @@ export function PricingPage() {
             </button>
           </div>
         </div>
-
-        {/* 错误条 */}
-        {checkoutError && (
-          <div className="max-w-2xl mx-auto mb-8 rounded-xl border border-red-500/30 bg-red-500/10 p-4 text-sm text-red-300 text-center">
-            {checkoutError}
-          </div>
-        )}
 
         {/* 产品卡片 */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-20">
@@ -238,14 +188,13 @@ export function PricingPage() {
                 <button
                   type="button"
                   onClick={() => handleCta(product.id)}
-                  disabled={checkingOut !== null}
-                  className={`block w-full rounded-xl px-6 py-3 text-center text-sm font-semibold transition-colors disabled:opacity-50 disabled:cursor-not-allowed ${
+                  className={`block w-full rounded-xl px-6 py-3 text-center text-sm font-semibold transition-colors ${
                     product.ctaStyle === 'primary'
                       ? 'bg-indigo-500 hover:bg-indigo-400 text-white shadow-lg shadow-indigo-500/20'
                       : 'border border-white/20 hover:border-white/40 text-slate-300 hover:text-white'
                   }`}
                 >
-                  {checkingOut === product.id ? '…' : t(`${product.id}.cta`)}
+                  {t(`${product.id}.cta`)}
                 </button>
               </div>
             )

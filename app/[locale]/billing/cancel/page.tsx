@@ -14,5 +14,5 @@ export async function generateMetadata({ params }: Props) {
 export default async function BillingCancelPage({ params }: Props) {
   const { locale } = await params
   setRequestLocale(locale)
-  return <BillingReturnPage status="cancel" />
+  return <BillingReturnPage status="cancel" locale={locale} />
 }

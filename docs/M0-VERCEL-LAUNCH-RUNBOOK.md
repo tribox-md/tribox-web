@@ -28,6 +28,7 @@ Clear pass condition:
 - Product analytics is disabled by default and requires explicit consent before sending.
 - `/billing/success` and `/billing/cancel` exist for Stripe Checkout redirects.
 - Pricing page displays Pro `$9/month`, Pro `$90/year`, AI credit pack `$10`, and a 7-day Pro refund window.
+- `/login`, `/signup`, and `/account` redirect to `NEXT_PUBLIC_ACCOUNT_ORIGIN`.
 - English, Chinese, and Japanese message files contain the legal footer and page namespaces.
 
 ## Manual Vercel / Website Tasks
@@ -38,7 +39,7 @@ Clear pass condition:
 | WEB-02 | Domain routing | Confirm `tribox.md` and localized routes resolve on HTTPS | `/`, `/zh`, `/ja`, and legal pages return 200 over HTTPS | Browser screenshots or `curl -I` output |
 | WEB-03 | Legal pages | Review `/privacy`, `/terms`, `/cookie`, `/subprocessors`, `/refund`, and `/legal/*` redirects | Footer links work in all locales, desktop app legal URLs do not 404, and pages match the M0 service surface | URL list + screenshots |
 | WEB-04 | Analytics decision | Keep `NEXT_PUBLIC_ANALYTICS_ENABLED` unset/false for M0, or enable only with a visible consent path | No analytics request is sent before consent; if disabled, no consent banner is required | Vercel env screenshot or browser network evidence |
-| WEB-05 | API URL + public Stripe price IDs | Confirm `NEXT_PUBLIC_API_BASE_URL` points at the intended sync-server environment and `NEXT_PUBLIC_STRIPE_PRICE_ID_PRO_YEARLY` is set for yearly Checkout selection; optionally set monthly and credit-pack public price IDs too | Login, account, billing, and invite flows call the intended API host; annual Checkout cannot silently fall back to monthly | Vercel env screenshot with values redacted |
+| WEB-05 | Account portal routing | Confirm `NEXT_PUBLIC_ACCOUNT_ORIGIN` points at the dedicated account portal and `NEXT_PUBLIC_API_BASE_URL` points at the intended sync-server environment for public/share-link features | `/login`, `/signup`, `/account`, Account nav, and paid pricing CTAs open the account portal, not the public website's legacy account pages | Vercel env screenshot with values redacted + redirect smoke output |
 | WEB-06 | Stripe redirects | Configure Stripe success/cancel URLs to `https://tribox.md/billing/success` and `https://tribox.md/billing/cancel` or equivalent deployed public routes | Hosted Checkout returns to a non-404 public website URL for both payment completion and cancellation | Stripe dashboard screenshot / Checkout session |
 | WEB-07 | Final copy smoke | Check public pricing, AI, sync, privacy, and E2EE claims against M0 wording | No zero-knowledge overclaim, no unsupported region claim, no request-count pricing promise | Reviewer sign-off |
 

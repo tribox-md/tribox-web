@@ -146,9 +146,24 @@ requireMatch(
   'pricing page must expose current M0 prices: Pro $9/month, Pro $90/year, AI credit pack $10',
 )
 requireMatch(
+  'next.config.mjs',
+  /source:\s*'\/login'[\s\S]*destination:\s*`\$\{ACCOUNT_ORIGIN\}\/login`/,
+  'next.config.mjs must redirect /login to the dedicated account portal',
+)
+requireMatch(
+  'next.config.mjs',
+  /source:\s*'\/account'[\s\S]*destination:\s*`\$\{ACCOUNT_ORIGIN\}\/account`/,
+  'next.config.mjs must redirect /account to the dedicated account portal',
+)
+requireMatch(
+  'lib/account-origin.ts',
+  /NEXT_PUBLIC_ACCOUNT_ORIGIN/,
+  'public website must configure dedicated account portal origin through NEXT_PUBLIC_ACCOUNT_ORIGIN',
+)
+requireMatch(
   'components/PricingPage.tsx',
-  /NEXT_PUBLIC_STRIPE_PRICE_ID_PRO_YEARLY/,
-  'pricing page must use the public yearly Stripe price ID for annual checkout selection',
+  /accountPath\('\/login\?redirect=\/account\/billing&from=pricing'/,
+  'pricing page must send paid CTAs to the dedicated account portal billing flow',
 )
 requireMatch(
   'messages/en.json',
@@ -172,8 +187,8 @@ requireMatch(
 )
 requireMatch(
   'docs/M0-VERCEL-LAUNCH-RUNBOOK.md',
-  /NEXT_PUBLIC_STRIPE_PRICE_ID_PRO_YEARLY/,
-  'Vercel launch runbook must document the public yearly Stripe price ID env var',
+  /NEXT_PUBLIC_ACCOUNT_ORIGIN/,
+  'Vercel launch runbook must document the dedicated account portal origin env var',
 )
 
 if (failures.length > 0) {

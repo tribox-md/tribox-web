@@ -1,6 +1,6 @@
 # tribox-web
 
-Marketing site, user portal, and snapshot-share landing pages for **tribox** —
+Marketing site and snapshot-share landing pages for **tribox** —
 a local-first notes & knowledge management desktop application.
 
 🌐 **Live:** [tribox.md](https://tribox.md) · [中文](https://tribox.md/zh) · [日本語](https://tribox.md/ja)
@@ -16,8 +16,8 @@ a local-first notes & knowledge management desktop application.
 | `/download` | Desktop client (macOS / Windows) + mobile (in development) |
 | `/about` | Team, philosophy, business model |
 | `/privacy` `/terms` `/refund` | Legal pages (Stripe-ready) |
-| `/login` `/signup` | Account login and account-only signup via browser Argon2id; remote Sync vault setup happens later in desktop |
-| `/account` | Subscription tier · storage quota · device list · logout |
+| `/login` `/signup` | Redirect to the dedicated account portal (`NEXT_PUBLIC_ACCOUNT_ORIGIN`) |
+| `/account` | Redirect to the dedicated account portal (`NEXT_PUBLIC_ACCOUNT_ORIGIN`) |
 | `/join/[token]` | Snapshot-share invite landing |
 | `/onboarding` | 4-step new-user flow |
 
@@ -50,7 +50,8 @@ All variables are exposed to the browser (`NEXT_PUBLIC_` prefix).
 | Variable | Purpose | Example |
 |----------|---------|---------|
 | `NEXT_PUBLIC_SITE_URL` | Canonical site URL for sitemap / OG / metadata | `https://tribox.md` |
-| `NEXT_PUBLIC_API_BASE_URL` | Backend HTTP API base (auth, billing, share-links) | `https://api.tribox.md` |
+| `NEXT_PUBLIC_API_BASE_URL` | Backend HTTP API base for public/share-link features | `https://api.tribox.md` |
+| `NEXT_PUBLIC_ACCOUNT_ORIGIN` | Dedicated account portal origin | `https://account.tribox.md` |
 | `NEXT_PUBLIC_APP_SCHEME` | Custom URL scheme for desktop app deep-link | `tribox` |
 | `NEXT_PUBLIC_STRIPE_PRICE_ID_PRO_MONTHLY` | Optional public Stripe price ID for Pro monthly checkout selection | `price_...` |
 | `NEXT_PUBLIC_STRIPE_PRICE_ID_PRO_YEARLY` | Public Stripe price ID for Pro yearly checkout selection | `price_...` |
@@ -80,10 +81,10 @@ npm run start   # serves on PORT, default 3000
 
 ## Backend dependency
 
-User-portal features (login, signup, account, billing) talk to `tribox-sync-server`
-over HTTP. The web app itself works in static mode without the backend —
-marketing and legal pages render fine; only `/login`, `/signup`, `/account`, and Stripe
-checkout require the backend to be reachable at `NEXT_PUBLIC_API_BASE_URL`.
+Account features (login, signup, account, billing) live in the dedicated
+`tribox-account` deployment. The public website redirects `/login`, `/signup`,
+and `/account` to `NEXT_PUBLIC_ACCOUNT_ORIGIN` so the marketing site does not
+store account tokens or run account KDF/sign-in flows.
 
 ## Project layout
 
