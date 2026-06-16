@@ -70,7 +70,10 @@ export async function getAuthParams(email: string): Promise<AuthParamsResponse> 
       message: `获取认证参数失败 (${res.status})`,
     } satisfies AuthErrorPayload
   }
-  return (await res.json()) as AuthParamsResponse
+  // 服务端 /auth/params 当前输出 snake_case(kdf_params),与本仓 camelCase 约定不一致;
+  // 在边界归一化,兼容两种 casing(与 tribox-account server-auth.ts 同款兜底)。
+  const raw = (await res.json()) as { salt: string; kdfParams?: string; kdf_params?: string }
+  return { salt: raw.salt, kdfParams: raw.kdfParams ?? raw.kdf_params ?? '' }
 }
 
 /** Step 2 — 客户端 Argon2id 派生 serverPassword（base64） */
