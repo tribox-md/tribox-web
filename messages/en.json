@@ -58,7 +58,7 @@
     "capability3Body": "Tantivy full-text index plus semantic vector search. Sub-50ms queries across thousands of notes. AI Copilot cites real notes, never hallucinates content.",
     "capability4Eyebrow": "Your multi-device",
     "capability4Title": "One account, many devices, one set of notes.",
-    "capability4Body": "tribox Sync stitches together your desktop, laptop, and phone for a single person. Jot an idea on the subway, continue it at your desk — same file, with the vault mode you choose in the desktop app.",
+    "capability4Body": "tribox Standard Sync stitches together your desktop, laptop, and phone for a single person. Jot an idea on the subway, continue it at your desk — the same file through Standard Sync. Standard Sync uses provider-managed key wrapping and is not end-to-end encrypted.",
     "capability5Eyebrow": "Snapshot sharing",
     "capability5Title": "What you share is a copy, not a live document.",
     "capability5Body": "Pack up a note or a folder, send it to someone, they get their own independent local copy to modify freely. Each person's notes stay on their own disk, completely separate.",
@@ -108,8 +108,8 @@
       "tagline": "Sync, version history, and hosted AI credits",
       "cta": "Subscribe to Pro",
       "features": [
-        "Multi-device sync with the managed mode by default",
-        "Private E2EE Sync is available when you choose client-held vault keys",
+        "Multi-device Standard Sync",
+        "Standard Sync uses provider-managed key wrapping for easier setup and recovery; it is not end-to-end encrypted",
         "Version history up to 12 months",
         "Recover deleted files",
         "Selective folder sync",
@@ -140,7 +140,7 @@
         {"label": "Full-text + semantic search", "free": "✓", "pro": "✓", "credits": "Requires Pro"},
         {"label": "AI Copilot (local models)", "free": "✓", "pro": "✓", "credits": "Requires Pro"},
         {"label": "Snapshot sharing", "free": "✓", "pro": "✓", "credits": "Requires Pro"},
-        {"label": "Multi-device cloud sync", "free": "—", "pro": "✓ encrypted by vault mode", "credits": "—"},
+        {"label": "Multi-device cloud sync", "free": "—", "pro": "✓ Standard Sync: provider-managed key wrapping, not end-to-end encrypted", "credits": "—"},
         {"label": "Version history", "free": "—", "pro": "12 months", "credits": "—"},
         {"label": "Hosted AI included credits", "free": "Limited trial", "pro": "100 per cycle", "credits": "+1000"},
         {"label": "AI credit purchase", "free": "—", "pro": "Eligible", "credits": "One-time pack"},
@@ -163,7 +163,7 @@
       },
       {
         "q": "Are my notes uploaded to the cloud?",
-        "a": "By default, no. The base app runs entirely locally with zero telemetry. Files are uploaded only after you subscribe to Sync and create or connect a remote Sync vault in the desktop app. The managed mode uses service-managed key wrapping. Private E2EE Sync uses client-held vault keys."
+        "a": "By default, no. The base app runs entirely locally with zero telemetry. Files are uploaded only after you subscribe to Sync and create or connect a remote Sync vault in the desktop app. New vaults use Standard Sync with provider-managed key wrapping; Standard Sync is not end-to-end encrypted. Creating new Private E2EE Sync vaults is currently unavailable. Existing Private E2EE vaults remain supported for access, recovery, and sync."
       },
       {
         "q": "Do I need to pay for commercial use?",
@@ -204,8 +204,8 @@
     "promise3Body": "Core features don't depend on the cloud. Sync and cloud AI are optional extensions, not the core.",
     "promise4Title": "No feature wall.",
     "promise4Body": "The base app is permanently free with all local features. Sync and other paid products provide cloud infrastructure, not feature gates.",
-    "promise5Title": "Sync with explicit vault modes.",
-    "promise5Body": "The default Sync setup is managed for easier onboarding. Private E2EE Sync is available when you want client-held vault keys and accept the recovery responsibility.",
+    "promise5Title": "Straightforward Standard Sync.",
+    "promise5Body": "The current Sync setup uses Standard Sync with provider-managed key wrapping for easier onboarding and recovery; it is not end-to-end encrypted.",
     "businessTitle": "How we sustain",
     "businessIntro": "tribox's operating costs are covered by user-paid products:",
     "businessSync": "tribox Pro — hosted sync and AI credits ($9/mo or $90/year)",
@@ -255,7 +255,7 @@
     "title": "Privacy Policy",
     "lastUpdated": "Last updated:",
     "tldrTitle": "TL;DR",
-    "tldrBody": "The tribox desktop app runs entirely locally by default — zero telemetry, zero analytics. Cloud services only collect the minimum information needed when you actively register an account. Sync encryption depends on your vault mode: the managed mode uses service-managed key wrapping, while Private E2EE Sync uses client-held vault keys. Hosted AI credits are a separate cloud service and are not part of the E2EE promise.",
+    "tldrBody": "The tribox desktop app runs entirely locally by default — zero telemetry, zero analytics. Cloud services only collect the minimum information needed when you actively register an account. New remote vaults use Standard Sync with provider-managed key wrapping; Standard Sync is not end-to-end encrypted. Creating new Private E2EE Sync vaults is currently unavailable, while existing Private E2EE vaults remain supported. Hosted AI credits are a separate cloud service and are not part of the E2EE promise.",
     "section1Title": "1. Desktop client (base app)",
     "section1Body": "The tribox desktop client does not send any data to our servers by default:",
     "section1List": [
@@ -275,11 +275,11 @@
     ],
     "section2Note": "We do not collect names, phone numbers, addresses, gender, birthday — and we don't require social account linking.",
     "section3Title": "3. tribox Sync — encryption of note sync",
-    "section3Body": "After subscribing to Sync, notes are synced between your devices through our servers — but the servers cannot read note content:",
+    "section3Body": "After subscribing to Sync, notes are synced between your devices through our servers. New vaults use Standard Sync with provider-managed key wrapping: content is encrypted in transit and at rest, but Standard Sync is not end-to-end encrypted and the service manages the wrapping keys. For existing Private E2EE Sync vaults, client-held key wrapping remains supported and the service cannot decrypt their note content without user-held recovery material:",
     "section3List": [
       "Standard Sync: notes are encrypted for hosted sync with service-managed vault key wrapping",
-      "Private E2EE Sync: notes use client-held vault key wrapping, so recovery depends on your local secret/recovery material",
-      "Forgetting Private E2EE recovery material can make synced data unrecoverable"
+      "Existing Private E2EE Sync vaults use client-held vault key wrapping, so recovery depends on your local secret/recovery material; creating new Private E2EE vaults is currently unavailable",
+      "Forgetting recovery material for an existing Private E2EE vault can make its synced data unrecoverable"
     ],
     "section4Title": "4. Payment information",
     "section4Body": "Payments are processed by Stripe. We never touch your credit card number, CVV, or bank account. Stripe only relays:",
@@ -320,13 +320,13 @@
     "section1List": [
       "Desktop client — local-first notes & knowledge management tool, permanently free, no feature limits, no signup required",
       "tribox Pro — paid subscription for multi-device sync, version history, and hosted AI credits",
-      "Private E2EE Sync — optional vault mode for client-held Sync keys",
+      "Existing Private E2EE Sync vault compatibility — client-held Sync keys remain supported, while creating new Private E2EE vaults is currently unavailable",
       "AI credit pack — one-time hosted AI credits for active Pro accounts",
       "Snapshot sharing — feature for passing note copies between users (free)"
     ],
     "section2Title": "2. Account responsibility",
     "section2List": [
-      "Password and recovery material security are your responsibility. Managed Sync and Private E2EE Sync have different recovery properties.",
+      "Password and recovery material security are your responsibility. Standard Sync and existing Private E2EE Sync vaults have different recovery properties; creating new Private E2EE vaults is currently unavailable.",
       "Simultaneous logins per account are limited by subscription tier and can be viewed/revoked in the user portal.",
       "Don't transfer, rent, or share your account. Subscription licenses are for an individual or single organizational entity, not \"team seats\".",
       "Notice any account anomaly? Change your password immediately and email hello@tribox.md."
@@ -353,7 +353,7 @@
       "Use automated scripts to abnormally consume cloud resources (API abuse, scraping, etc.)",
       "Infringe others' copyrights, trademarks, or privacy"
     ],
-    "section5Note": "Violations may result in account suspension or termination. tribox does not proactively scan or read your notes. Private E2EE Sync further limits server-side access by using client-held vault keys.",
+    "section5Note": "Violations may result in account suspension or termination. tribox does not proactively scan or read your notes. Existing Private E2EE Sync vaults further limit server-side access by using client-held vault keys; creating new Private E2EE vaults is currently unavailable.",
     "section6Title": "6. Service availability",
     "section6List": [
       "tribox strives for 99.9% monthly availability for cloud services, but does not provide an SLA guarantee",
@@ -454,7 +454,7 @@
     "errorRateLimit": "Too many requests, please try again later",
     "hasAccount": "Already have an account?",
     "loginLink": "Sign in",
-    "setupNote": "After creating an account, open the desktop app to create or connect a remote Sync vault. The default Sync mode is managed; Private E2EE Sync is available when you want client-held vault keys."
+    "setupNote": "After creating an account, open the desktop app to create a Standard Sync vault. Standard Sync uses provider-managed key wrapping and is not end-to-end encrypted."
   },
   "account": {
     "subscribedToast": "Subscription successful!",
@@ -484,7 +484,7 @@
     "syncVaultStandard": "Standard Sync active",
     "syncVaultStandardDesc": "Standard Sync stores a service-managed wrapped vault key for easier setup and device recovery.",
     "syncVaultPrivate": "Private E2EE Sync active",
-    "syncVaultPrivateDesc": "Private E2EE Sync uses client-held vault key wrapping. Keep your recovery material safe.",
+    "syncVaultPrivateDesc": "This existing Private E2EE Sync vault uses client-held vault key wrapping. Keep your recovery material safe.",
     "syncVaultNotConfigured": "Sync vault not configured",
     "syncVaultNotConfiguredDesc": "Create an account first, then use the desktop app to create or connect a remote Sync vault.",
     "devicesTitle": "Logged-in devices",

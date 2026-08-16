@@ -58,7 +58,7 @@
     "capability3Body": "Tantivy 全文検索 + セマンティックベクトル検索。数千件のノートで 50ms 以内のクエリ。AI Copilot は実際のノート内容を引用し、ハルシネーションしません。",
     "capability4Eyebrow": "あなたのマルチデバイス",
     "capability4Title": "1 つのアカウント、複数のデバイス、同じノート。",
-    "capability4Body": "tribox Sync は、デスクトップ・ノート PC・スマートフォン間の連携をあなた一人のために提供します。電車で思いついたアイデアをデスクトップで展開——同じファイルを、デスクトップアプリで選択した vault モードで扱います。",
+    "capability4Body": "tribox Standard Sync は、デスクトップ・ノート PC・スマートフォン間の連携をあなた一人のために提供します。電車で思いついたアイデアをデスクトップで展開し、同じファイルを Standard Sync で同期できます。Standard Sync はサービス管理の key wrapping を使い、エンドツーエンド暗号化ではありません。",
     "capability5Eyebrow": "スナップショット共有",
     "capability5Title": "送るのはコピー、ライブドキュメントではありません。",
     "capability5Body": "ノートやフォルダをパッケージ化して相手に送ると、受信者は独立したローカルコピーを受け取り、自由に編集できます。各人のノートはそれぞれのディスク上に残り、互いに干渉しません。",
@@ -108,8 +108,8 @@
       "tagline": "クラウド同期、バージョン履歴、Hosted AI credits",
       "cta": "Pro を購読",
       "features": [
-        "標準はマネージドモードのマルチデバイス同期",
-        "クライアント保持の vault key が必要な場合は Private E2EE Sync も選択可能",
+        "マルチデバイス Standard Sync",
+        "Standard Sync はサービス管理の key wrapping を使い、設定と復旧を容易にします。エンドツーエンド暗号化ではありません",
         "最長 12 か月のバージョン履歴",
         "削除ファイルの復元",
         "フォルダ単位の同期選択",
@@ -140,7 +140,7 @@
         {"label": "全文 + セマンティック検索", "free": "✓", "pro": "✓", "credits": "Pro 必須"},
         {"label": "AI Copilot（ローカルモデル）", "free": "✓", "pro": "✓", "credits": "Pro 必須"},
         {"label": "スナップショット共有", "free": "✓", "pro": "✓", "credits": "Pro 必須"},
-        {"label": "マルチデバイスクラウド同期", "free": "—", "pro": "✓ vault モードに応じて暗号化", "credits": "—"},
+        {"label": "マルチデバイスクラウド同期", "free": "—", "pro": "✓ Standard Sync：サービス管理の key wrapping、エンドツーエンド暗号化ではありません", "credits": "—"},
         {"label": "バージョン履歴", "free": "—", "pro": "12 か月", "credits": "—"},
         {"label": "Hosted AI 付属 credits", "free": "少量トライアル", "pro": "サイクルごとに 100", "credits": "+1000"},
         {"label": "AI credits 購入", "free": "—", "pro": "購入可能", "credits": "一回限り"},
@@ -163,7 +163,7 @@
       },
       {
         "q": "ノートはクラウドにアップロードされますか？",
-        "a": "デフォルトではいいえ。基本アプリは完全にローカルで動作し、テレメトリも一切ありません。Sync を購読し、デスクトップアプリでリモート Sync vault を作成または接続した場合のみファイルがアップロードされます。マネージドモードはサービス管理の key wrapping を使います。Private E2EE Sync はクライアント保持の vault key を使います。"
+        "a": "デフォルトではいいえ。基本アプリは完全にローカルで動作し、テレメトリも一切ありません。Sync を購読し、デスクトップアプリでリモート Sync vault を作成または接続した場合のみファイルがアップロードされます。新しい vault はサービス管理の key wrapping を使う Standard Sync で作成され、Standard Sync はエンドツーエンド暗号化ではありません。現在、新しい Private E2EE Sync vault は作成できません。既存の Private E2EE vault は、アクセス・復旧・同期について引き続きサポートされます。"
       },
       {
         "q": "tribox を仕事（商用）で使うには追加料金が必要ですか？",
@@ -204,8 +204,8 @@
     "promise3Body": "コア機能はクラウドに依存しません。同期やクラウド AI は拡張機能であり、コアではありません。",
     "promise4Title": "「機能の壁」はありません。",
     "promise4Body": "基本アプリは永久無料で、すべてのローカル機能を含みます。Sync などの有料プロダクトはクラウドインフラの提供で、機能制限ではありません。",
-    "promise5Title": "vault モードを明示した同期。",
-    "promise5Body": "デフォルトの Sync 設定はオンボーディングしやすいマネージドモードです。クライアント保持の vault key と復旧責任を選びたい場合は Private E2EE Sync を利用できます。",
+    "promise5Title": "わかりやすい Standard Sync。",
+    "promise5Body": "現在の Sync 設定は、導入と復旧を容易にするサービス管理の key wrapping を使う Standard Sync です。エンドツーエンド暗号化ではありません。",
     "businessTitle": "ビジネスモデル",
     "businessIntro": "tribox の運営資金は、ユーザーが支払うプロダクトから得ています：",
     "businessSync": "tribox Pro — hosted sync と AI credits（$9/月または $90/年）",
@@ -255,7 +255,7 @@
     "title": "プライバシーポリシー",
     "lastUpdated": "最終更新：",
     "tldrTitle": "要約",
-    "tldrBody": "tribox デスクトップアプリはデフォルトで完全にローカル動作し、テレメトリ・分析もありません。クラウドサービスはアカウント登録時に必要最小限の情報のみを収集します。Sync の暗号化は vault モードによって異なります。マネージドモードはサービス管理の key wrapping を使い、Private E2EE Sync はクライアント保持の vault key を使います。Hosted AI credits は別のクラウドサービスであり、E2EE の約束には含まれません。",
+    "tldrBody": "tribox デスクトップアプリはデフォルトで完全にローカル動作し、テレメトリ・分析もありません。クラウドサービスはアカウント登録時に必要最小限の情報のみを収集します。新しいリモート vault はサービス管理の key wrapping を使う Standard Sync で作成され、Standard Sync はエンドツーエンド暗号化ではありません。現在、新しい Private E2EE Sync vault は作成できませんが、既存の Private E2EE vault は引き続きサポートされます。Hosted AI credits は別のクラウドサービスであり、E2EE の約束には含まれません。",
     "section1Title": "1. デスクトップクライアント（基本アプリ）",
     "section1Body": "tribox デスクトップクライアントは、デフォルトで私たちのサーバーにデータを送信しません：",
     "section1List": [
@@ -275,11 +275,11 @@
     ],
     "section2Note": "氏名、電話、住所、性別、生年月日は収集しません。ソーシャルアカウントとの連携も求めません。",
     "section3Title": "3. tribox Sync —— ノート同期の暗号化",
-    "section3Body": "Sync を購読すると、ノートは私たちのサーバーを経由してあなたのデバイス間で同期されます。ただし、サーバーはノートの内容を読み取れません：",
+    "section3Body": "Sync を購読すると、ノートは私たちのサーバーを経由してデバイス間で同期されます。新しい vault はサービス管理の key wrapping を使う Standard Sync で作成されます。内容は転送時と保存時に暗号化されますが、Standard Sync はエンドツーエンド暗号化ではありません。サービスが key wrapping を管理します。既存の Private E2EE Sync vault ではクライアント保持の key wrapping が引き続きサポートされ、ユーザー保持の復旧情報なしにサービスがノート内容を復号することはできません：",
     "section3List": [
       "Standard Sync：ホステッド同期ではサービス管理の vault key wrapping を使います",
-      "Private E2EE Sync：クライアント保持の vault key wrapping を使い、復旧はローカル secret / 復旧情報に依存します",
-      "Private E2EE の復旧情報を失うと、同期データを復旧できない場合があります"
+      "既存の Private E2EE Sync vault はクライアント保持の vault key wrapping を使い、復旧はローカル secret / 復旧情報に依存します。現在、新しい Private E2EE vault は作成できません",
+      "既存の Private E2EE vault の復旧情報を失うと、その同期データを復旧できない場合があります"
     ],
     "section4Title": "4. 決済情報",
     "section4Body": "決済は Stripe が処理します。クレジットカード番号、CVV、銀行口座に私たちは触れません。Stripe が返す情報のみ：",
@@ -320,13 +320,13 @@
     "section1List": [
       "デスクトップクライアント：ローカルファーストのノート・ナレッジ管理ツール、永久無料、機能制限なし、登録不要",
       "tribox Pro：マルチデバイス同期、バージョン履歴、Hosted AI credits を提供する有料サブスクリプション",
-      "Private E2EE Sync：クライアント保持の Sync key を使う任意の vault モード",
+      "既存の Private E2EE Sync vault の互換サポート：クライアント保持の Sync key は引き続きサポートされますが、現在、新しい Private E2EE vault は作成できません",
       "AI credit pack：active Pro アカウント向けの一回限りの Hosted AI credits",
       "スナップショット共有：ユーザー間でノートのコピーを受け渡す機能（無料）"
     ],
     "section2Title": "2. アカウント責任",
     "section2List": [
-      "アカウント、パスワード、復旧情報はあなた自身で管理してください。マネージド同期と Private E2EE Sync では復旧特性が異なります。",
+      "アカウント、パスワード、復旧情報はあなた自身で管理してください。Standard Sync と既存の Private E2EE Sync vault では復旧特性が異なり、現在、新しい Private E2EE vault は作成できません。",
       "同時ログインできるデバイス数はプランによって制限されます。ユーザーセンターで確認・取り消し可能です。",
       "アカウントの譲渡、貸与、共有は禁止です。サブスクリプションライセンスは個人または単一の組織を対象とし、「チーム席」ではありません。",
       "アカウントに異常を発見したら、すぐにパスワードを変更し hello@tribox.md にご連絡ください。"
@@ -353,7 +353,7 @@
       "自動化スクリプトによる異常なクラウドリソース消費（API 乱用、スクレイピングなど）",
       "他者の著作権、商標、プライバシー権の侵害"
     ],
-    "section5Note": "違反はアカウント停止や終了につながる可能性があります。tribox は能動的にノート内容をスキャンしたり読んだりしません。Private E2EE Sync はクライアント保持の vault key により、サーバー側アクセスをさらに制限します。",
+    "section5Note": "違反はアカウント停止や終了につながる可能性があります。tribox は能動的にノート内容をスキャンしたり読んだりしません。既存の Private E2EE Sync vault はクライアント保持の vault key により、サーバー側アクセスをさらに制限します。現在、新しい Private E2EE vault は作成できません。",
     "section6Title": "6. サービス可用性",
     "section6List": [
       "tribox はクラウドサービスの月次可用性 99.9% を目指しますが、SLA の保証は提供しません",
@@ -455,7 +455,7 @@
     "errorRateLimit": "リクエストが多すぎます。しばらく後に再試行してください",
     "hasAccount": "すでにアカウントをお持ちですか？",
     "loginLink": "サインイン",
-    "setupNote": "アカウント作成後、デスクトップアプリでリモート Sync vault を作成または接続してください。デフォルトの Sync モードはマネージドモードです。クライアント側で vault key を保持したい場合は Private E2EE Sync を選択できます。"
+    "setupNote": "アカウント作成後、デスクトップアプリで Standard Sync vault を作成してください。Standard Sync はサービス管理の key wrapping を使い、エンドツーエンド暗号化ではありません。"
   },
   "account": {
     "subscribedToast": "購読が完了しました！",
@@ -485,7 +485,7 @@
     "syncVaultStandard": "Standard Sync 有効",
     "syncVaultStandardDesc": "Standard Sync はサービス管理の wrapped vault key を使い、セットアップとデバイス復旧を簡単にします。",
     "syncVaultPrivate": "Private E2EE Sync 有効",
-    "syncVaultPrivateDesc": "Private E2EE Sync はクライアント保持の vault key wrapping を使います。復旧情報は安全に保管してください。",
+    "syncVaultPrivateDesc": "この既存の Private E2EE Sync vault はクライアント保持の vault key wrapping を使います。復旧情報は安全に保管してください。",
     "syncVaultNotConfigured": "Sync vault 未設定",
     "syncVaultNotConfiguredDesc": "まずアカウントを作成し、その後デスクトップアプリでリモート Sync vault を作成または接続してください。",
     "devicesTitle": "サインイン中のデバイス",
