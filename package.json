@@ -4,14 +4,14 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "npm run -s check:sync-copy && npm run -s check:m0-web-legal && next build",
+    "build": "npm run -s check:sync-copy && npm run -s check:m0-web-legal && npm run -s check:account-boundary && next build",
     "start": "next start",
     "type-check": "tsc --noEmit",
     "check:m0-web-legal": "node scripts/check-m0-web-legal.mjs",
-    "check:sync-copy": "node scripts/check-sync-copy.mjs"
+    "check:sync-copy": "node scripts/check-sync-copy.mjs",
+    "check:account-boundary": "node scripts/check-account-boundary.mjs"
   },
   "dependencies": {
-    "@noble/hashes": "^2.2.0",
     "next": "14.2.5",
     "next-intl": "^4.12.0",
     "react": "18.3.1",
