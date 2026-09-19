@@ -1,5 +1,7 @@
 # tribox-web
 
+> Friday重构共同需求入口：[全系统需求基线](../tribox-friday/docs/requirements/README.md)（2026-09-11已接受，尚未部署）。客户端、服务、部署、分布式共用范围及验收；本仓现有实现说明不等于已满足基线要求，基线也不自动废止现行协议或生产义务。
+
 Marketing site and snapshot-share landing pages for **tribox** —
 a local-first notes & knowledge management desktop application.
 
