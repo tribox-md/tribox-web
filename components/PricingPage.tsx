@@ -7,13 +7,12 @@ import { track } from '@/lib/analytics'
 import { accountPath } from '@/lib/account-origin'
 
 type BillingCycle = 'monthly' | 'annual'
-type ProductId = 'free' | 'pro' | 'credits' | 'commercial'
+type ProductId = 'free' | 'pro' | 'commercial'
 
 interface Product {
   id: ProductId
-  priceMonthly: string | null
-  priceAnnual: string | null
-  priceOneTime: string | null
+  priceMonthly: string
+  priceAnnual: string
   ctaStyle: 'primary' | 'outline'
   highlight: boolean
   featuresCount: number
@@ -25,29 +24,18 @@ const PRODUCTS: Product[] = [
     id: 'free',
     priceMonthly: '$0',
     priceAnnual: '$0',
-    priceOneTime: null,
     ctaStyle: 'outline',
     highlight: false,
-    featuresCount: 8,
+    featuresCount: 6,
   },
   {
     id: 'pro',
     priceMonthly: '$9',
     priceAnnual: '$90',
-    priceOneTime: null,
     ctaStyle: 'primary',
     highlight: true,
-    featuresCount: 7,
+    featuresCount: 6,
     annualTotalDisplay: '$90',
-  },
-  {
-    id: 'credits',
-    priceMonthly: null,
-    priceAnnual: null,
-    priceOneTime: '$10',
-    ctaStyle: 'outline',
-    highlight: false,
-    featuresCount: 5,
   },
 ]
 
@@ -55,7 +43,6 @@ interface ComparisonRow {
   label: string
   free: string
   pro: string
-  credits: string
 }
 
 interface FaqItem {
@@ -129,25 +116,19 @@ export function PricingPage() {
         </div>
 
         {/* 产品卡片 */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-20">
           {PRODUCTS.map((product) => {
-            const isSubscription = product.priceMonthly !== null
-            const displayPrice = isSubscription
-              ? billing === 'annual'
-                ? product.priceAnnual
-                : product.priceMonthly
-              : product.priceOneTime
+            const displayPrice = billing === 'annual' ? product.priceAnnual : product.priceMonthly
             const featureKeys = Array.from({ length: product.featuresCount }, (_, i) => i)
             const features = t.raw(`${product.id}.features`) as string[]
 
             let priceNote: string
             if (product.id === 'free') priceNote = t('forever')
-            else if (product.id === 'pro')
+            else
               priceNote =
                 billing === 'annual'
                   ? t('annualNote', { price: product.annualTotalDisplay ?? '' })
                   : t('monthlyNote')
-            else priceNote = t('oneTimeNote')
 
             return (
               <div
@@ -169,7 +150,7 @@ export function PricingPage() {
                   <p className="text-xs text-slate-500 mb-4">{t(`${product.id}.tagline`)}</p>
                   <div className="flex items-end gap-1">
                     <span className="text-4xl font-bold text-white">{displayPrice}</span>
-                    {isSubscription && product.id !== 'free' && billing === 'monthly' && (
+                    {product.id !== 'free' && billing === 'monthly' && (
                       <span className="text-slate-500 text-sm mb-1">{t('perMonth')}</span>
                     )}
                   </div>
@@ -237,7 +218,6 @@ export function PricingPage() {
                   </th>
                   <th className="py-4 px-4 text-center text-slate-300 font-semibold">tribox</th>
                   <th className="py-4 px-4 text-center text-indigo-300 font-semibold">Pro</th>
-                  <th className="py-4 px-4 text-center text-slate-300 font-semibold">AI credits</th>
                 </tr>
               </thead>
               <tbody>
@@ -251,7 +231,6 @@ export function PricingPage() {
                     <td className="py-3.5 px-4 text-center text-indigo-300 font-medium">
                       {row.pro}
                     </td>
-                    <td className="py-3.5 px-4 text-center text-slate-300">{row.credits}</td>
                   </tr>
                 ))}
               </tbody>

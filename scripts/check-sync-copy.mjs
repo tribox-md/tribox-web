@@ -90,7 +90,7 @@ for (const locale of locales) {
   const contract = exposureContracts[locale]
   const activeCommercialCopy = [
     ['pricing.pro.features[1]', messages.pricing?.pro?.features?.[1]],
-    ['about.promise5Body', messages.about?.promise5Body],
+    ['about.promise4Body', messages.about?.promise4Body],
     ['signup.setupNote', messages.signup?.setupNote],
   ]
   for (const [path, value] of activeCommercialCopy) {
@@ -109,8 +109,8 @@ for (const locale of locales) {
   const standardOnlyFields = [
     ['home.capability4Body', messages.home?.capability4Body, true],
     ['pricing.pro.features[0]', messages.pricing?.pro?.features?.[0], false],
-    ['pricing.comparison.rows[5].pro', messages.pricing?.comparison?.rows?.[5]?.pro, true],
-    ['about.promise5Title', messages.about?.promise5Title, false],
+    ['pricing.comparison.rows[1].pro', messages.pricing?.comparison?.rows?.[1]?.pro, true],
+    ['about.promise4Title', messages.about?.promise4Title, false],
   ]
   for (const [path, value, requiresBoundary] of standardOnlyFields) {
     requireContract(value, contract.standard, `${locale}:${path} must name Standard Sync`)
@@ -122,7 +122,7 @@ for (const locale of locales) {
 
   const standardOnlySurface = [
     ...messages.pricing.pro.features.map((value, index) => [`pricing.pro.features[${index}]`, value]),
-    ['pricing.comparison.rows[5].pro', messages.pricing?.comparison?.rows?.[5]?.pro],
+    ['pricing.comparison.rows[1].pro', messages.pricing?.comparison?.rows?.[1]?.pro],
     ...flattenStrings(messages.home, 'home').map(({ path, value }) => [path, value]),
     ...flattenStrings(messages.about, 'about').map(({ path, value }) => [path, value]),
     ...flattenStrings(messages.signup, 'signup').map(({ path, value }) => [path, value]),

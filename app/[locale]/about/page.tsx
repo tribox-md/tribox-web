@@ -41,7 +41,7 @@ function AboutContent() {
         <Section title={t('promisesTitle')}>
           <p>{t('promisesIntro')}</p>
           <ul className="list-disc pl-5 space-y-2.5 text-slate-400">
-            {[1, 2, 3, 4, 5].map((i) => (
+            {[1, 2, 3, 4].map((i) => (
               <li key={i}>
                 <strong className="text-slate-200">{t(`promise${i}Title`)}</strong>{' '}
                 {t(`promise${i}Body`)}
@@ -54,7 +54,6 @@ function AboutContent() {
           <p>{t('businessIntro')}</p>
           <ul className="list-disc pl-5 space-y-2 text-slate-400">
             <li>{t('businessSync')}</li>
-            <li>{t('businessCredits')}</li>
             <li>{t('businessCommercial')}</li>
           </ul>
           <p>{t('businessClosing')}</p>

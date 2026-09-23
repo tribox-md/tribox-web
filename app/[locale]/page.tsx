@@ -7,8 +7,8 @@ interface Props {
   params: Promise<{ locale: string }>
 }
 
-const PRINCIPLE_KEYS = [1, 2, 3, 4, 5] as const
-const CAPABILITY_KEYS = [1, 2, 3, 4, 5, 6] as const
+const PRINCIPLE_KEYS = [1, 2, 3, 4] as const
+const CAPABILITY_KEYS = [1, 2, 3, 4, 5] as const
 
 const PLATFORMS = [
   { key: 'macos', label: 'macOS', Icon: AppleIcon },
@@ -75,7 +75,7 @@ function HomeContent() {
         </div>
       </section>
 
-      {/* 五原则 */}
+      {/* 四原则 */}
       <section className="px-4 py-24 sm:py-32 border-t border-white/10">
         <div className="mx-auto max-w-5xl">
           <h2 className="text-center text-3xl sm:text-4xl font-bold text-white mb-4 tracking-tight">

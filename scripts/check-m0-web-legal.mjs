@@ -142,8 +142,8 @@ requireMatch(
 )
 requireMatch(
   'components/PricingPage.tsx',
-  /priceMonthly:\s*'\$9'[\s\S]*priceAnnual:\s*'\$90'[\s\S]*priceOneTime:\s*'\$10'/,
-  'pricing page must expose current M0 prices: Pro $9/month, Pro $90/year, AI credit pack $10',
+  /priceMonthly:\s*'\$9'[\s\S]*priceAnnual:\s*'\$90'/,
+  'pricing page must expose current M0 prices: Pro $9/month, Pro $90/year',
 )
 requireMatch(
   'next.config.mjs',
