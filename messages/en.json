@@ -35,7 +35,7 @@
     "heroCtaPrimary": "Download tribox for free",
     "heroCtaSecondary": "See add-ons",
     "platformNote": "macOS · Windows · Linux — Desktop-first, mobile in development",
-    "principlesTitle": "Five product promises",
+    "principlesTitle": "Four product promises",
     "principlesIntro": "These are not marketing slogans — they are constraints we hold while writing every line of code.",
     "principle1Title": "Yours",
     "principle1Body": "All notes are real Markdown files on your disk. Any text editor can open them. No proprietary format, no data lock-in.",
@@ -44,27 +44,22 @@
     "principle3Title": "In your control",
     "principle3Body": "Fully usable offline. Cloud sync is something you choose to enable, not a forced dependency. If tribox ever disappears, your notes stay on your machine.",
     "principle4Title": "Malleable",
-    "principle4Body": "Keyboard shortcuts, themes, plugins, AI models — everything you touch is customizable. You shouldn't have to bend yourself to the software.",
-    "principle5Title": "No silent writes",
-    "principle5Body": "AI-generated content is always reviewed by you (draft → preview → accept) before it lands in a note. tribox never modifies your files behind your back.",
+    "principle4Body": "Keyboard shortcuts, themes, plugins — everything you touch is customizable. You shouldn't have to bend yourself to the software.",
     "capability1Eyebrow": "The shape of thought",
     "capability1Title": "Connect ideas with bidirectional links.",
-    "capability1Body": "[[WikiLink]] syntax creates connections as you write. Every note knows who links to it. The knowledge graph emerges automatically, no manual organization required.",
+    "capability1Body": "[[WikiLink]] syntax creates connections as you write. Every note knows who links to it, no manual organization required.",
     "capability2Eyebrow": "Now and later",
     "capability2Title": "Tasks and notes are the same thing.",
     "capability2Body": "Write @due(2026-06-01) @priority(high) inline in any paragraph. The Today view sees it instantly. Tasks no longer live in a separate app.",
     "capability3Eyebrow": "Millisecond search",
     "capability3Title": "Search faster than feels possible for a local app.",
-    "capability3Body": "Tantivy full-text index plus semantic vector search. Sub-50ms queries across thousands of notes. AI Copilot cites real notes, never hallucinates content.",
+    "capability3Body": "Tantivy full-text index. Sub-50ms queries across thousands of notes.",
     "capability4Eyebrow": "Your multi-device",
     "capability4Title": "One account, many devices, one set of notes.",
     "capability4Body": "tribox Standard Sync stitches together your desktop, laptop, and phone for a single person. Jot an idea on the subway, continue it at your desk — the same file through Standard Sync. Standard Sync uses provider-managed key wrapping and is not end-to-end encrypted.",
-    "capability5Eyebrow": "Snapshot sharing",
-    "capability5Title": "What you share is a copy, not a live document.",
-    "capability5Body": "Pack up a note or a folder, send it to someone, they get their own independent local copy to modify freely. Each person's notes stay on their own disk, completely separate.",
-    "capability6Eyebrow": "Local-first",
-    "capability6Title": "Works without a network.",
-    "capability6Body": "Every feature is available offline, including AI (via local Ollama models). The network is only involved when you actively sync or call cloud AI.",
+    "capability5Eyebrow": "Local-first",
+    "capability5Title": "Works without a network.",
+    "capability5Body": "Every local feature is available offline. The network is only involved when you actively use device sync.",
     "downloadTitle": "Get started",
     "downloadSubtitle": "Download the desktop client. All local features are usable without registration.",
     "platforms": {
@@ -77,7 +72,7 @@
     "eyebrow": "Pricing",
     "title": "Free at the core, paid when you need more.",
     "subtitle1": "tribox itself is permanently free with no feature wall and no signup.",
-    "subtitle2": "Pro is the hosted sync and AI credit account tier; credit packs are optional for active Pro users.",
+    "subtitle2": "Pro is the account tier for hosted device sync and version history.",
     "billingMonthly": "Monthly",
     "billingAnnual": "Annual",
     "billingSave": "Save $18",
@@ -86,7 +81,6 @@
     "forever": "Free forever",
     "annualNote": "{price}/year, billed annually",
     "monthlyNote": "billed monthly",
-    "oneTimeNote": "One-time purchase",
     "annualCheckoutUnavailable": "Annual checkout is not configured yet. Choose Monthly or email hello@tribox.md.",
     "free": {
       "name": "tribox",
@@ -94,18 +88,16 @@
       "cta": "Download for free",
       "features": [
         "Markdown files on disk, your data belongs to you",
-        "Bidirectional [[WikiLinks]] and knowledge graph",
-        "Tantivy full-text + semantic search",
+        "Bidirectional [[WikiLinks]]",
+        "Tantivy full-text search",
         "Inline task syntax: @due / @priority",
-        "AI Copilot (local Ollama models supported)",
         "Plugin system",
-        "Snapshot sharing: send a local copy to others",
         "Community support"
       ]
     },
     "pro": {
       "name": "tribox Pro",
-      "tagline": "Sync, version history, and hosted AI credits",
+      "tagline": "Sync and version history",
       "cta": "Subscribe to Pro",
       "features": [
         "Multi-device Standard Sync",
@@ -114,37 +106,18 @@
         "Recover deleted files",
         "Selective folder sync",
         "Settings, themes, plugin sync",
-        "100 hosted AI credits per billing cycle",
         "Email technical support"
       ]
     },
-    "credits": {
-      "name": "AI credit pack",
-      "tagline": "One-time hosted AI credits for active Pro accounts",
-      "cta": "Buy credits",
-      "features": [
-        "1000 hosted AI credits",
-        "One-time purchase, not a subscription",
-        "Available only to active Pro accounts",
-        "Region/provider gate applies before checkout",
-        "Unused credits remain on the account"
-      ]
-    },
     "comparisonTitle": "Feature comparison",
-    "comparisonSubtitle": "Base app already includes every local feature. Pro unlocks hosted sync and hosted AI usage.",
+    "comparisonSubtitle": "Base app already includes every local feature. Pro unlocks hosted device sync.",
     "comparison": {
       "headerFeature": "Feature",
       "rows": [
-        {"label": "Local Markdown file storage", "free": "✓", "pro": "✓", "credits": "Requires Pro"},
-        {"label": "Bidirectional links + graph", "free": "✓", "pro": "✓", "credits": "Requires Pro"},
-        {"label": "Full-text + semantic search", "free": "✓", "pro": "✓", "credits": "Requires Pro"},
-        {"label": "AI Copilot (local models)", "free": "✓", "pro": "✓", "credits": "Requires Pro"},
-        {"label": "Snapshot sharing", "free": "✓", "pro": "✓", "credits": "Requires Pro"},
-        {"label": "Multi-device cloud sync", "free": "—", "pro": "✓ Standard Sync: provider-managed key wrapping, not end-to-end encrypted", "credits": "—"},
-        {"label": "Version history", "free": "—", "pro": "12 months", "credits": "—"},
-        {"label": "Hosted AI included credits", "free": "Limited trial", "pro": "100 per cycle", "credits": "+1000"},
-        {"label": "AI credit purchase", "free": "—", "pro": "Eligible", "credits": "One-time pack"},
-        {"label": "Customer support", "free": "Community", "pro": "Email", "credits": "Account support"}
+        {"label": "Local Markdown file storage", "free": "✓", "pro": "✓"},
+        {"label": "Multi-device cloud sync", "free": "—", "pro": "✓ Standard Sync: provider-managed key wrapping, not end-to-end encrypted"},
+        {"label": "Version history", "free": "—", "pro": "12 months"},
+        {"label": "Customer support", "free": "Community", "pro": "Email"}
       ]
     },
     "commercialEyebrow": "Commercial / Self-hosted",
@@ -155,11 +128,11 @@
     "faqs": [
       {
         "q": "Are there feature limits in the free version?",
-        "a": "No. The tribox base app is permanently free. All local features (editing, search, AI Copilot, plugins, snapshot sharing) are included with no signup required. Pro is optional and covers hosted sync, version history, and hosted AI credits."
+        "a": "No. The tribox base app is permanently free. All local features (editing, search, plugins) are included with no signup required. Pro is optional and covers hosted device sync and version history."
       },
       {
         "q": "Is Sync for team collaboration?",
-        "a": "No. tribox Sync exists to stitch together your own devices — jot an idea on your phone, continue at your desktop. To share notes with someone else, use the free Snapshot Sharing feature: they get an independent local copy they can freely modify, no interference between yours and theirs."
+        "a": "No. tribox Sync is device sync: it exists to stitch together your own devices — jot an idea on your phone, continue at your desktop."
       },
       {
         "q": "Are my notes uploaded to the cloud?",
@@ -175,7 +148,7 @@
       },
       {
         "q": "Do you offer refunds?",
-        "a": "Yes for Pro — full refund within 7 days of purchase, no questions asked. AI credit packs are refundable only when required by law or when unused credits can be reversed."
+        "a": "Yes for Pro — full refund within 7 days of purchase, no questions asked."
       },
       {
         "q": "Discounts for students, teachers, or non-profits?",
@@ -198,18 +171,15 @@
     "promisesIntro": "These are not marketing copy — they are hard constraints written into the tribox architecture:",
     "promise1Title": "We don't lock your notes in a database.",
     "promise1Body": "Every note is a real Markdown file on your disk. VSCode, Sublime, vim — anything can open it.",
-    "promise2Title": "AI never writes your files silently.",
-    "promise2Body": "AI-generated content always goes through draft → preview → accept before landing in a note.",
-    "promise3Title": "Local-first, fully usable offline.",
-    "promise3Body": "Core features don't depend on the cloud. Sync and cloud AI are optional extensions, not the core.",
-    "promise4Title": "No feature wall.",
-    "promise4Body": "The base app is permanently free with all local features. Sync and other paid products provide cloud infrastructure, not feature gates.",
-    "promise5Title": "Straightforward Standard Sync.",
-    "promise5Body": "The current Sync setup uses Standard Sync with provider-managed key wrapping for easier onboarding and recovery; it is not end-to-end encrypted.",
+    "promise2Title": "Local-first, fully usable offline.",
+    "promise2Body": "Core features don't depend on the cloud. Device sync is an optional extension, not the core.",
+    "promise3Title": "No feature wall.",
+    "promise3Body": "The base app is permanently free with all local features. Sync and other paid products provide cloud infrastructure, not feature gates.",
+    "promise4Title": "Straightforward Standard Sync.",
+    "promise4Body": "The current Sync setup uses Standard Sync with provider-managed key wrapping for easier onboarding and recovery; it is not end-to-end encrypted.",
     "businessTitle": "How we sustain",
     "businessIntro": "tribox's operating costs are covered by user-paid products:",
-    "businessSync": "tribox Pro — hosted sync and AI credits ($9/mo or $90/year)",
-    "businessCredits": "AI credit pack — one-time hosted AI credits ($10)",
+    "businessSync": "tribox Pro — hosted device sync and version history ($9/mo or $90/year)",
     "businessCommercial": "Commercial License — for businesses and organizations",
     "businessClosing": "Paid plans help a small team keep investing in development. The base app is forever free — local features will never be paywalled.",
     "contactTitle": "Contact us",
@@ -437,7 +407,8 @@
     "termsConsent": "By signing in you agree to tribox's",
     "termsLink": "Terms",
     "privacyAnd": "and",
-    "privacyLink": "Privacy Policy"
+    "privacyLink": "Privacy Policy",
+    "termsConsentEnd": "."
   },
   "signup": {
     "title": "Create a tribox account",

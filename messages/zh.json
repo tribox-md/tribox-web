@@ -35,7 +35,7 @@
     "heroCtaPrimary": "免费下载 tribox",
     "heroCtaSecondary": "查看附加产品",
     "platformNote": "macOS · Windows · Linux — 桌面优先，移动端开发中",
-    "principlesTitle": "tribox 的五条产品承诺",
+    "principlesTitle": "tribox 的四条产品承诺",
     "principlesIntro": "这些不是营销口号，而是我们写每一行代码时遵循的边界。",
     "principle1Title": "属于你",
     "principle1Body": "所有笔记是你磁盘上真实的 Markdown 文件。任何文本编辑器都能打开，没有专有格式，没有数据锁定。",
@@ -44,27 +44,22 @@
     "principle3Title": "可掌控",
     "principle3Body": "离线完整可用。云端同步是你选择的功能，不是强制依赖。如果哪一天 tribox 消失，你的笔记仍在你的电脑里。",
     "principle4Title": "可塑造",
-    "principle4Body": "快捷键、主题、插件、AI 模型——所有用得到的地方都可定制。你不必迁就软件，软件应该迁就你。",
-    "principle5Title": "不会偷写",
-    "principle5Body": "AI 输出永远先经过你的确认（草稿 → 预览 → 接受三段流程）才能落入笔记。tribox 不在你不知情时修改你的文件。",
+    "principle4Body": "快捷键、主题、插件——所有用得到的地方都可定制。你不必迁就软件，软件应该迁就你。",
     "capability1Eyebrow": "思考的形状",
     "capability1Title": "把想法用双向链接连起来。",
-    "capability1Body": "[[WikiLink]] 语法在写作中即时建立联系。每一篇笔记都知道谁链接了自己，知识图谱自动浮现，无需手动整理。",
+    "capability1Body": "[[WikiLink]] 语法在写作中即时建立联系。每一篇笔记都知道谁链接了自己，无需手动整理。",
     "capability2Eyebrow": "当下与未来",
     "capability2Title": "任务和笔记是同一件事。",
     "capability2Body": "在段落里直接写 @due(2026-06-01) @priority(high)，今日视图就会看到它。任务不再被关在另一个 app 里。",
     "capability3Eyebrow": "毫秒级",
     "capability3Title": "搜索快到不像本地工具。",
-    "capability3Body": "Tantivy 全文索引 + 语义向量检索，几千篇笔记下查询不超过 50ms。AI Copilot 引用真实笔记内容，不臆造。",
+    "capability3Body": "Tantivy 全文索引，几千篇笔记下查询不超过 50ms。",
     "capability4Eyebrow": "你的多端",
     "capability4Title": "一个账号，多台设备，同一份笔记。",
     "capability4Body": "tribox Standard Sync 服务于你一个人在桌面、笔电、手机之间的衔接。在地铁上记下灵感，回到桌面继续展开——同一份文件通过 Standard Sync 保持同步。Standard Sync 使用服务端管理的 key wrapping，不是端到端加密。",
-    "capability5Eyebrow": "快照分享",
-    "capability5Title": "发出去的是副本，不是活文档。",
-    "capability5Body": "把一个笔记或一组笔记打包发给别人，接收者得到自己的独立副本，可以自由修改和管理。每个人的笔记仍在各自的本地磁盘上，互不干扰。",
-    "capability6Eyebrow": "本地优先",
-    "capability6Title": "没有网络也照样工作。",
-    "capability6Body": "所有功能离线可用，包括 AI（接 Ollama 本地模型）。网络只在你主动同步或调用云端 AI 时才介入。",
+    "capability5Eyebrow": "本地优先",
+    "capability5Title": "没有网络也照样工作。",
+    "capability5Body": "所有本地功能离线可用。网络只在你主动使用设备同步时才介入。",
     "downloadTitle": "开始使用",
     "downloadSubtitle": "下载桌面客户端，无需注册账号即可使用全部本地功能。",
     "platforms": {
@@ -77,7 +72,7 @@
     "eyebrow": "定价",
     "title": "基础免费，按需付费。",
     "subtitle1": "tribox 本身永久免费、无功能墙、无注册要求。",
-    "subtitle2": "Pro 是云同步、版本历史与 Hosted AI credits 的账户层级；credit pack 仅供 active Pro 用户按需购买。",
+    "subtitle2": "Pro 是设备同步与版本历史的账户层级。",
     "billingMonthly": "月付",
     "billingAnnual": "年付",
     "billingSave": "省 $18",
@@ -86,7 +81,6 @@
     "forever": "永久免费",
     "annualNote": "按年计费 {price}/年",
     "monthlyNote": "按月计费",
-    "oneTimeNote": "一次性买断，无续费",
     "annualCheckoutUnavailable": "年付结账尚未配置。请先选择月付，或邮件联系 hello@tribox.md。",
     "free": {
       "name": "tribox",
@@ -94,18 +88,16 @@
       "cta": "免费下载",
       "features": [
         "Markdown 文件存储，数据永远属于你",
-        "双向链接 [[WikiLink]] 与知识图谱",
-        "Tantivy 全文搜索 + 语义检索",
+        "双向链接 [[WikiLink]]",
+        "Tantivy 全文搜索",
         "任务管理：@due / @priority 内嵌语法",
-        "AI Copilot（支持本地 Ollama 模型）",
         "插件系统",
-        "快照分享：发出本地副本给他人",
         "社区支持"
       ]
     },
     "pro": {
       "name": "tribox Pro",
-      "tagline": "云同步、版本历史与 Hosted AI credits",
+      "tagline": "云同步与版本历史",
       "cta": "订阅 Pro",
       "features": [
         "Standard Sync 多端同步",
@@ -114,37 +106,18 @@
         "已删除文件可恢复",
         "可选择按文件夹同步",
         "设置、主题、插件同步",
-        "每个计费周期 100 Hosted AI credits",
         "邮件技术支持"
       ]
     },
-    "credits": {
-      "name": "AI credit pack",
-      "tagline": "active Pro 账户可购买的一次性 Hosted AI credits",
-      "cta": "购买 credits",
-      "features": [
-        "1000 Hosted AI credits",
-        "一次性购买，不是订阅",
-        "仅 active Pro 账户可购买",
-        "结账前执行地区 / provider gate",
-        "未使用 credits 保留在账户中"
-      ]
-    },
     "comparisonTitle": "功能对比",
-    "comparisonSubtitle": "基础 app 已包含全部本地功能。Pro 解锁 hosted sync 与 hosted AI 使用。",
+    "comparisonSubtitle": "基础 app 已包含全部本地功能。Pro 解锁托管的设备同步。",
     "comparison": {
       "headerFeature": "功能",
       "rows": [
-        {"label": "本地 Markdown 文件存储", "free": "✓", "pro": "✓", "credits": "需 Pro"},
-        {"label": "双向链接 + 图谱", "free": "✓", "pro": "✓", "credits": "需 Pro"},
-        {"label": "全文搜索 + 语义检索", "free": "✓", "pro": "✓", "credits": "需 Pro"},
-        {"label": "AI Copilot（本地模型）", "free": "✓", "pro": "✓", "credits": "需 Pro"},
-        {"label": "快照分享", "free": "✓", "pro": "✓", "credits": "需 Pro"},
-        {"label": "多端云同步", "free": "—", "pro": "✓ Standard Sync：服务端管理的 key wrapping，不是端到端加密", "credits": "—"},
-        {"label": "版本历史", "free": "—", "pro": "12 个月", "credits": "—"},
-        {"label": "Hosted AI 包含 credits", "free": "少量试用", "pro": "每周期 100", "credits": "+1000"},
-        {"label": "AI credits 购买", "free": "—", "pro": "可购买", "credits": "一次性包"},
-        {"label": "客户支持", "free": "社区", "pro": "邮件", "credits": "账户支持"}
+        {"label": "本地 Markdown 文件存储", "free": "✓", "pro": "✓"},
+        {"label": "多端云同步", "free": "—", "pro": "✓ Standard Sync：服务端管理的 key wrapping，不是端到端加密"},
+        {"label": "版本历史", "free": "—", "pro": "12 个月"},
+        {"label": "客户支持", "free": "社区", "pro": "邮件"}
       ]
     },
     "commercialEyebrow": "Commercial / Self-hosted",
@@ -155,11 +128,11 @@
     "faqs": [
       {
         "q": "免费版有功能限制吗？",
-        "a": "没有。tribox 基础 app 永久免费，所有本地功能（编辑、搜索、AI Copilot、插件、快照分享）都包含在内，不强制注册账号。Pro 是可选订阅，覆盖云同步、版本历史和 Hosted AI credits。"
+        "a": "没有。tribox 基础 app 永久免费，所有本地功能（编辑、搜索、插件）都包含在内，不强制注册账号。Pro 是可选订阅，覆盖设备同步和版本历史。"
       },
       {
         "q": "Sync 是多人协作吗？",
-        "a": "不是。tribox Sync 服务于一个人在多台设备之间的衔接——例如手机记下灵感，桌面继续展开。如果你想把笔记给别人看，请使用免费的\"快照分享\"功能：对方拿到独立的本地副本，可自由修改，互不干扰。"
+        "a": "不是。tribox Sync 是设备同步，服务于一个人在多台设备之间的衔接——例如手机记下灵感，桌面继续展开。"
       },
       {
         "q": "我的笔记会被上传到云端吗？",
@@ -175,7 +148,7 @@
       },
       {
         "q": "支持退款吗？",
-        "a": "Pro 购买后 7 天内无理由全额退款。AI credit pack 仅在法律要求或 unused credits 可回收时退款。"
+        "a": "Pro 购买后 7 天内无理由全额退款。"
       },
       {
         "q": "学生 / 教师 / 非营利组织有折扣吗？",
@@ -198,18 +171,15 @@
     "promisesIntro": "以下不是营销话术，而是写在 tribox 产品架构里的硬约束：",
     "promise1Title": "不把你的笔记锁进数据库。",
     "promise1Body": "所有笔记都是磁盘上真实的 Markdown 文件，VSCode / Sublime / vim 都能直接打开。",
-    "promise2Title": "AI 不偷写你的文件。",
-    "promise2Body": "AI 生成的内容必须先经过你的确认（草稿 → 预览 → 接受三段流程）才能落入笔记。",
-    "promise3Title": "本地优先，离线完整可用。",
-    "promise3Body": "所有核心功能不依赖云端。同步、AI 云端等可选服务是延伸，不是核心。",
-    "promise4Title": "没有\"功能墙\"。",
-    "promise4Body": "基础 app 永久免费，所有本地功能都包含。Sync 等付费产品只提供云端基础设施，不是功能限制。",
-    "promise5Title": "简单明确的 Standard Sync。",
-    "promise5Body": "当前 Sync 设置使用 Standard Sync 和服务端管理的 key wrapping，便于上手与恢复；它不是端到端加密。",
+    "promise2Title": "本地优先，离线完整可用。",
+    "promise2Body": "所有核心功能不依赖云端。设备同步是可选的延伸服务，不是核心。",
+    "promise3Title": "没有\"功能墙\"。",
+    "promise3Body": "基础 app 永久免费，所有本地功能都包含。Sync 等付费产品只提供云端基础设施，不是功能限制。",
+    "promise4Title": "简单明确的 Standard Sync。",
+    "promise4Body": "当前 Sync 设置使用 Standard Sync 和服务端管理的 key wrapping，便于上手与恢复；它不是端到端加密。",
     "businessTitle": "商业模式",
     "businessIntro": "tribox 的运营资金来自用户付费产品：",
-    "businessSync": "tribox Pro — hosted sync 与 AI credits（$9/月或 $90/年）",
-    "businessCredits": "AI credit pack — 一次性 Hosted AI credits（$10）",
+    "businessSync": "tribox Pro — 设备同步与版本历史（$9/月或 $90/年）",
     "businessCommercial": "Commercial License — 企业 / 组织许可",
     "businessClosing": "付费帮助小团队持续投入开发，把更多精力放在产品本身。基础 app 永远免费，所有本地功能不会被锁。",
     "contactTitle": "联系我们",
@@ -437,7 +407,8 @@
     "termsConsent": "登录即视为同意 tribox 的",
     "termsLink": "服务条款",
     "privacyAnd": "与",
-    "privacyLink": "隐私政策"
+    "privacyLink": "隐私政策",
+    "termsConsentEnd": "。"
   },
   "signup": {
     "title": "创建 tribox 账号",

@@ -35,7 +35,7 @@
     "heroCtaPrimary": "tribox を無料でダウンロード",
     "heroCtaSecondary": "アドオンを見る",
     "platformNote": "macOS · Windows · Linux — デスクトップ優先、モバイル版開発中",
-    "principlesTitle": "tribox の 5 つの製品約束",
+    "principlesTitle": "tribox の 4 つの製品約束",
     "principlesIntro": "これらはマーケティングのスローガンではなく、コードを書くたびに守る境界線です。",
     "principle1Title": "あなたのもの",
     "principle1Body": "すべてのノートは、あなたのディスク上の本物の Markdown ファイルです。どのテキストエディタでも開けます。独自フォーマットなし、データロックインなし。",
@@ -44,27 +44,22 @@
     "principle3Title": "あなたの管理下",
     "principle3Body": "オフラインで完全に使えます。クラウド同期はあなたが選ぶ機能であり、強制的な依存ではありません。tribox が消えても、ノートはあなたのコンピュータに残ります。",
     "principle4Title": "カスタマイズ可能",
-    "principle4Body": "ショートカット、テーマ、プラグイン、AI モデル——触れる場所はすべてカスタマイズできます。ソフトウェアに合わせるのではなく、ソフトウェアがあなたに合わせるべきです。",
-    "principle5Title": "勝手に書きません",
-    "principle5Body": "AI が生成した内容は、必ずあなたの確認（下書き → プレビュー → 承認の 3 段階）を経てからノートに反映されます。tribox があなたに知らせずファイルを変更することはありません。",
+    "principle4Body": "ショートカット、テーマ、プラグイン——触れる場所はすべてカスタマイズできます。ソフトウェアに合わせるのではなく、ソフトウェアがあなたに合わせるべきです。",
     "capability1Eyebrow": "思考のかたち",
     "capability1Title": "アイデアを双方向リンクでつなげる。",
-    "capability1Body": "[[WikiLink]] 構文で書きながら即座に関連付け。各ノートは誰がリンクしているかを把握し、ナレッジグラフが自動で浮かび上がります。手動整理は不要です。",
+    "capability1Body": "[[WikiLink]] 構文で書きながら即座に関連付け。各ノートは誰がリンクしているかを把握します。手動整理は不要です。",
     "capability2Eyebrow": "今と未来",
     "capability2Title": "タスクとノートは同じもの。",
     "capability2Body": "段落の中で直接 @due(2026-06-01) @priority(high) と書けば、Today ビューがすぐに認識します。タスクが別のアプリに閉じ込められることはもうありません。",
     "capability3Eyebrow": "ミリ秒単位",
     "capability3Title": "ローカルツールとは思えない検索速度。",
-    "capability3Body": "Tantivy 全文検索 + セマンティックベクトル検索。数千件のノートで 50ms 以内のクエリ。AI Copilot は実際のノート内容を引用し、ハルシネーションしません。",
+    "capability3Body": "Tantivy 全文検索。数千件のノートで 50ms 以内のクエリ。",
     "capability4Eyebrow": "あなたのマルチデバイス",
     "capability4Title": "1 つのアカウント、複数のデバイス、同じノート。",
     "capability4Body": "tribox Standard Sync は、デスクトップ・ノート PC・スマートフォン間の連携をあなた一人のために提供します。電車で思いついたアイデアをデスクトップで展開し、同じファイルを Standard Sync で同期できます。Standard Sync はサービス管理の key wrapping を使い、エンドツーエンド暗号化ではありません。",
-    "capability5Eyebrow": "スナップショット共有",
-    "capability5Title": "送るのはコピー、ライブドキュメントではありません。",
-    "capability5Body": "ノートやフォルダをパッケージ化して相手に送ると、受信者は独立したローカルコピーを受け取り、自由に編集できます。各人のノートはそれぞれのディスク上に残り、互いに干渉しません。",
-    "capability6Eyebrow": "ローカルファースト",
-    "capability6Title": "ネットワークなしでも動作。",
-    "capability6Body": "すべての機能がオフラインで利用可能、AI（ローカル Ollama モデル接続）も含みます。ネットワークは、あなたが能動的に同期したりクラウド AI を呼び出したりするときのみ介入します。",
+    "capability5Eyebrow": "ローカルファースト",
+    "capability5Title": "ネットワークなしでも動作。",
+    "capability5Body": "すべてのローカル機能がオフラインで利用可能です。ネットワークは、あなたが能動的にデバイス同期を使うときのみ介入します。",
     "downloadTitle": "始める",
     "downloadSubtitle": "デスクトップクライアントをダウンロードしてください。アカウント登録なしでもすべてのローカル機能が使えます。",
     "platforms": {
@@ -77,7 +72,7 @@
     "eyebrow": "料金",
     "title": "基本は無料、必要なときだけ支払う。",
     "subtitle1": "tribox 本体は永久無料、機能制限なし、登録不要です。",
-    "subtitle2": "Pro はホステッド同期、バージョン履歴、Hosted AI credits のアカウント階層です。credit pack は active Pro ユーザー向けの任意購入です。",
+    "subtitle2": "Pro はデバイス同期とバージョン履歴のアカウント階層です。",
     "billingMonthly": "月払い",
     "billingAnnual": "年払い",
     "billingSave": "$18 お得",
@@ -86,7 +81,6 @@
     "forever": "永久無料",
     "annualNote": "年額 {price}、年払い",
     "monthlyNote": "月額",
-    "oneTimeNote": "一括購入、継続課金なし",
     "annualCheckoutUnavailable": "年払いのチェックアウトはまだ設定されていません。月払いを選ぶか、hello@tribox.md までご連絡ください。",
     "free": {
       "name": "tribox",
@@ -94,18 +88,16 @@
       "cta": "無料ダウンロード",
       "features": [
         "Markdown ファイルで保存、データはあなたのもの",
-        "双方向リンク [[WikiLink]] とナレッジグラフ",
-        "Tantivy 全文検索 + セマンティック検索",
+        "双方向リンク [[WikiLink]]",
+        "Tantivy 全文検索",
         "タスク管理：@due / @priority のインライン構文",
-        "AI Copilot（ローカル Ollama モデル対応）",
         "プラグインシステム",
-        "スナップショット共有：ローカルコピーを他人に送信",
         "コミュニティサポート"
       ]
     },
     "pro": {
       "name": "tribox Pro",
-      "tagline": "クラウド同期、バージョン履歴、Hosted AI credits",
+      "tagline": "クラウド同期、バージョン履歴",
       "cta": "Pro を購読",
       "features": [
         "マルチデバイス Standard Sync",
@@ -114,37 +106,18 @@
         "削除ファイルの復元",
         "フォルダ単位の同期選択",
         "設定・テーマ・プラグインの同期",
-        "請求サイクルごとに 100 Hosted AI credits",
         "メールテクニカルサポート"
       ]
     },
-    "credits": {
-      "name": "AI credit pack",
-      "tagline": "active Pro アカウント向けの一回限りの Hosted AI credits",
-      "cta": "credits を購入",
-      "features": [
-        "1000 Hosted AI credits",
-        "一回限りの購入、サブスクリプションではありません",
-        "active Pro アカウントのみ購入可能",
-        "チェックアウト前に地域 / provider gate を適用",
-        "未使用 credits はアカウントに残ります"
-      ]
-    },
     "comparisonTitle": "機能比較",
-    "comparisonSubtitle": "基本アプリにはすべてのローカル機能が含まれます。Pro はホステッド同期と Hosted AI 利用を解除します。",
+    "comparisonSubtitle": "基本アプリにはすべてのローカル機能が含まれます。Pro はホステッドのデバイス同期を解除します。",
     "comparison": {
       "headerFeature": "機能",
       "rows": [
-        {"label": "ローカル Markdown ファイル保存", "free": "✓", "pro": "✓", "credits": "Pro 必須"},
-        {"label": "双方向リンク + グラフ", "free": "✓", "pro": "✓", "credits": "Pro 必須"},
-        {"label": "全文 + セマンティック検索", "free": "✓", "pro": "✓", "credits": "Pro 必須"},
-        {"label": "AI Copilot（ローカルモデル）", "free": "✓", "pro": "✓", "credits": "Pro 必須"},
-        {"label": "スナップショット共有", "free": "✓", "pro": "✓", "credits": "Pro 必須"},
-        {"label": "マルチデバイスクラウド同期", "free": "—", "pro": "✓ Standard Sync：サービス管理の key wrapping、エンドツーエンド暗号化ではありません", "credits": "—"},
-        {"label": "バージョン履歴", "free": "—", "pro": "12 か月", "credits": "—"},
-        {"label": "Hosted AI 付属 credits", "free": "少量トライアル", "pro": "サイクルごとに 100", "credits": "+1000"},
-        {"label": "AI credits 購入", "free": "—", "pro": "購入可能", "credits": "一回限り"},
-        {"label": "サポート", "free": "コミュニティ", "pro": "メール", "credits": "アカウントサポート"}
+        {"label": "ローカル Markdown ファイル保存", "free": "✓", "pro": "✓"},
+        {"label": "マルチデバイスクラウド同期", "free": "—", "pro": "✓ Standard Sync：サービス管理の key wrapping、エンドツーエンド暗号化ではありません"},
+        {"label": "バージョン履歴", "free": "—", "pro": "12 か月"},
+        {"label": "サポート", "free": "コミュニティ", "pro": "メール"}
       ]
     },
     "commercialEyebrow": "Commercial / Self-hosted",
@@ -155,11 +128,11 @@
     "faqs": [
       {
         "q": "無料版に機能制限はありますか？",
-        "a": "ありません。tribox 基本アプリは永久無料で、すべてのローカル機能（編集、検索、AI Copilot、プラグイン、スナップショット共有）が含まれます。アカウント登録も不要です。Pro は任意のサブスクリプションで、クラウド同期、バージョン履歴、Hosted AI credits を含みます。"
+        "a": "ありません。tribox 基本アプリは永久無料で、すべてのローカル機能（編集、検索、プラグイン）が含まれます。アカウント登録も不要です。Pro は任意のサブスクリプションで、デバイス同期とバージョン履歴を含みます。"
       },
       {
         "q": "Sync は複数人での協同編集ですか？",
-        "a": "いいえ。tribox Sync は、あなた一人の複数デバイス間の連携を目的としています——例えばスマートフォンでアイデアを記録し、デスクトップで展開する、といった使い方です。他人にノートを見せたい場合は、無料の「スナップショット共有」機能をご利用ください：相手は独立したローカルコピーを受け取り、自由に編集でき、互いに干渉しません。"
+        "a": "いいえ。tribox Sync はデバイス同期で、あなた一人の複数デバイス間の連携を目的としています——例えばスマートフォンでアイデアを記録し、デスクトップで展開する、といった使い方です。"
       },
       {
         "q": "ノートはクラウドにアップロードされますか？",
@@ -175,7 +148,7 @@
       },
       {
         "q": "返金は可能ですか？",
-        "a": "Pro は購入から 7 日以内なら無条件で全額返金します。AI credit pack は、法令で必要な場合または未使用 credits を回収できる場合のみ返金します。"
+        "a": "Pro は購入から 7 日以内なら無条件で全額返金します。"
       },
       {
         "q": "学生・教員・非営利組織への割引はありますか？",
@@ -198,18 +171,15 @@
     "promisesIntro": "以下はマーケティング表現ではなく、tribox のプロダクトアーキテクチャに刻まれた制約です：",
     "promise1Title": "ノートをデータベースに閉じ込めません。",
     "promise1Body": "すべてのノートはディスク上の本物の Markdown ファイルです。VSCode / Sublime / vim でそのまま開けます。",
-    "promise2Title": "AI が勝手にファイルを書き換えません。",
-    "promise2Body": "AI が生成した内容は、必ずあなたの確認（下書き → プレビュー → 承認の 3 段階）を経てからノートに反映されます。",
-    "promise3Title": "ローカルファースト、オフライン完全動作。",
-    "promise3Body": "コア機能はクラウドに依存しません。同期やクラウド AI は拡張機能であり、コアではありません。",
-    "promise4Title": "「機能の壁」はありません。",
-    "promise4Body": "基本アプリは永久無料で、すべてのローカル機能を含みます。Sync などの有料プロダクトはクラウドインフラの提供で、機能制限ではありません。",
-    "promise5Title": "わかりやすい Standard Sync。",
-    "promise5Body": "現在の Sync 設定は、導入と復旧を容易にするサービス管理の key wrapping を使う Standard Sync です。エンドツーエンド暗号化ではありません。",
+    "promise2Title": "ローカルファースト、オフライン完全動作。",
+    "promise2Body": "コア機能はクラウドに依存しません。デバイス同期は拡張機能であり、コアではありません。",
+    "promise3Title": "「機能の壁」はありません。",
+    "promise3Body": "基本アプリは永久無料で、すべてのローカル機能を含みます。Sync などの有料プロダクトはクラウドインフラの提供で、機能制限ではありません。",
+    "promise4Title": "わかりやすい Standard Sync。",
+    "promise4Body": "現在の Sync 設定は、導入と復旧を容易にするサービス管理の key wrapping を使う Standard Sync です。エンドツーエンド暗号化ではありません。",
     "businessTitle": "ビジネスモデル",
     "businessIntro": "tribox の運営資金は、ユーザーが支払うプロダクトから得ています：",
-    "businessSync": "tribox Pro — hosted sync と AI credits（$9/月または $90/年）",
-    "businessCredits": "AI credit pack — 一回限りの Hosted AI credits（$10）",
+    "businessSync": "tribox Pro — デバイス同期とバージョン履歴（$9/月または $90/年）",
     "businessCommercial": "Commercial License — 企業 / 組織向けライセンス",
     "businessClosing": "有料プランの収入は、小規模チームが開発に集中するために使われます。基本アプリは永久無料です。すべてのローカル機能がペイウォールの背後に隠されることはありません。",
     "contactTitle": "お問い合わせ",
