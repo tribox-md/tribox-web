@@ -116,7 +116,7 @@ export function PricingPage() {
         </div>
 
         {/* 产品卡片 */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-20">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-20">
           {PRODUCTS.map((product) => {
             const displayPrice = billing === 'annual' ? product.priceAnnual : product.priceMonthly
             const featureKeys = Array.from({ length: product.featuresCount }, (_, i) => i)

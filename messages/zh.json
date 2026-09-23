@@ -407,7 +407,8 @@
     "termsConsent": "登录即视为同意 tribox 的",
     "termsLink": "服务条款",
     "privacyAnd": "与",
-    "privacyLink": "隐私政策"
+    "privacyLink": "隐私政策",
+    "termsConsentEnd": "。"
   },
   "signup": {
     "title": "创建 tribox 账号",

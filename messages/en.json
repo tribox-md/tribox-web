@@ -407,7 +407,8 @@
     "termsConsent": "By signing in you agree to tribox's",
     "termsLink": "Terms",
     "privacyAnd": "and",
-    "privacyLink": "Privacy Policy"
+    "privacyLink": "Privacy Policy",
+    "termsConsentEnd": "."
   },
   "signup": {
     "title": "Create a tribox account",
