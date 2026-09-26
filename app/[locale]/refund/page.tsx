@@ -65,39 +65,29 @@ function RefundContent() {
         </Section>
 
         <Section title={t('section2Title')}>
-          <p dangerouslySetInnerHTML={{ __html: renderInline(t('section2Body')) }} />
+          <p>{t('section2Body')}</p>
           <ul>
             {(t.raw('section2List') as string[]).map((item, i) => (
-              <li key={i}>{item}</li>
-            ))}
-          </ul>
-          <p>{t('section2Note')}</p>
-        </Section>
-
-        <Section title={t('section3Title')}>
-          <p>{t('section3Body')}</p>
-          <ul>
-            {(t.raw('section3List') as string[]).map((item, i) => (
               <li key={i} dangerouslySetInnerHTML={{ __html: renderMd(item) }} />
             ))}
           </ul>
-          <p dangerouslySetInnerHTML={{ __html: renderInline(t('section3Note')) }} />
+          <p dangerouslySetInnerHTML={{ __html: renderInline(t('section2Note')) }} />
+        </Section>
+
+        <Section title={t('section3Title')}>
+          <h3 className="text-base font-semibold text-slate-200 mb-2">{t('section3Sub1')}</h3>
+          <p>{t('section3Body1')}</p>
+
+          <h3 className="text-base font-semibold text-slate-200 mb-2 mt-6">{t('section3Sub2')}</h3>
+          <p>{t('section3Body2')}</p>
+
+          <h3 className="text-base font-semibold text-slate-200 mb-2 mt-6">{t('section3Sub3')}</h3>
+          <p>{t('section3Body3')}</p>
         </Section>
 
         <Section title={t('section4Title')}>
-          <h3 className="text-base font-semibold text-slate-200 mb-2">{t('section4Sub1')}</h3>
-          <p>{t('section4Body1')}</p>
-
-          <h3 className="text-base font-semibold text-slate-200 mb-2 mt-6">{t('section4Sub2')}</h3>
-          <p>{t('section4Body2')}</p>
-
-          <h3 className="text-base font-semibold text-slate-200 mb-2 mt-6">{t('section4Sub3')}</h3>
-          <p>{t('section4Body3')}</p>
-        </Section>
-
-        <Section title={t('section5Title')}>
           <p>
-            {t('section5Body')}{' '}
+            {t('section4Body')}{' '}
             <a
               href="mailto:hello@tribox.md?subject=Refund%20Request"
               className="text-indigo-300 hover:text-indigo-200 transition-colors"

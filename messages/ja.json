@@ -225,7 +225,7 @@
     "title": "プライバシーポリシー",
     "lastUpdated": "最終更新：",
     "tldrTitle": "要約",
-    "tldrBody": "tribox デスクトップアプリはデフォルトで完全にローカル動作し、テレメトリ・分析もありません。クラウドサービスはアカウント登録時に必要最小限の情報のみを収集します。新しいリモート vault はサービス管理の key wrapping を使う Standard Sync で作成され、Standard Sync はエンドツーエンド暗号化ではありません。現在、新しい Private E2EE Sync vault は作成できませんが、既存の Private E2EE vault は引き続きサポートされます。Hosted AI credits は別のクラウドサービスであり、E2EE の約束には含まれません。",
+    "tldrBody": "tribox デスクトップアプリはデフォルトで完全にローカル動作し、テレメトリ・分析もありません。クラウドサービスはアカウント登録時に必要最小限の情報のみを収集します。新しいリモート vault はサービス管理の key wrapping を使う Standard Sync で作成され、Standard Sync はエンドツーエンド暗号化ではありません。現在、新しい Private E2EE Sync vault は作成できませんが、既存の Private E2EE vault は引き続きサポートされます。",
     "section1Title": "1. デスクトップクライアント（基本アプリ）",
     "section1Body": "tribox デスクトップクライアントは、デフォルトで私たちのサーバーにデータを送信しません：",
     "section1List": [
@@ -236,7 +236,7 @@
     ],
     "section1Note": "tribox デスクトップクライアントの利用にアカウント登録は不要です。",
     "section2Title": "2. アカウント登録時に収集する情報",
-    "section2Body": "Pro の購読、AI credit pack の購入、またはスナップショット共有の受け取りにはアカウントが必要です。収集するのは：",
+    "section2Body": "Pro の購読にはアカウントが必要です。収集するのは：",
     "section2List": [
       "メールアドレス（ログイン、パスワードリセット、購読通知用）",
       "暗号化されたパスワード（bcrypt ハッシュ、原文は保存されない）",
@@ -289,10 +289,8 @@
     "section1Body": "tribox は以下のサービスを提供します：",
     "section1List": [
       "デスクトップクライアント：ローカルファーストのノート・ナレッジ管理ツール、永久無料、機能制限なし、登録不要",
-      "tribox Pro：マルチデバイス同期、バージョン履歴、Hosted AI credits を提供する有料サブスクリプション",
-      "既存の Private E2EE Sync vault の互換サポート：クライアント保持の Sync key は引き続きサポートされますが、現在、新しい Private E2EE vault は作成できません",
-      "AI credit pack：active Pro アカウント向けの一回限りの Hosted AI credits",
-      "スナップショット共有：ユーザー間でノートのコピーを受け渡す機能（無料）"
+      "tribox Pro：マルチデバイス同期とバージョン履歴を提供する有料サブスクリプション",
+      "既存の Private E2EE Sync vault の互換サポート：クライアント保持の Sync key は引き続きサポートされますが、現在、新しい Private E2EE vault は作成できません"
     ],
     "section2Title": "2. アカウント責任",
     "section2List": [
@@ -304,7 +302,7 @@
     "section3Title": "3. 課金と返金",
     "section3List": [
       "サブスクリプション周期：Pro は月次または年次サブスクリプションで、満了時に自動更新、いつでも解約可能",
-      "返金ポリシー：Pro は購入から 7 日以内なら全額返金可能；AI credit pack は法令で必要な場合または未使用 credits を回収できる場合のみ返金",
+      "返金ポリシー：Pro は購入から 7 日以内なら全額返金可能",
       "価格改定：tribox は将来の周期の価格を 30 日前のメール通知を経て変更する権利を持ちます。支払い済みの現周期には影響しません",
       "税金：表示価格に該当する地域の税金は含まれません"
     ],
@@ -347,7 +345,6 @@
     "summaryTitle": "要約",
     "summaryList": [
       "**tribox Pro**：購入から 7 日以内なら無条件で全額返金",
-      "**AI credit pack**：法令で必要な場合または未使用 credits を回収できる場合のみ返金",
       "**解約**：いつでも Customer Portal から実行可能、サービスは支払い済み周期の終了まで継続"
     ],
     "section1Title": "1. tribox Pro の返金",
@@ -363,30 +360,22 @@
       "返金理由の簡潔な説明（任意ですが、製品改善に役立ちます）"
     ],
     "section1Body3End": "2 営業日以内に返信・処理します。",
-    "section2Title": "2. AI credit pack",
-    "section2Body": "AI credit pack は active Pro アカウント向けの一回限りの credits です。法令で必要な場合または未使用 credits を回収できる場合のみ返金します。理由：",
+    "section2Title": "2. 解約 vs 返金",
+    "section2Body": "これらは別の操作です：",
     "section2List": [
-      "Credits は Hosted AI の使用後に消費されます",
-      "Credit pack checkout は Pro と地域 / provider gate を通過した場合のみ利用できます",
-      "使用済み credits は回収できません"
-    ],
-    "section2Note": "tribox のローカル機能を試したいだけなら、永久無料の基本アプリをご利用ください。Pro や AI credit pack を購入する必要はありません。",
-    "section3Title": "3. 解約 vs 返金",
-    "section3Body": "これらは別の操作です：",
-    "section3List": [
       "**解約**：次回の自動更新を停止します。現在の支払い済み周期内はサービスを正常に利用できます。サポートへの連絡は不要で、Stripe Customer Portal でセルフで実行できます",
       "**返金**：支払い済みの費用を返金し、即座にサービスを終了します。hello@tribox.md への連絡が必要で、7 日間の無条件条件を満たす必要があります"
     ],
-    "section3Note": "ほとんどの場合、<strong>解約</strong>がより適切な選択です——現周期の終了まで使い続けることができます。",
-    "section4Title": "4. 例外的なケース",
-    "section4Sub1": "サービス利用不能",
-    "section4Body1": "サブスクリプション期間中に tribox Pro hosted sync が事前通知なく 24 時間以上連続して利用できなかった場合、影響を受けた期間の費用を按分で返金申請できます。",
-    "section4Sub2": "誤操作 / 重複請求",
-    "section4Body2": "システムの問題による重複請求や誤請求は、7 日間の制限なく無条件で全額返金します。Stripe の領収書を添えてメールしてください。",
-    "section4Sub3": "紛争処理",
-    "section4Body3": "私たちは紛争をメールで友好的に解決することを望みます。すでにカード発行会社にチャージバックを起こしている場合、アカウントを一時停止して紛争解決を待ちます。先にメールでご連絡ください——チャージバックよりも早く処理できます。",
-    "section5Title": "5. お問い合わせ",
-    "section5Body": "返金関連のお問い合わせ：",
+    "section2Note": "ほとんどの場合、<strong>解約</strong>がより適切な選択です——現周期の終了まで使い続けることができます。",
+    "section3Title": "3. 例外的なケース",
+    "section3Sub1": "サービス利用不能",
+    "section3Body1": "サブスクリプション期間中に tribox Pro hosted sync が事前通知なく 24 時間以上連続して利用できなかった場合、影響を受けた期間の費用を按分で返金申請できます。",
+    "section3Sub2": "誤操作 / 重複請求",
+    "section3Body2": "システムの問題による重複請求や誤請求は、7 日間の制限なく無条件で全額返金します。Stripe の領収書を添えてメールしてください。",
+    "section3Sub3": "紛争処理",
+    "section3Body3": "私たちは紛争をメールで友好的に解決することを望みます。すでにカード発行会社にチャージバックを起こしている場合、アカウントを一時停止して紛争解決を待ちます。先にメールでご連絡ください——チャージバックよりも早く処理できます。",
+    "section4Title": "4. お問い合わせ",
+    "section4Body": "返金関連のお問い合わせ：",
     "backHome": "← ホームに戻る"
   },
   "login": {
@@ -498,7 +487,7 @@
     "lastUpdated": "最終更新 {time}",
     "roleEditor": "編集可能なコピー",
     "roleViewer": "読み取り専用コピー",
-    "snapshotNote": "承諾後、独立したローカルコピーを取得し、自由に編集・管理できます。",
+    "snapshotNote": "tribox アプリでこの共有を開くと内容を確認できます。",
     "expiresAt": "招待リンクは {date} に期限切れになります",
     "downloadCta": "tribox をダウンロード（無料で開始）",
     "openInApp": "tribox で開く",
@@ -579,7 +568,7 @@
     "success": {
       "eyebrow": "請求",
       "title": "お支払いを受け付けました",
-      "body": "Stripe から tribox に戻りました。Webhook の処理後、サブスクリプションまたは credits の更新が反映されるまで少し時間がかかる場合があります。",
+      "body": "Stripe から tribox に戻りました。Webhook の処理後、サブスクリプションの更新が反映されるまで少し時間がかかる場合があります。",
       "accountCta": "アカウントを開く",
       "pricingCta": "料金ページに戻る"
     },
@@ -598,7 +587,6 @@
     "step1Subtitle": "体験を最適化するためにお伺いします",
     "useCases": [
       {"id": "knowledge", "icon": "🧠", "label": "ナレッジ管理", "desc": "個人ナレッジベース、双方向リンク、マインドグラフ"},
-      {"id": "team", "icon": "📤", "label": "スナップショット共有", "desc": "ノートをパッケージ化して他人に送信、相手は独立コピーを受け取る"},
       {"id": "personal", "icon": "📝", "label": "個人ノート", "desc": "日記、アイデア記録、学習ノート"},
       {"id": "project", "icon": "🚀", "label": "プロジェクト管理", "desc": "タスク追跡、@due 日付、プロジェクトドキュメント"}
     ],

@@ -225,7 +225,7 @@
     "title": "隐私政策",
     "lastUpdated": "最后更新：",
     "tldrTitle": "一句话总结",
-    "tldrBody": "tribox 桌面 app 默认完全本地运行，零遥测，零分析。云端服务仅在你主动注册账号并使用时才收集必要的最少信息。新建远程 vault 使用 Standard Sync 和服务端管理的 key wrapping；Standard Sync 不是端到端加密。当前不提供新建 Private E2EE Sync vault，已有 Private E2EE vault 仍受支持。Hosted AI credits 是单独的云端服务，不属于 E2EE 承诺范围。",
+    "tldrBody": "tribox 桌面 app 默认完全本地运行，零遥测，零分析。云端服务仅在你主动注册账号并使用时才收集必要的最少信息。新建远程 vault 使用 Standard Sync 和服务端管理的 key wrapping；Standard Sync 不是端到端加密。当前不提供新建 Private E2EE Sync vault，已有 Private E2EE vault 仍受支持。",
     "section1Title": "1. 桌面客户端（基础 app）",
     "section1Body": "tribox 桌面客户端默认不向我们的服务器发送任何数据。具体来说：",
     "section1List": [
@@ -236,7 +236,7 @@
     ],
     "section1Note": "你不需要注册账号就能使用 tribox 桌面客户端。",
     "section2Title": "2. 注册账号时收集什么",
-    "section2Body": "当你订阅 Pro、购买 AI credit pack 或接受快照分享时需要注册账号。我们仅收集：",
+    "section2Body": "当你订阅 Pro 时需要注册账号。我们仅收集：",
     "section2List": [
       "邮箱地址（用于登录、密码重置、订阅通知）",
       "加密后的密码（bcrypt 哈希，原文从不存储）",
@@ -289,10 +289,8 @@
     "section1Body": "tribox 提供以下服务：",
     "section1List": [
       "桌面客户端：本地优先的笔记与知识管理工具，永久免费、无功能限制、无注册要求",
-      "tribox Pro：付费订阅服务，提供多端同步、版本历史与 Hosted AI credits",
-      "已有 Private E2EE Sync vault 兼容支持：继续支持客户端持有的 Sync key；当前不提供新建 Private E2EE vault",
-      "AI credit pack：active Pro 账户可购买的一次性 Hosted AI credits",
-      "快照分享：在用户之间传递笔记副本的功能（免费）"
+      "tribox Pro：付费订阅服务，提供多端同步与版本历史",
+      "已有 Private E2EE Sync vault 兼容支持：继续支持客户端持有的 Sync key；当前不提供新建 Private E2EE vault"
     ],
     "section2Title": "2. 账号责任",
     "section2List": [
@@ -304,7 +302,7 @@
     "section3Title": "3. 订阅计费与退款",
     "section3List": [
       "订阅周期：Pro 按月或按年订阅，到期自动续费，可随时取消续费",
-      "退款政策：Pro 购买后 7 天内可申请全额退款；AI credit pack 仅在法律要求或 unused credits 可回收时退款",
+      "退款政策：Pro 购买后 7 天内可申请全额退款",
       "价格调整：tribox 有权调整未来订阅周期的价格，调整前 30 天会邮件通知。已支付的当前周期不受影响",
       "税费：展示价格不含可能适用的当地税费"
     ],
@@ -347,7 +345,6 @@
     "summaryTitle": "速览",
     "summaryList": [
       "**tribox Pro**：购买后 7 天内无理由全额退款",
-      "**AI credit pack**：仅在法律要求或 unused credits 可回收时退款",
       "**取消订阅**：随时可在 Customer Portal 取消，服务持续到付费周期结束"
     ],
     "section1Title": "1. tribox Pro 退款",
@@ -363,30 +360,22 @@
       "简单说明退款原因（可选，但有助于我们改进产品）"
     ],
     "section1Body3End": "我们会在 2 个工作日内回复并处理。",
-    "section2Title": "2. AI credit pack",
-    "section2Body": "AI credit pack 是 active Pro 账户可购买的一次性 credits。仅在法律要求或 unused credits 可回收时退款。原因是：",
+    "section2Title": "2. 取消订阅 vs 退款",
+    "section2Body": "这两个操作不同：",
     "section2List": [
-      "Credits 会在 Hosted AI 使用后被消耗",
-      "Credit pack 结账只会在 Pro 与地区 / provider gate 通过后开放",
-      "已使用 credits 无法回收"
-    ],
-    "section2Note": "如果你只是想试用 tribox 的本地功能，请使用永久免费的基础 app，不需要购买 Pro 或 AI credit pack。",
-    "section3Title": "3. 取消订阅 vs 退款",
-    "section3Body": "这两个操作不同：",
-    "section3List": [
       "**取消订阅**：停止下次自动续费，当前付费周期内服务正常使用直到到期。无须联系客服，可在 Stripe Customer Portal 自助操作",
       "**退款**：退还已支付的费用并立即终止服务。需联系 hello@tribox.md 并符合 7 天无理由条件"
     ],
-    "section3Note": "大多数情况下，<strong>取消订阅</strong>是更合适的选择——可以继续使用到当前周期结束。",
-    "section4Title": "4. 异常情况",
-    "section4Sub1": "服务无法使用",
-    "section4Body1": "如果你的订阅期间 tribox Pro hosted sync 服务持续 24 小时以上无法使用，且我们未提前通知，可申请按比例退还受影响时段的费用。",
-    "section4Sub2": "误操作 / 重复扣费",
-    "section4Body2": "因系统问题导致的重复扣费、误扣费，将无条件全额退还，不受 7 天限制。发邮件附上 Stripe 收据即可。",
-    "section4Sub3": "争议处理",
-    "section4Body3": "我们倾向于通过邮件友好解决争议。如果你已经向发卡行发起 chargeback（争议扣款），我们将暂停账号直到争议结束。请优先邮件联系我们——我们处理速度通常快于 chargeback 流程。",
-    "section5Title": "5. 联系",
-    "section5Body": "退款相关问题：",
+    "section2Note": "大多数情况下，<strong>取消订阅</strong>是更合适的选择——可以继续使用到当前周期结束。",
+    "section3Title": "3. 异常情况",
+    "section3Sub1": "服务无法使用",
+    "section3Body1": "如果你的订阅期间 tribox Pro hosted sync 服务持续 24 小时以上无法使用，且我们未提前通知，可申请按比例退还受影响时段的费用。",
+    "section3Sub2": "误操作 / 重复扣费",
+    "section3Body2": "因系统问题导致的重复扣费、误扣费，将无条件全额退还，不受 7 天限制。发邮件附上 Stripe 收据即可。",
+    "section3Sub3": "争议处理",
+    "section3Body3": "我们倾向于通过邮件友好解决争议。如果你已经向发卡行发起 chargeback（争议扣款），我们将暂停账号直到争议结束。请优先邮件联系我们——我们处理速度通常快于 chargeback 流程。",
+    "section4Title": "4. 联系",
+    "section4Body": "退款相关问题：",
     "backHome": "← 返回首页"
   },
   "login": {
@@ -498,7 +487,7 @@
     "lastUpdated": "最后更新 {time}",
     "roleEditor": "可编辑副本",
     "roleViewer": "只读副本",
-    "snapshotNote": "接受后你将获得独立的本地副本，可自由修改和管理。",
+    "snapshotNote": "在 tribox app 中打开这个分享即可查看内容。",
     "expiresAt": "邀请链接将于 {date} 过期",
     "downloadCta": "下载 tribox（免费开始）",
     "openInApp": "在 tribox 中打开",
@@ -579,7 +568,7 @@
     "success": {
       "eyebrow": "计费",
       "title": "付款已返回",
-      "body": "Stripe 已将你带回 tribox。订阅或 credits 更新需要等待 webhook 处理，可能会有短暂延迟。",
+      "body": "Stripe 已将你带回 tribox。订阅更新需要等待 webhook 处理，可能会有短暂延迟。",
       "accountCta": "打开账号页",
       "pricingCta": "返回定价页"
     },
@@ -598,7 +587,6 @@
     "step1Subtitle": "帮助我们为你优化体验",
     "useCases": [
       {"id": "knowledge", "icon": "🧠", "label": "知识管理", "desc": "构建个人知识库，双向链接，思维图谱"},
-      {"id": "team", "icon": "📤", "label": "快照分享", "desc": "把笔记打包发给别人，对方拿到独立副本"},
       {"id": "personal", "icon": "📝", "label": "个人笔记", "desc": "日记、灵感记录、学习笔记"},
       {"id": "project", "icon": "🚀", "label": "项目管理", "desc": "任务跟踪，@due 日期，项目文档"}
     ],
