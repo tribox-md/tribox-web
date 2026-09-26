@@ -225,7 +225,7 @@
     "title": "Privacy Policy",
     "lastUpdated": "Last updated:",
     "tldrTitle": "TL;DR",
-    "tldrBody": "The tribox desktop app runs entirely locally by default — zero telemetry, zero analytics. Cloud services only collect the minimum information needed when you actively register an account. New remote vaults use Standard Sync with provider-managed key wrapping; Standard Sync is not end-to-end encrypted. Creating new Private E2EE Sync vaults is currently unavailable, while existing Private E2EE vaults remain supported. Hosted AI credits are a separate cloud service and are not part of the E2EE promise.",
+    "tldrBody": "The tribox desktop app runs entirely locally by default — zero telemetry, zero analytics. Cloud services only collect the minimum information needed when you actively register an account. New remote vaults use Standard Sync with provider-managed key wrapping; Standard Sync is not end-to-end encrypted. Creating new Private E2EE Sync vaults is currently unavailable, while existing Private E2EE vaults remain supported.",
     "section1Title": "1. Desktop client (base app)",
     "section1Body": "The tribox desktop client does not send any data to our servers by default:",
     "section1List": [
@@ -236,7 +236,7 @@
     ],
     "section1Note": "You do not need to register an account to use the tribox desktop client.",
     "section2Title": "2. What we collect on account registration",
-    "section2Body": "When you subscribe to Pro, buy an AI credit pack, or accept a snapshot share, an account is required. We only collect:",
+    "section2Body": "When you subscribe to Pro, an account is required. We only collect:",
     "section2List": [
       "Email address (for login, password reset, subscription notifications)",
       "Encrypted password (bcrypt hash — never stored as plaintext)",
@@ -289,10 +289,8 @@
     "section1Body": "tribox offers:",
     "section1List": [
       "Desktop client — local-first notes & knowledge management tool, permanently free, no feature limits, no signup required",
-      "tribox Pro — paid subscription for multi-device sync, version history, and hosted AI credits",
-      "Existing Private E2EE Sync vault compatibility — client-held Sync keys remain supported, while creating new Private E2EE vaults is currently unavailable",
-      "AI credit pack — one-time hosted AI credits for active Pro accounts",
-      "Snapshot sharing — feature for passing note copies between users (free)"
+      "tribox Pro — paid subscription for multi-device sync and version history",
+      "Existing Private E2EE Sync vault compatibility — client-held Sync keys remain supported, while creating new Private E2EE vaults is currently unavailable"
     ],
     "section2Title": "2. Account responsibility",
     "section2List": [
@@ -304,7 +302,7 @@
     "section3Title": "3. Subscription and refund",
     "section3List": [
       "Subscription cycle — Pro is billed monthly or annually with auto-renewal; cancel anytime",
-      "Refund policy — Pro subscriptions are fully refundable within 7 days of purchase; AI credit packs are refundable only when required by law or when unused credits can be reversed",
+      "Refund policy — Pro subscriptions are fully refundable within 7 days of purchase",
       "Price changes — tribox may adjust future-cycle prices with 30-day email notice. Current paid cycle is unaffected.",
       "Tax — Displayed prices exclude local taxes that may apply"
     ],
@@ -347,7 +345,6 @@
     "summaryTitle": "Summary",
     "summaryList": [
       "**tribox Pro**: full refund within 7 days of purchase, no questions asked",
-      "**AI credit pack**: refundable only when required by law or when unused credits can be reversed",
       "**Cancellation**: anytime via Customer Portal — service continues through the current paid period"
     ],
     "section1Title": "1. tribox Pro refund",
@@ -363,30 +360,22 @@
       "A brief reason (optional but helpful for our improvement)"
     ],
     "section1Body3End": "We respond and process within 2 business days.",
-    "section2Title": "2. AI credit pack",
-    "section2Body": "AI credit packs are one-time purchases for active Pro accounts. They are refundable only when required by law or when unused credits can be reversed. Reasons:",
+    "section2Title": "2. Cancellation vs refund",
+    "section2Body": "These are distinct operations:",
     "section2List": [
-      "Credits are consumed by hosted AI usage after purchase",
-      "Credit pack checkout is available only after the Pro and region/provider gates pass",
-      "Used credits cannot be reclaimed once spent"
-    ],
-    "section2Note": "If you only want to try tribox's local features, use the permanently free base app. You don't need Pro or an AI credit pack.",
-    "section3Title": "3. Cancellation vs refund",
-    "section3Body": "These are distinct operations:",
-    "section3List": [
       "**Cancellation**: stops next auto-renewal; you continue to use the service through the current cycle. No support contact needed — self-serve in Stripe Customer Portal.",
       "**Refund**: returns money already paid and terminates service immediately. Requires emailing hello@tribox.md and meeting the 7-day window."
     ],
-    "section3Note": "In most cases, <strong>cancellation</strong> is the better option — you keep using the service until the cycle ends.",
-    "section4Title": "4. Edge cases",
-    "section4Sub1": "Service unavailability",
-    "section4Body1": "If tribox Pro hosted sync is unavailable for more than 24 continuous hours during your subscription, without prior notice, you can request a pro-rated refund for the affected period.",
-    "section4Sub2": "Mistakes / duplicate charges",
-    "section4Body2": "Duplicate or mistaken charges due to system issues are fully refunded unconditionally, not limited by the 7-day window. Email us with the Stripe receipt.",
-    "section4Sub3": "Disputes",
-    "section4Body3": "We prefer to resolve disputes amicably by email. If you've already filed a chargeback with your card issuer, we'll suspend the account until the dispute is resolved. Please email us first — we typically respond faster than the chargeback process.",
-    "section5Title": "5. Contact",
-    "section5Body": "Refund questions:",
+    "section2Note": "In most cases, <strong>cancellation</strong> is the better option — you keep using the service until the cycle ends.",
+    "section3Title": "3. Edge cases",
+    "section3Sub1": "Service unavailability",
+    "section3Body1": "If tribox Pro hosted sync is unavailable for more than 24 continuous hours during your subscription, without prior notice, you can request a pro-rated refund for the affected period.",
+    "section3Sub2": "Mistakes / duplicate charges",
+    "section3Body2": "Duplicate or mistaken charges due to system issues are fully refunded unconditionally, not limited by the 7-day window. Email us with the Stripe receipt.",
+    "section3Sub3": "Disputes",
+    "section3Body3": "We prefer to resolve disputes amicably by email. If you've already filed a chargeback with your card issuer, we'll suspend the account until the dispute is resolved. Please email us first — we typically respond faster than the chargeback process.",
+    "section4Title": "4. Contact",
+    "section4Body": "Refund questions:",
     "backHome": "← Back to home"
   },
   "login": {
@@ -498,7 +487,7 @@
     "lastUpdated": "Last updated {time}",
     "roleEditor": "editable copy",
     "roleViewer": "read-only copy",
-    "snapshotNote": "After accepting, you'll get an independent local copy you can freely modify and manage.",
+    "snapshotNote": "Open the share in the tribox app to view its content.",
     "expiresAt": "Invite expires {date}",
     "downloadCta": "Download tribox (free)",
     "openInApp": "Open in tribox",
@@ -579,7 +568,7 @@
     "success": {
       "eyebrow": "Billing",
       "title": "Payment received",
-      "body": "Stripe has returned you to tribox. It can take a short moment for the subscription or credit update to appear after the webhook is processed.",
+      "body": "Stripe has returned you to tribox. It can take a short moment for the subscription update to appear after the webhook is processed.",
       "accountCta": "Open account",
       "pricingCta": "Back to pricing"
     },
@@ -598,7 +587,6 @@
     "step1Subtitle": "Helps us tailor your experience",
     "useCases": [
       {"id": "knowledge", "icon": "🧠", "label": "Knowledge management", "desc": "Build a personal knowledge base with bidirectional links"},
-      {"id": "team", "icon": "📤", "label": "Snapshot sharing", "desc": "Pack notes and send to others, they get independent copies"},
       {"id": "personal", "icon": "📝", "label": "Personal notes", "desc": "Journals, ideas, study notes"},
       {"id": "project", "icon": "🚀", "label": "Project management", "desc": "Task tracking, @due dates, project docs"}
     ],
